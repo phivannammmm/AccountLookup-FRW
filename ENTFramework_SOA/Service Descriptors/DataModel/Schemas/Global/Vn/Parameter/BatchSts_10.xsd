@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/parameter/batchsts/1.0"
+	elementFormDefault="qualified"
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/parameter/batchsts/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	<import namespace="datamodel/datatypes/common/serviceenvelope"
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd" />
+
+	<import schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"></import>
+	<element name="BatchStsInqReq" type="tns:BatchStsInqReqType" />
+
+	<element name="BatchStsInqRes" type="tns:BatchStsInqResType" />
+
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType" />
+
+	<complexType name="BatchStsInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="BatchStsInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadInqRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="PayloadInqRes" type="tns:PayloadInqResType" />
+
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient"	type="pref:HeaderForClientType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="BatchSts" type="string" />
+		</sequence>
+	</complexType>
+</schema>

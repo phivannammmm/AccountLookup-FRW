@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.vietcombank.com.vn/service/global/vn/parameter/hostdateinfo/1.0" xmlns:tns0="http://www.vietcombank.com.vn/global/vn/parameter/hostdateinfo/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HostDateInfo" targetNamespace="http://www.vietcombank.com.vn/service/global/vn/parameter/hostdateinfo/1.0">
+  <wsdl:import namespace="http://www.vietcombank.com.vn/global/vn/parameter/hostdateinfo/1.0"/>
+  <wsdl:message name="InquiryRequest">
+    <wsdl:part element="tns0:HostDateInfoInqReq" name="inInquiry"/>
+  </wsdl:message>
+  <wsdl:message name="InquiryResponse">
+    <wsdl:part element="tns0:HostDateInfoInqRes" name="outInquiry"/>
+  </wsdl:message>
+  <wsdl:portType name="HostDateInfo">
+    <wsdl:operation name="Inquiry">
+      <wsdl:input message="tns:InquiryRequest" name="InqInput"/>
+      <wsdl:output message="tns:InquiryResponse" name="InqOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HostDateInfoServiceBinding" type="tns:HostDateInfo">
+    <soap12:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+    <jms:binding messageFormat="bytes"/>
+    <wsdl:operation name="Inquiry">
+      <soap12:operation soapAction="Inquiry" soapActionRequired="true" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="inInquiry" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="outInquiry" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HostDateInfo">
+    <wsdl:port binding="tns:HostDateInfoServiceBinding" name="HostDateInfoSOAP">
+      <soap12:address location=""/>
+      <jms:connectionFactory>FTQueueConnectionFactory</jms:connectionFactory>
+      <jms:targetAddress destination="queue">vn.parameter.ws-hostdateinfo.1.0</jms:targetAddress>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

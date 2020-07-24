@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema elementFormDefault="qualified"
+	targetNamespace="http://www.vietcombank.com.vn/framework/utilities/logging/logger/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:tns="http://www.vietcombank.com.vn/framework/utilities/logging/logger/1.0" xmlns:cmd-fw="datamodel/datatypes/common/framework" xmlns:pref="framework/datatypes/common/serviceenvelope">
+
+	<import namespace="framework/datatypes/common/serviceenvelope" schemaLocation="../../DataTypes/Common/SvcEnvelope.xsd"/>
+	<element name="Logger" type="tns:Logger_Type" />
+
+	<complexType name="Logger_Type">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="ServiceHeader"
+				type="pref:MsgHdr_Type" />
+			<element name="ResponseStatus"
+				type="pref:Status_Type" minOccurs="0" maxOccurs="1">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="MessagePayLoad"
+				type="tns:any_Type" />
+			<element name="ServiceInfo" type="pref:SvcInfo_Type"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="TimeDuration" type="int" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="Direction" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="SOAMsgId" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+
+			<element ref="tns:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<element name="Exception" type="tns:Exception_Type" />
+
+	<complexType name="Exception_Type">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="ServiceHeader"
+				type="pref:MsgHdr_Type" />
+			<element ref="pref:Status" minOccurs="0"></element>
+			<element maxOccurs="1" minOccurs="0" name="MessagePayload"
+				type="tns:any_Type" />
+			<element maxOccurs="1" minOccurs="0" name="StackTrace"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="ErrorCode"
+				type="string" />
+
+			<element maxOccurs="1" minOccurs="0" name="ErrorDescription"
+				type="string" />
+			<element name="ServiceInfo" type="pref:SvcInfo_Type"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="ProcessStack"
+				type="string" />
+			<element ref="tns:AdditionalInfo" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="any_Type">
+		<sequence>
+			<any namespace="##any" processContents="lax"
+				minOccurs="0">
+			</any>
+		</sequence>
+	</complexType>	
+
+
+    
+
+    <complexType name="AdditionalInfoType">
+    	<sequence>
+    		<element name="ID" type="string" minOccurs="0"></element>
+    		<element name="Value" type="string" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="AdditionalInfo" type="tns:AdditionalInfoType"></element>
+
+
+</schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/1496/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/1496/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+	<element name="BT1496O" type="tns:BT1496OType"></element>
+	<complexType name="BT1496OType">
+		<sequence>
+			<element name="CustomerName" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="ErrorMessage" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

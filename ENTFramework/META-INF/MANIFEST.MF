@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ENTFramework Module
+Bundle-SymbolicName: ENTFramework
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-SharedModule: META-INF/module.bwm
+TIBCO-BW-Edition: bwe
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
+ com.tibco.bw.palette; filter:="(name=bw.jdbc)",
+ com.tibco.bw.palette; filter:="(name=bw.jms)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.jdbc)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.jmsconnection)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.jndiconfiguration)"
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Provide-Capability: com.tibco.bw.module; name="ENTFramework"; version:Version="1.0.0",
+ com.tibco.bw.wsdls; ns="http://www.vietcombank.com.vn/framework/service/logging/logger/1.0",
+ com.tibco.bw.schemas; ns="framework/datatypes/common/serviceenvelope",
+ com.tibco.bw.schemas; ns="http://www.vietcombank.com.vn/framework/datatypes/common/common/1.0",
+ com.tibco.bw.schemas; ns="http://www.vietcombank.com.vn/framework/utilities/logging/logger/1.0",
+ com.tibco.bw.schemas; ns="http://www.vietcombank.com.vn/framework/utilities/pattern/pattern/1.0",
+ com.tibco.bw.resources; name="SOA",
+ com.tibco.bw.processes; name="Utilities.Pattern",
+ com.tibco.bw.processes; name="Utilities.impl",
+ com.tibco.bw.processes; name="Utilities.Common",
+ com.tibco.bw.processes; name="Utilities.Logging"
+TIBCO-BW-Version: 6.5.1 HF1 V34 2019-05-22

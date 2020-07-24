@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.vietcombank.com.vn/global/vn/fundtransfer/fundtransferdd2ln/1.0" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:cmd-xfer="http://www.vietcombank.com.vn/entity/vn/common/xfer" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/fundtransfer/fundtransferdd2ln/1.0">
+	<xsd:import namespace="http://www.vietcombank.com.vn/entity/vn/common/xfer" schemaLocation="../../../Datatypes/Business/Xfer.xsd">
+	</xsd:import>
+	<xsd:import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</xsd:import>
+
+	<xsd:import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"/>
+	<xsd:element name="FundTransferDD2LNAddReq" type="FundTransferDD2LNAddReqType"/>
+
+	<xsd:element name="FundTransferDD2LNAddRes" type="FundTransferDD2LNAddResType"/>
+
+	<xsd:element name="PayloadAddReq" type="PayloadAddReqType"/>
+
+	<xsd:element name="PayloadAddRes" type="PayloadAddResType"/>
+
+	<xsd:complexType name="FundTransferDD2LNAddReqType">
+		<xsd:complexContent>
+			<xsd:extension base="cmd-svrenv:BaseServiceRequestType">
+				<xsd:sequence>
+					<xsd:element ref="PayloadAddReq"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="FundTransferDD2LNAddResType">
+		<xsd:complexContent>
+			<xsd:extension base="cmd-svrenv:BaseServiceResponseType">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" ref="PayloadAddRes"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="PayloadAddReqType">
+		<xsd:sequence>
+			<xsd:element name="HeaderForClient"
+				type="tns:HeaderForClientType" />
+			<xsd:element name="xferInfo" type="cmd-xfer:XferInfoType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PayloadAddResType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RefNumber" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="CifNo" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="FundTransferDD2LNRevReq" type="FundTransferDD2LNRevReqType"/>
+
+    <xsd:element name="FundTransferDD2LNRevRes" type="FundTransferDD2LNRevResType"/>
+
+    <xsd:element name="PayloadRevReq" type="PayloadRevReqType"/>
+
+    <xsd:element name="PayloadRevRes" type="PayloadRevResType"/>
+    
+	<xsd:complexType name="FundTransferDD2LNRevReqType">
+		<xsd:complexContent>
+			<xsd:extension base="cmd-svrenv:BaseServiceRequestType">
+				<xsd:sequence>
+					<xsd:element ref="PayloadRevReq"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="FundTransferDD2LNRevResType">
+		<xsd:complexContent>
+			<xsd:extension base="cmd-svrenv:BaseServiceResponseType">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" ref="PayloadRevRes"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="PayloadRevReqType">
+		<xsd:sequence>
+			<xsd:element name="HeaderForClient"
+				type="tns:HeaderForClientType" />
+			<xsd:element name="xferInfo" type="cmd-xfer:XferInfoType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PayloadRevResType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="RefNumber" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="CifNo" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+</xsd:schema>

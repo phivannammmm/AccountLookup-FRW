@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v805/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v805/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+	<complexType name="V805OType">
+		<sequence>
+			<element name="ApplicationNumber" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="AccountNumber" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="SweepFlag" type="inc-field:FieldType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+    <element name="V805O" type="tns:V805OType"></element>
+</schema>

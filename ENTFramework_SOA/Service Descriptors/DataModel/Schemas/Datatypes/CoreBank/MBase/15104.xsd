@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/mbase/15104/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/mbase/15104/1.0">
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../Message.xsd"/>
+
+    <element name="MB15104I" type="tns:MB15104IType"/>
+
+    <element name="MB15104O" type="tns:MB15104OType"/>
+
+    <complexType name="MB15104IType">
+    	<sequence>
+    		<element name="CFSSNO" type="inc-field:FieldType"/>
+			<element name="CFSSCD" type="inc-field:FieldType"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="MB15104ORepeatedFiledType">
+    	<sequence>
+			<element name="RCFFSN" type="inc-field:FieldType"/>
+			<element name="RCFSSN" type="inc-field:FieldType"/>
+			<element name="RCFSSC" type="inc-field:FieldType"/>
+			<element name="RCFBRN" type="inc-field:FieldType"/>
+			<element name="RCFCIF" type="inc-field:FieldType"/>
+			<element name="RCFNA1" type="inc-field:FieldType"/>
+			<element name="RCFNA2" type="inc-field:FieldType"/>
+			<element name="RALIAS" type="inc-field:FieldType"/>
+			<element name="RFCIFT" type="inc-field:FieldType"/>
+    	</sequence>
+    </complexType>
+
+    <element name="MB15104ORepeatedFiled" type="tns:MB15104ORepeatedFiledType"></element>
+
+    <complexType name="MB15104OType">
+    	<sequence>
+            <element name="MB15104OFixedField" type="tns:MB15104OFixedFieldType" minOccurs="0" maxOccurs="1"></element>
+            <element name="MB15104ORepeatedFiled"
+    			type="tns:MB15104ORepeatedFiledType" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+        </sequence>
+    </complexType>
+
+    <complexType name="MB15104OFixedFieldType">
+    	<sequence>
+    		<element name="RCFSSN" type="inc-field:FieldType"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="RCFSSC" type="inc-field:FieldType" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="MB15104OFixedField" type="tns:MB15104OFixedFieldType"></element>
+</schema>

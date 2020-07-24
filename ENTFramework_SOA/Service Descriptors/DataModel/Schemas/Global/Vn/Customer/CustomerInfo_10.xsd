@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-party="http://www.vietcombank.com.vn/entity/vn/common/party" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/customer/customerinfo/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/customer/customerinfo/1.0">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</import>
+
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/party" schemaLocation="../../../Datatypes/Business/Party.xsd">
+	</import>
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"/>
+	<element name="CustomerInfoInqReq" type="tns:CustomerInfoInqReqType">
+	</element>
+	<element name="CustomerInfoInqRes" type="tns:CustomerInfoInqResType">
+	</element>
+
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"/>
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"/>
+
+	<complexType name="CustomerInfoInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadInqReqType">
+
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element name="CifNo" type="string"/>
+		</sequence>
+
+	</complexType>
+
+	<complexType name="CustomerInfoInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadInqRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+
+		<sequence>
+			<element minOccurs="0" name="CustomerInfo" type="cmd-party:CustomerInfoType"/>
+			<element maxOccurs="1" minOccurs="0" name="AdditionalInfo" type="string"/>
+		</sequence>
+
+	</complexType>
+
+
+
+    
+    
+
+
+    
+
+
+    <complexType name="CustomerInfoUpdReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+					<element ref="tns:PayloadUdpReq"/>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="CustomerInfoUpdResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+					<element minOccurs="0" ref="tns:PayloadUdpRes"/>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="PayloadUpdReqType">
+    	<sequence>
+    		<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+    		<element name="UpdField" type="string"/>
+    		<element name="CustomInfo" type="cmd-party:CustomerInfoType"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PayloadUdpResType"/>
+
+    <element name="CustomerInfoUpdReq" type="tns:CustomerInfoUpdReqType"/>
+
+    <element name="CustomerInfoUpdRes" type="tns:CustomerInfoUpdResType"/>
+
+    <element name="PayloadUdpReq" type="tns:PayloadUpdReqType"/>
+
+    <element name="PayloadUdpRes" type="tns:PayloadUdpResType"/>
+
+    <complexType name="PayloadAddReqType">
+    	<sequence>
+    		<element name="HeaderForClient"
+    			type="sig:HeaderForClientType">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="CustomerName"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="CustomerAddress"
+    			type="string">
+
+    		</element>
+
+    		<element maxOccurs="1" minOccurs="1" name="IDType"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="IDNo"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="IDIssueDate"
+    			type="date">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="IDIssuePlace"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="IDExpiryDate"
+    			type="date">
+    		</element>
+    		<element name="PrimaryOfficerNumber" type="string"
+    			minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="OpeningDate" type="date" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="CustomerType" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="Gender" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="DateOfBirth" type="date" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="Branch" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element maxOccurs="1" minOccurs="0" name="DateMoveIn"
+    			type="date">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="Resident"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="State"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="EconomicSector"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="ClassLevel"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="HomePhoneFlag"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="MobilePhoneFlag"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="MailFlag"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="EmailFlag"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="TextMessageFlag"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1"
+    			name="BrailleDocumentFlag" type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="LargePrintFlag"
+    			type="string" />
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PayloadAddResType">
+    	<sequence>
+    		<element name="CustomerID" type="string" minOccurs="1" maxOccurs="1"/>
+    	</sequence>
+    </complexType>
+
+    <element name="PayloadAddReq" type="tns:PayloadAddReqType"/>
+
+    <element name="PayloadAddRes" type="tns:PayloadAddResType"/>
+
+    <complexType name="CustomerInfoAddReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+    				<element ref="tns:PayloadAddReq"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="CustomerInfoAddResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+    				<element ref="tns:PayloadAddRes" minOccurs="0"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="CustomerInfoAddReq" type="tns:CustomerInfoAddReqType"></element>
+
+    <element name="CustomerInfoAddRes" type="tns:CustomerInfoAddResType"></element>
+</schema>

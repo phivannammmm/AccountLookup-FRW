@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ENTFramework_GPP Module
+Bundle-SymbolicName: ENTFramework_GPP
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-SharedModule: META-INF/module.bwm
+TIBCO-BW-Edition: bwe
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.mqcon)"
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Provide-Capability: com.tibco.bw.module; name="ENTFramework_GPP"; version:Version="1.0.0",
+ com.tibco.bw.schemas; ns="http://fundtech.com/SCL/CommonTypes",
+ com.tibco.bw.resources; name="entframework_gpp"
+TIBCO-BW-Version: 6.5.1 HF1 V34 2019-05-22

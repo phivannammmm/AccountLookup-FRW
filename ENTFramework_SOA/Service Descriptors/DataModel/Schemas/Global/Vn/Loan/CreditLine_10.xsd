@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/loan/creditline/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/loan/creditline/1.0"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:pref="http://www.vietcombank.com.vn/entity/vn/common/loan"
+	xmlns:pref1="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+
+	<import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</import>
+	<import schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"
+		namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	</import>
+	<import schemaLocation="../../../Datatypes/Business/Loan.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/loan"></import>
+	<complexType name="CreditLineAddReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadAddReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="CreditLineAddReq" type="tns:CreditLineAddReqType"></element>
+
+	<element name="CreditLineAddRes" type="tns:CreditLineAddResType"></element>
+
+	<complexType name="CreditLineAddResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadAddRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadAddReqType">
+		<sequence>
+			<element name="HeaderForClient"
+				type="pref1:HeaderForClientType">
+			</element>
+			<element name="CreditLine" type="pref:CreditLineType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadAddResType"></complexType>
+
+	<element name="PayloadAddReq" type="tns:PayloadAddReqType"></element>
+
+	<element name="PayloadAddRes" type="tns:PayloadAddResType"></element>
+</schema>

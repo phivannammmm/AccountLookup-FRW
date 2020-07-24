@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<xs:schema xmlns:cmd-prod="http://www.vietcombank.com.vn/entity/vn/common/product" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vietcombank.com.vn/entity/vn/common/product" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="ProductInfoType">
+		<xs:sequence>
+			<xs:element name="ProductId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Category id</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProductCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Product code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProductName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Product description</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProductLimit" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="ProductGroup" type="xs:string" minOccurs="0"/>
+			<xs:element name="ProductDesc" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

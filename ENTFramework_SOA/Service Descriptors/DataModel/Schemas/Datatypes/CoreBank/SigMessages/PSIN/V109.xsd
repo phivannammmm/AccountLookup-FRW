@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v109/1.0"
+	elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v109/1.0">
+
+	<xsd:import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></xsd:import>
+	<xsd:complexType name="V109ORepeatedFieldType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="1" name="RecordNumber" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="RecordType" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DateEntered" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ExpirationDate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SerialNumberLow" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SerialNumberHigh" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DateOfCheck" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="HoldAmount" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="PayableToDescription" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ReasonDescription" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="HoldCode" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="HoldLevel" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="HoldOverride" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ChequePrefix" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="UserID" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="TimeSubmitted" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="LongDescription" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="HoldingBranch" type="inc-field:FieldType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="V109ORepeatedFieldType" type="tns:V109ORepeatedFieldType"></xsd:element>
+	<xsd:complexType name="V109OFixedFieldType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ShortName" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="Branch" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="AliasAccountType" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="AliasAccountNumber" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="NextRecordNumber" type="inc-field:FieldType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:element name="V109OFixedField" type="tns:V109OFixedFieldType"></xsd:element>
+
+    <xsd:element name="V109O" type="tns:V109OType"></xsd:element>
+
+    <xsd:complexType name="V109OType">
+    	<xsd:sequence>
+    		<xsd:element name="V10AOFixedField" type="tns:V109OFixedFieldType" minOccurs="0" maxOccurs="1"></xsd:element>
+			<xsd:element name="V10AORepeatedField" type="tns:V109ORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

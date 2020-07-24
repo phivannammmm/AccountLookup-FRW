@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-fw="datamodel/datatypes/common/framework" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="Message.xsd"/>
+
+	<import namespace="datamodel/datatypes/common/framework" schemaLocation="../Common/Framework.xsd">
+	</import>
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../Common/ServiceEnvelope.xsd"/>
+	<complexType name="CommonHeaderReqType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="MessageLength" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ReservedField" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="BranchNumber" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="UserID" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SequenceNumber" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TransactionCode" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ClientType" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="SecondaryHeaderReqType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="TellerID" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="OverrideFlag" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CorrectionFlag" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ReentryFlag" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="AMPMFlag" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ReBIDFlag" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="BitMapReqType">
+		<sequence>
+			<element name="Byte1" type="string"/>
+			<element name="Byte2" type="string"/>
+			<element name="Byte3" type="string"/>
+			<element name="Byte4" type="string"/>
+			<element name="Byte5" type="string"/>
+			<element name="Byte6" type="string"/>
+			<element name="Byte7" type="string"/>
+			<element name="Byte8" type="string"/>
+			<element name="Byte9" type="string"/>
+			<element name="Byte10" type="string"/>
+			<element name="Byte11" type="string"/>
+			<element name="Byte12" type="string"/>
+		</sequence>
+	</complexType>
+
+
+	<element name="CommonHeaderReq" type="tns:CommonHeaderReqType"/>
+
+	<element name="SecondaryHeaderReq" type="tns:SecondaryHeaderReqType"/>
+	<element name="BitMapReq" type="tns:BitMapReqType"/>
+	<element name="ReqLength" type="string"/>
+	<element name="FieldList" type="tns:FieldListType"/>
+
+	<complexType name="FieldListType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="Field" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="SignOnResType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="RecordLegnth" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ReservedField" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Branch" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="UserID" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SequenceNumber" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TransactionCode" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ClientType" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="PostedCode" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ResponseCode" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ApplicationCode" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ResponseFormatCode" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MessageNumber1" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MessageNumber2" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MessageNumber3" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MessageNumber4" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MessageNumber5" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ResponseLength" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CPDATE" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="NPDATE" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LPDATE" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SYSDATE" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MSVER0" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCUNME" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCAUTH" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCSTAT" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCWFGP" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCWFRL1" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCWFRL2" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCWFRL3" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCWFRL4" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCWFRL5" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCWKSL" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCLIBR" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SCBK" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TLSCRS" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TLSEMP" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TLSEFX" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TLSEML" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TLSPRT" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TLSCRL" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TLACTB" type="inc-field:FieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TLSUAN" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+	<complexType name="ResponseHeaderType">
+		<sequence>
+			<element name="Reserved" type="inc-field:FieldType"/>
+			<element name="BranchNumber" type="inc-field:FieldType"/>
+			<element name="UserID" type="inc-field:FieldType"/>
+			<element name="SequenceNumber" type="inc-field:FieldType"/>
+			<element name="TransactionCode" type="inc-field:FieldType"/>
+			<element name="ClientType" type="inc-field:FieldType"/>
+			<element name="PostedCode" type="inc-field:FieldType"/>
+			<element name="ResponseCode" type="inc-field:FieldType"/>
+			<element name="ApplicationCode" type="inc-field:FieldType"/>
+			<element name="ResponseFormatCode" type="inc-field:FieldType"/>
+			<element name="MessageNumber1" type="inc-field:FieldType"/>
+			<element name="MessageNumber2" type="inc-field:FieldType"/>
+			<element name="MessageNumber3" type="inc-field:FieldType"/>
+			<element name="MessageNumber4" type="inc-field:FieldType"/>
+			<element name="MessageNumber5" type="inc-field:FieldType"/>
+			<element name="TellerNumber" type="inc-field:FieldType"/>
+			<element name="ResponseLength" type="inc-field:FieldType"/>
+			<element name="ItemCount" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="StandardResponseFormatType">
+		<sequence>
+			<element name="ResponseFormatCode" type="inc-field:FieldType"/>
+			<element name="MessageNumber1" type="inc-field:FieldType"/>
+			<element name="MessageNumber2" type="inc-field:FieldType"/>
+			<element name="MessageNumber3" type="inc-field:FieldType"/>
+			<element name="MessageNumber4" type="inc-field:FieldType"/>
+			<element name="MessageNumber5" type="inc-field:FieldType"/>
+			<element name="TellerNumber" type="inc-field:FieldType"/>
+			<element name="ResponseLength" type="inc-field:FieldType"/>
+			<element name="ItemCount" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+
+	<element name="HeaderRes" type="tns:ResponseHeaderType"/>
+	<element name="StandardResFormat" type="tns:StandardResponseFormatType"/>
+	<element name="HeaderInfo" type="tns:HeaderInfoType"/>
+
+	<complexType name="HeaderInfoType">
+		<sequence>
+			<element ref="tns:CommonHeaderReq"/>
+			<element ref="tns:SecondaryHeaderReq"/>
+		</sequence>
+	</complexType>
+
+	<element name="SignOnReq" type="tns:SignOnReqType"/>
+
+	<element name="SignOnRes" type="tns:SignOnResType"/>
+
+	<complexType name="SignOnReqType">
+		<sequence>
+			<element name="Legnth" type="inc-field:FieldType"/>
+			<element name="ReservedField" type="inc-field:FieldType"/>
+			<element name="Branch" type="inc-field:FieldType"/>
+			<element name="UserID" type="inc-field:FieldType"/>
+			<element name="SequenceNumber" type="inc-field:FieldType"/>
+			<element name="TransactionCode" type="inc-field:FieldType"/>
+			<element name="ClientType" type="inc-field:FieldType"/>
+			<element name="EncryptionFlag" type="inc-field:FieldType"/>
+			<element name="CurPass" type="inc-field:FieldType"/>
+			<element name="NewPass" type="inc-field:FieldType"/>
+			<element name="PCCodePage" type="inc-field:FieldType"/>
+			<element name="WorkstationID" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+
+	<element name="ReadingSocket" type="tns:ReadingSocketType"/>
+
+	<complexType name="ReadingSocketType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="ReadSize" type="int"/>
+			<element maxOccurs="1" minOccurs="0" name="Connection" type="base64Binary"/>
+		</sequence>
+	</complexType>
+
+	<element name="CommonBodyReq" type="tns:CommonBodyReqType"/>
+
+	<complexType name="CommonBodyReqType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="1" name="CommonBodyMain" type="tns:CommonBodyMainType"/>
+			<element maxOccurs="1" minOccurs="0" name="CommonBodyExtra" type="tns:CommonBodyExtraType"/>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="CommonBodyMainType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="SupervisorID" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="EffectiveDate" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ReentryDate" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ReentryTime" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CorrectionSequence" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Password" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CIFKey" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="AccountNumber" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TransfertoAccount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="AlternateAccount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="PassbookBalance" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TransactionAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CashInAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CashOutAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ChequesOutAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CollectedCheques" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LocalItemsDeposited" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CollectedFloatDays" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Uncollectedcheques1" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Foreignitemsdeposited" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Uncollectedcksdays1" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Uncollectedcks2" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Notusedatthistime1" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Uncollectedcksdays2" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Uncollectedcheques3" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Notusedatthistime2" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Uncollectedcksdays3" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Uncollectedcheques4" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Notusedatthistime3" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Uncollectedcksdays4" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FeeAmount1" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FeeAmount2" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FeeAmount3" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FeeAmount4" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FeeAmount5" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="PrincipalAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="InterestAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="EscrowAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LoanTypeCode" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LCEofTransAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ForeignCurrencyCode" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ForeignCurrencyRate" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="IRACodeOrigtrancode" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="IRAYear" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CheckNumber1" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CheckNumber2" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MiscDate1" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MiscDate2" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TicketNumber" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CashierNumberPresentCurr" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ReferenceNumber" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Alpha1" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Alpha2" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Alpha3" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Alpha4" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Alpha5" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Alpha6" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="PostalCode" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Fee6TaxAmountorLateFee" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TillNumber" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="HomeBranchNumber" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CustomerSeqNumber" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LCECashInAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LCECashOutAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ChequeOutAmtLCE" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LCECollectedChqAmt" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LCEUnCollectedChq1" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LCEUnCollectedChq2" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LCEUnCollectedChq3" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LCEUnCollectedChq4" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ExchangeInDr" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ExchangeOutCr" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TransactionTime" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Alpha7" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Alpha8" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="OverridePenalty" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ShortNamePrefix" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ConstantSymbol" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="VariableSymbol" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SpecificSymbol" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CreditLineNumber" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="SublimitNumber" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MiscCashIn" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MiscCashInLCYE" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Notinuse1" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Genericlinkfield" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="PINBlock" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CardNumber" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="DealerNumber" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="LongWorkstationName" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Notinuse" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="AuthorisationCode" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Notinuse2" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Notinuse3" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Notinuse4" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Additionalfieldspresent" type="inc-field:BitmapFieldType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="CommonBodyExtraType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="ToCurrencyCode" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ToExchangeRate" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ToTransactionAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ToTransactionAmountLCE" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ToExchangeInAmount" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ToCostCentre" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Availableforfutureuse1" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Availableforfutureuse2" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TotalFeeAmtinAccountCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TotalFeeAmtinLCYE" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TotalFeeAmtinPresCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CashInPresentationCurr" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CashOutPresentationCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ChequesOutPresentationCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="NetTranAmtinPresentCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="NetTranAmtinLCYE" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="ExchrateofPresCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FloatAmount1inPresCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FloatAmount2inPresCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FloatAmount3inPresCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FloatAmount4inPresCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FloatAmount5inPresCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="MiscCashinAmountPresCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="NetTransaction" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TotalTranAmtinPresCur" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="TotalTranAmtinLCYE" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="OldTranSecondaryType" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="AliasAcctNoType" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="AliasAcctNo" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="AliasAcctNoTypeXferTo" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="AliasAcctNoXferTo" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="GroupSequenceNo" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="PromotionIdentifier" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="Alpha9" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CreditAdviceRefer" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="FeeLCYEs" type="inc-field:BitmapFieldType"/>
+			<element maxOccurs="1" minOccurs="0" name="CorrectionDate" type="inc-field:BitmapFieldType"/>
+		</sequence>
+	</complexType>
+
+	<element name="CommonBodyMain" type="tns:CommonBodyMainType"/>
+
+	<element name="CommonBodyExtra" type="tns:CommonBodyExtraType"/>
+
+	<element name="ByteArrayWithOption" type="tns:ByteArrayWithOptionType">
+	</element>
+
+	<complexType name="ByteArrayWithOptionType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="1" name="FieldList" type="tns:FieldListType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="InputString" type="string">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ResponseHeaderCRINType">
+		<sequence>
+			<element name="Dummy" type="inc-field:FieldType"/>
+			<element name="BranchNumber" type="inc-field:FieldType"/>
+			<element name="UserID" type="inc-field:FieldType"/>
+			<element name="SequenceNumber" type="inc-field:FieldType"/>
+			<element name="Transactioncode" type="inc-field:FieldType"/>
+			<element name="ClientType" type="inc-field:FieldType"/>
+			<element name="PostedCode" type="inc-field:FieldType"/>
+			<element name="ResponseCode" type="inc-field:FieldType"/>
+			<element name="ApplicationCode" type="inc-field:FieldType"/>
+			<element name="ResponseFormatCode" type="inc-field:FieldType"/>
+			<element name="ExtendedError1" type="inc-field:FieldType"/>
+			<element name="ExtendedError2" type="inc-field:FieldType"/>
+			<element name="ExtendedError3" type="inc-field:FieldType"/>
+			<element name="ExtendedError4" type="inc-field:FieldType"/>
+			<element name="ExtendedError5" type="inc-field:FieldType"/>
+			<element name="ResponseLength" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+	<element name="HeaderResCRIN" type="tns:ResponseHeaderCRINType"/>
+
+	<complexType name="HeaderForClientType">
+		<sequence>
+			<element name="BranchNumber" type="string"/>
+			<element minOccurs="0" name="UserID" type="string"/>
+			<element name="SequenceNumber" type="string"/>
+			<element name="TellerID" type="string"/>
+			<element minOccurs="0" name="OverrideFlag" type="string"/>
+			<element minOccurs="0" name="CorrectionFlag" type="string">
+			</element>
+			<element minOccurs="0" name="ReBIDFlag" type="string"/>
+		</sequence>
+	</complexType>
+
+	<element name="HeaderForClient" type="tns:HeaderForClientType"/>
+
+	<element name="SigMsgReq" type="tns:SigMsgReqType"/>
+	<complexType name="SigMsgReqType">
+		<sequence>
+			<element name="MsgType" type="string"/>
+			<element minOccurs="0" name="ResTranCode" type="string"/>
+			<element minOccurs="0" ref="tns:HeaderInfo"/>
+			<element minOccurs="0" name="MsgBody" type="cmd-fw:MessageType">
+			</element>
+			<element minOccurs="0" name="LegacyName" type="string"/>
+		</sequence>
+	</complexType>
+
+	<element name="SigMsgRes" type="tns:SigMsgResType"/>
+	<complexType name="SigMsgResType">
+		<sequence>
+			<element ref="cmd-svrenv:ResponseStatus"/>
+			<choice minOccurs="0">
+				<element ref="tns:HeaderRes"/>
+				<element ref="tns:HeaderResCRIN"/>
+			</choice>
+			<element minOccurs="0" name="MsgBody" type="cmd-fw:MessageType">
+			</element>
+			<element minOccurs="0" name="LegacyName" type="string"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="SigLogType">
+		<sequence>
+			<element minOccurs="0" name="CorrelationID" type="string"/>
+			<element name="Data" type="base64Binary"/>
+			<element minOccurs="0" name="TransCodeType" type="string"/>
+			<element minOccurs="0" name="User" type="string"/>
+			<element minOccurs="0" name="LogSig" type="string"/>
+			<element minOccurs="0" name="InboundQueue" type="string"/>
+			<element minOccurs="0" name="OutboundQueue" type="string"/>
+		</sequence>
+	</complexType>
+
+    <element name="SigLog" type="tns:SigLogType"/>
+    <element name="operationRequest2">
+    <complexType>
+      <sequence>
+        <element name="in" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+  <complexType name="CoreQueueNameType">
+    	<sequence>
+    		<element name="InboundQueue" type="string"></element>
+    		<element name="OutboundQueue" type="string"></element>
+    	</sequence>
+    </complexType>
+    <element name="CoreQueueName" type="tns:CoreQueueNameType"></element>
+
+    <complexType name="SEG90001Type">
+		<sequence>
+			<element name="SUX1CS" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SUXREL" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUXNOT" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG90002Type">
+		<sequence>
+			<element name="SCXLNBR" type="inc-field:FieldType"></element>
+			<element name="SCXSNBR" type="inc-field:FieldType"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG90003Type">
+		<sequence>
+			<element name="SCUSTTY" type="inc-field:FieldType"></element>
+			<element name="SCUDTSM" type="inc-field:FieldType"></element>
+			<element name="SCUSTNR" type="inc-field:FieldType"></element>
+			<element name="SCUSTCD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUSTFR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUSTSP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUSTDT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUALT" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG90004Type">
+		<sequence>
+			<element name="SCLNBR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCLIDLT" type="inc-field:FieldType"></element>
+			<element name="SCLLNR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCLSLNR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCLPCT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCLMAX" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG13001Type">
+		<sequence>
+			<element name="SDACIFD" type="inc-field:FieldType" ></element>
+			<element name="SDAPROM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SDASLMN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SDATHRD" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG03001Type">
+		<sequence>
+			<element name="SISPTYP" type="inc-field:FieldType" ></element>
+			<element name="SISPOTY" type="inc-field:FieldType" ></element>
+			<element name="SISBRCH" type="inc-field:FieldType" ></element>
+			<element name="SISOFF" type="inc-field:FieldType" ></element>
+			<element name="SISIPNO" type="inc-field:FieldType" ></element>
+			<element name="SISCIFD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISBCOD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISRBNO" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISSLMN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISICOP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISMNBL" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISMNPA" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISMXCV" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISCVAM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISFXPA" type="inc-field:FieldType" ></element>
+			<element name="SISRATE" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISCPPR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISCDSR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISIYBS" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISIABS" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISRTCH" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISIPTR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SDATHRD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISAPNO" type="inc-field:FieldType" ></element>
+			<element name="SISACCT" type="inc-field:FieldType" ></element>
+			<element name="SISACSN" type="inc-field:FieldType" ></element>
+			<element name="SISSTRD" type="inc-field:FieldType" ></element>
+			<element name="SISEDAT" type="inc-field:FieldType" ></element>
+			<element name="SISEDYSY" type="inc-field:FieldType" ></element>
+			<element name="SISPEFD" type="inc-field:FieldType" ></element>
+			<element name="SISADAT" type="inc-field:FieldType" ></element>
+			<element name="SISPDDT" type="inc-field:FieldType" ></element>
+			<element name="SISPPER" type="inc-field:FieldType" ></element>
+			<element name="SISPFRQ" type="inc-field:FieldType" ></element>
+			<element name="SISPSPD" type="inc-field:FieldType" ></element>
+			<element name="SISSEQ" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISAANT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SISAAN" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG01004Type">
+		<sequence>
+			<element name="SCMMNBR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPAPP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPACC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPSACC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPRULE" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPAMAX" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPPPTY" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPARUL" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPRTCD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPSPRL" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPSPRD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCPPLPR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCMSEQID4" type="inc-field:FieldType" minOccurs="0"></element>																							
+		</sequence>
+	</complexType>
+	<complexType name="SEG21001Type">
+		<sequence>
+			<element name="SSOINID" type="inc-field:FieldType" ></element>
+			<element name="SSOAPPN" type="inc-field:FieldType" ></element>
+			<element name="SSOREFN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSODESC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOPER" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOFRQ" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSODAY1" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOORDT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOEXDT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOAPDR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOAPCR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOAPFR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOFCTL" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOAEXR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOAPAP" type="inc-field:FieldType" ></element>
+			<element name="SSOAPAC" type="inc-field:FieldType" ></element>
+			<element name="SSOSEQ" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSODESC2" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSODESC3" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOGLCC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOATBL" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOAMTR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOATAI" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOAPBK" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOAPEX" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOASGRN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOSAANT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOSAAN" type="inc-field:FieldType" minOccurs="0"></element>																						
+		</sequence>
+	</complexType>
+	<complexType name="SEG21002Type">
+		<sequence>
+			<element name="SSIINID" type="inc-field:FieldType" ></element>
+			<element name="SSOTID" type="inc-field:FieldType" ></element>
+			<element name="SSOTPNO" type="inc-field:FieldType" ></element>
+			<element name="SSOINAC" type="inc-field:FieldType" ></element>
+			<element name="SSOTAMT" type="inc-field:FieldType" ></element>
+			<element name="SSOTDES" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOINCC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SOOTEXR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTPAP" type="inc-field:FieldType" ></element>
+			<element name="SSOTCUR" type="inc-field:FieldType" ></element>
+			<element name="SSOSEQ" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTDES2" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTDES3" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTACM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTPMA" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTAPC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTPRD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTBRN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTOFF" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTPCA" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTSEQ" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTSGRN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTSPAC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTSPCD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTAANT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTAAN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOPTOBT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOEXACT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOPREFT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOFPS" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOCUST" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOCUID" type="inc-field:FieldType" minOccurs="0"></element>																							
+		</sequence>
+	</complexType>
+	<complexType name="SEG21003Type">
+		<sequence>
+			<element name="SSIINID" type="inc-field:FieldType" ></element>
+			<element name="SSOTID" type="inc-field:FieldType" ></element>
+			<element name="SSOTPNO" type="inc-field:FieldType" ></element>
+			<element name="SSOPTOB" type="inc-field:FieldType" ></element>
+			<element name="SSOTREF" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTDES" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOEXAC" type="inc-field:FieldType" ></element>
+			<element name="SSOTAMT" type="inc-field:FieldType" ></element>
+			<element name="SSOTCUR" type="inc-field:FieldType" ></element>
+			<element name="SSOPDT1" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOPDT2" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOPDT3" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOPCR1" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOPCR2" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOPCR3" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SOOTEXR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOSEQ" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTDES2" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTDES3" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTPMA" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTAPC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTPCA" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTSEQ" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOTSGRN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOPTOBT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOEXACT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOPREFT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOFPS" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOCUST" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SSOCUID" type="inc-field:FieldType" minOccurs="0"></element>																					
+		</sequence>
+	</complexType>
+	<complexType name="SEG50001Type">
+		<sequence>
+			<element name="SLNNOTE" type="inc-field:FieldType"></element>
+			<element name="SLSANBR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLSASEQ" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNTYPE" type="inc-field:FieldType"></element>
+			<element name="SLNBRCH" type="inc-field:FieldType"></element>
+			<element name="SLNOFF" type="inc-field:FieldType"></element>
+			<element name="SLNNTYP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNNTDT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNMTDT" type="inc-field:FieldType"></element>
+			<element name="SLNFACE" type="inc-field:FieldType"></element>
+			<element name="SLNRATE" type="inc-field:FieldType"></element>
+			<element name="SLNSCDT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLIX1CS" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNTERM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNDISB" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SNBRPMT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNFRQ" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNRQTP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNAALAT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNAALAC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNPNNR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="S9TMPD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="S9TMFR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="S9FPDF" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="S9MATF" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="S9PFSP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNUSID" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNSPID" type="inc-field:FieldType" minOccurs="0"></element>																							
+		</sequence>
+	</complexType>
+	<complexType name="SEG50002Type">
+		<sequence>
+			<element name="SLNIGAR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNBILL" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNCBFG" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNPPDF" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNCRTE" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNCOLB" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNLTV" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNFRB" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNFDIC" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG50003Type">
+		<sequence>
+			<element name="SLNADAT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNNABL" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNBRND" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNIRVR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNIRVE" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNDOE" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNPART" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNCR1" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNCR2" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNAPP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNCENS" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNSMSA" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNRCRS" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNRISK" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNT1SB" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNT1RT" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG50004Type">
+		<sequence>
+			<element name="SLNINTM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNINTP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNINTF" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNINDT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNISPD" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG50005Type">
+		<sequence>
+			<element name="SLNSCHD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNPRP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNPRF" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNPRSP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNPRDN" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG50006Type">
+		<sequence>
+			<element name="SLNSCPM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNSCP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNSCF " type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLXSCDT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNSCSP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNSCTY" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNSCAM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNSCE1" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SLNSCE2" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG50020Type">
+		<sequence>
+			<element name="SLNNOTE" type="inc-field:FieldType" ></element>
+			<element name="SLSANBR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SL1NPAM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SL1NPIN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SL1DDDT" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SL1DAMT" type="inc-field:FieldType" ></element>
+			<element name="SL1DTYP" type="inc-field:FieldType" ></element>
+			<element name="SL1ALTY" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SL1ALAC" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG50021Type">
+		<sequence>
+			<element name="SL1CKNR" type="inc-field:FieldType" ></element>
+			<element name="SL1CAMT" type="inc-field:FieldType" ></element>
+			<element name="SL1PAYE" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SL1SEQ" type="inc-field:FieldType" ></element>
+		</sequence>
+	</complexType>
+	<complexType name="SEG69001Type">
+		<sequence>
+			<element name="SCUANBR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUNBR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULTY" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULCCD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULOF1" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULOF2" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULNAM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUSLNM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULCMR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULDS1" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULDS2" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULGRP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULPTY" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULRSK" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULRTC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULOLN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULEXD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULRV" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULRPR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULRFR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULRSP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULRND" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULNL1" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULNL2" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULNL3" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULFL1" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULFPR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULFFR" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULFSP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULFCD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULFAM" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULFNX" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULFCH" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULFAC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUSLCD" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCULAPC" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUBRCH" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUFACN" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUWDRP" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCUSID" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="SCSPID" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="MSIDXDType">
+		<sequence>
+			<element name="MSSGID" type="inc-field:FieldType"></element>
+			<element name="MSNOSG" type="inc-field:FieldType"></element>
+			<element name="MSSGOF " type="inc-field:FieldType"></element>
+			<element name="MSSSIZ" type="inc-field:FieldType"></element>
+		</sequence>
+	</complexType>
+</schema>

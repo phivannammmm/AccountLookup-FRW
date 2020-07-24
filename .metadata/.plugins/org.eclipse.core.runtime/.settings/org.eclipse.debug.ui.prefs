@@ -1,0 +1,13 @@
+com.tibco.bw.core.design.debug.ui.launch.existingApplications=AcctInfo.application/
+com.tibco.bw.core.design.debug.ui.launch.processesArg=AcctInfo.application\=acctinfo.service.impl.inq.GetAccInfoDB,acctinfo.service.impl.inq.Process,Utilities.Common.ErrorTranslator,Utilities.Common.ExceptionHandling,Utilities.Common.getRoute,Utilities.Logging.CLELogger,Utilities.Logging.SendExceptionToQueue,Utilities.Logging.SendLogToQueue,Utilities.Pattern.InputValidation,Utilities.Pattern.ReqResTemplate,Utilities.Pattern.ReqResTemplate_NoValidate,Utilities.Pattern.RequestResponseProcessing,Utilities.impl.JMSSendRecv/
+com.tibco.bw.core.design.debug.ui.launch.selectedApplications=AcctInfo.application/
+com.tibco.bw.core.design.debug.ui.launch.selectedModules=AcctInfo/ENTFramework/ENTFramework_GPP/
+com.tibco.bw.core.design.debug.ui.launch.selectedProcesses=AcctInfo\=acctinfo.service.impl.inq.GetAccInfoDB,Utilities.Common.ErrorTranslator,Utilities.Common.ExceptionHandling,Utilities.Common.getRoute,Utilities.Logging.CLELogger,Utilities.Logging.SendExceptionToQueue,Utilities.Logging.SendLogToQueue,Utilities.Pattern.InputValidation,Utilities.Pattern.ReqResTemplate,Utilities.Pattern.ReqResTemplate_NoValidate,Utilities.Pattern.RequestResponseProcessing,Utilities.impl.JMSSendRecv,acctinfo.service.impl.inq.Process/
+com.tibco.bw.core.design.debug.ui.view.BWProcessInstanceView+com.tibco.bw.core.design.debug.ui.actions.BWShowInstanceSatckByTempleteAction=true
+eclipse.preferences.version=1
+org.eclipse.debug.ui.DebugView+com.tibco.bw.core.design.debug.ui.actions.BWShowStackByTempleteAction=true
+org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
+org.eclipse.debug.ui.activate_debug_view=false
+org.eclipse.debug.ui.activate_workbench=false
+preferredDetailPanes=DefaultDetailPane\:DefaultDetailPane|
+preferredTargets=default\:default|

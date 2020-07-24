@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/customer/customermemo/1.0"
+	elementFormDefault="qualified"
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/customer/customermemo/1.0"
+	xmlns:cmd-memo="http://www.vietcombank.com.vn/entity/vn/common/memo"
+	xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct">
+    <import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"></import>
+    <import namespace="datamodel/datatypes/common/serviceenvelope"
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</import>
+	<import schemaLocation="../../../Datatypes/Business/Account.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/acct"></import>
+	<import schemaLocation="../../../Datatypes/Business/Memo.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/memo"></import>
+	
+	<element name="CustomerMemoAddReq" type="tns:CustomerMemoAddReqType" />
+	<element name="CustomerMemoAddRes" type="tns:CustomerMemoAddResType" />
+
+	<complexType name="CustomerMemoAddReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					
+					<element ref="tns:PayloadAddReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CustomerMemoAddResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadAddRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="PayloadAddReq" type="tns:PayloadAddReqType" />
+	<element name="PayloadAddRes" type="tns:PayloadAddResType" />
+
+	<complexType name="PayloadAddReqType">
+		<sequence>
+			<element name="HeaderForClient" type="pref:HeaderForClientType"/>
+			<element name="CifNo" type="string"/>
+			<element name="ExpireDate" type="string"/>
+			<element name="Officer" type="cmd-memo:OfficerType" minOccurs="0"/>
+			<element name="ItemInfo" type="cmd-memo:MemoItemInfoType"/>
+			<element name="Remark" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadAddResType">
+		<sequence>
+			<element name="CustMemoInfo" type="cmd-memo:MemoInfoType" minOccurs="0"/>			
+		</sequence>
+	</complexType>
+	
+	<element name="CustomerMemoDelReq" type="tns:CustomerMemoDelReqType" />
+	<element name="CustomerMemoDelRes" type="tns:CustomerMemoDelResType" />
+
+	<complexType name="CustomerMemoDelReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadDelReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CustomerMemoDelResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadDelRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="PayloadDelReq" type="tns:PayloadDelReqType" />
+	<element name="PayloadDelRes" type="tns:PayloadDelResType" />
+
+	<complexType name="PayloadDelReqType">
+		<sequence>
+			<element name="HeaderForClient" type="pref:HeaderForClientType"/>
+			<element name="CifNo" type="string"/>
+			<element name="LinkNo" type="string"/>			
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadDelResType">
+		<sequence>
+			<element name="CifNo" type="string" minOccurs="0"/>
+			<element name="LinkNo" type="string" minOccurs="0"/>			
+		</sequence>
+	</complexType>
+</schema>

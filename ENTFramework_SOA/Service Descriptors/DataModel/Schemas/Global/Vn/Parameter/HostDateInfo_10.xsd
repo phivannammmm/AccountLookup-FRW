@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/parameter/hostdateinfo/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com.vn/global/vn/parameter/hostdateinfo/1.0" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	<import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</import>
+	<import schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"></import>
+	<element name="HostDateInfoInqReq"
+		type="tns:HostDateInfoInqReqType">
+	</element>
+	<element name="HostDateInfoInqRes"
+		type="tns:HostDateInfoInqResType">
+	</element>
+
+	<complexType name="HostDateInfoInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="HostDateInfoInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadInqRes" minOccurs="0"
+						maxOccurs="1">
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="CurrentDate" type="string" minOccurs="0"></element>
+			<element name="NextDate" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType" ></element>
+		</sequence>
+	</complexType>
+
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"></element>
+
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"></element>
+</schema>

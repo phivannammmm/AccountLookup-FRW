@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:tns="http://www.vietcombank.com.vn/global/vn/crc/collateralinfo/1.0"
+	 xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	 xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	 targetNamespace="http://www.vietcombank.com.vn/global/vn/crc/collateralinfo/1.0"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"/>
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"/>
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element name="CollateralNo" type="string" minOccurs="0"/>
+			<element name="CIFNo" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"/>
+	<complexType name="CollateralInfoInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="CollateralInfoInqReq" type="tns:CollateralInfoInqReqType"/>
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="FacilityInfoRecords" type="tns:CollateralInfoRecordsType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"/>
+	<complexType name="CollateralInfoInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadInqRes" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="CollateralInfoInqRes" type="tns:CollateralInfoInqResType"/>
+	<complexType name="CollateralInfoRecordsType">
+		<sequence>
+			<element name="CollateralNo" type="string"/>
+			<element name="CollateralName" type="string"/>
+			<element name="CollateralValue" type="string"/>
+			<element name="CurrencyCode" type="string"/>
+			<element name="CustomerNumber" type="string"/>
+			<element name="CustomerName" type="string"/>
+			<element name="PrimaryCustomerNumber" type="string"/>
+			<element name="PrimaryCustomerName" type="string"/>
+			<element name="CollateralCode" type="string"/>
+			<element name="CollateralContractNo" type="string"/>
+		</sequence>
+	</complexType>
+</schema>

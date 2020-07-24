@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:pref="http://www.vietcombank.com.vn/entity/vn/common/remittance" xmlns:tns="http://www.vietcombank.com.vn/global/vn/remittance/remittanceinfo/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/remittance/remittanceinfo/1.0">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</import>
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/remittance" schemaLocation="../../../Datatypes/Business/Remittance.xsd"/>
+
+    <element name="RemittanceInfoAddReq" type="tns:RemittanceInfoAddReqType"/>
+
+    <element name="RemittanceInfoAddRes" type="tns:RemittanceInfoAddResType"/>
+
+    <element name="RemittanceInfoInqReq" type="tns:RemittanceInfoInqReqType"/>
+
+    <element name="RemittanceInfoInqRes" type="tns:RemittanceInfoInqResType"/>
+
+    <element name="PayloadAddReq" type="tns:PayloadAddReqType"/>
+
+    <complexType name="RemittanceInfoAddReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+					<element ref="tns:PayloadAddReq"/>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="RemittanceInfoAddResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+					<element minOccurs="0" ref="tns:PayloadAddRes"/>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="RemittanceInfoInqReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+					<element ref="tns:PayloadInqReq"/>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="RemittanceInfoInqResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+					<element minOccurs="0" ref="tns:PayloadInqRes"/>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="PayloadAddRes" type="tns:PayloadAddResType"/>
+
+    <element name="PayloadInqReq" type="tns:PayloadInqReqType"/>
+
+    <element name="PayloadInqRes" type="tns:PayloadInqResType"/>
+
+    <complexType name="PayloadAddReqType">
+    	<sequence>
+    		<element name="RemittanceInfo" type="pref:RemittanceInfoType"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="PayloadAddResType"/>
+    
+    <complexType name="PayloadInqReqType">
+    	<sequence>
+    		<element name="RMNo" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="PayloadInqResType">
+    	<sequence>
+    		<element minOccurs="0" name="RemittanceInfo" type="pref:RemittanceInfoType"/>
+    	</sequence>
+    </complexType>
+    <element name="operationRequest">
+    <complexType>
+      <sequence>
+        <element name="in" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+    <element name="operationResponse">
+    <complexType>
+      <sequence>
+        <element name="out" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

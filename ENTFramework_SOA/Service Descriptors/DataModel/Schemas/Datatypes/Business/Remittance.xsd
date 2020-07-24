@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct" xmlns:cmd-party="http://www.vietcombank.com.vn/entity/vn/common/party" xmlns:cmd-prod="http://www.vietcombank.com.vn/entity/vn/common/product" xmlns:tns="http://www.vietcombank.com.vn/entity/vn/common/remittance" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/entity/vn/common/remittance">
+
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/acct" schemaLocation="Account.xsd">
+	</import>
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/party" schemaLocation="Party.xsd">
+	</import>
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/product" schemaLocation="Product.xsd"/>
+	<complexType name="RemittanceInfoType">
+		<sequence>
+			<element minOccurs="0" name="RMNo" type="string"/>
+			<element name="Status" type="string" minOccurs="0"/>
+			<element name="OutwardInfo" type="tns:RMInOutType" minOccurs="0"/>
+			<element name="CustAcct" type="cmd-acct:AcctIdType" minOccurs="0"/>
+			<element name="CustInfo" type="cmd-party:GeneralInfoType" minOccurs="0">
+			</element>
+			<element name="BenAcct" type="cmd-acct:AcctIdType" minOccurs="0"/>
+			<element name="BenInfo" type="cmd-party:GeneralInfoType" minOccurs="0"/>
+			<element name="ForwardBrn" type="cmd-party:BranchInfoType" minOccurs="0">
+			</element>
+			<element name="ProductInfo" type="cmd-prod:ProductInfoType" minOccurs="0">
+			</element>
+			<element name="TellerID" type="string" minOccurs="0"/>
+			<element name="TotalFee" type="cmd-acct:AmountType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="AcctAmtType">
+		<sequence>
+			<element name="Account" type="cmd-acct:AcctIdType" />
+			<element name="Amount" type="cmd-acct:AmountType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="RMInOutType">
+		<sequence>
+			<element name="CreditInfo" type="tns:AcctAmtType"/>
+			<element name="DebitInfo" type="tns:AcctAmtType"/>
+			<element name="Branch" type="cmd-party:BranchInfoType" minOccurs="0"/>
+			<element name="EffDate" type="string" minOccurs="0"/>
+			<element name="SeqNo" type="string" minOccurs="0"/>
+			<element minOccurs="0" name="IPAddress" type="string"/>
+			<element minOccurs="0" name="Workstation" type="string"/>
+			<element minOccurs="0" name="Description" type="string"/>
+		</sequence>
+	</complexType>
+</schema>

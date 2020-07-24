@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<xs:schema
+	xmlns:cmd-trn="http://www.vietcombank.com.vn/entity/vn/common/trn"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct"
+	targetNamespace="http://www.vietcombank.com.vn/entity/vn/common/trn"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:cmd-prod="http://www.vietcombank.com.vn/entity/vn/common/product">
+	<xs:import namespace="http://www.vietcombank.com.vn/entity/vn/common/acct" schemaLocation="Account.xsd" />
+	<xs:import schemaLocation="Product.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/product"></xs:import>
+	<xs:complexType name="TrnInfoType">
+		<xs:sequence>
+			<xs:element name="AcctId" type="cmd-acct:AcctIdType" minOccurs="0"/>
+			<xs:element name="BankNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="TrnDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="SystemDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="PostingDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="TrnCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="TrnAmount" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="OriginalAmount" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="RefNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="Remark" type="xs:string" minOccurs="0"/>
+			<xs:element name="ProductInfo" type="cmd-prod:ProductInfoType" minOccurs="0"/>
+			<xs:element name="StmtFlag" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

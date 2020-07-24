@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/customer/creditlimit/1.0"
+	elementFormDefault="qualified"
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/customer/creditlimit/1.0"
+	xmlns:cmd-party="http://www.vietcombank.com.vn/entity/vn/common/party" xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct">
+	<import namespace="datamodel/datatypes/common/serviceenvelope"
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</import>
+
+	<import schemaLocation="../../../Datatypes/Business/Account.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/acct"></import>
+	<element name="CreditLimitInqReq" type="tns:CreditLimitInqReqType" />
+
+	<element name="CreditLimitInqRes" type="tns:CreditLimitInqResType" />
+
+	<complexType name="CreditLimitInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CreditLimitInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadInqRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType" />
+
+	<element name="PayloadInqRes" type="tns:PayloadInqResType" />
+
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="CifNo" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="CreditLimit" type="cmd-acct:AmountType" minOccurs="0"/>
+			<element minOccurs="0" name="TempLimit" type="cmd-acct:AmountType" />
+		</sequence>
+	</complexType>
+
+</schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v920/1.0" elementFormDefault="qualified" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v920/1.0">
+	<xsd:import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></xsd:import>    <xsd:complexType name="V920OType">    	<xsd:sequence>    		<xsd:element name="PrimaryOfficerCode" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="PrimaryOfficerUserID" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="UserDepartmentCode" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="OpeningUserBranch" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="OfficerName" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+			<xsd:element name="UserName" type="inc-field:FieldType" minOccurs="0"></xsd:element>			
+    	</xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="V920O" type="tns:V920OType"></xsd:element>
+</xsd:schema>

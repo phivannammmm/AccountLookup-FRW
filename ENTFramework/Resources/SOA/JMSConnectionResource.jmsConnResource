@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://xsd.tns.tibco.com/bw/models/sharedresource/jms" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_G7f0cUlgEeqAWraZbMItXQ" name="SOA.JMSConnectionResource" type="jms:JMSConnectionFactory">
+  <jndi:reference xmi:id="_Kh1pAElgEeqAWraZbMItXQ" key="jndiConnectionJNDIName" type="jms:JNDIConnection" value="SOA.EMSDefaultJNDIConfiguration"/>
+  <jndi:configuration xsi:type="jms:JNDIConnectionFactory" xmi:id="_KeOUUElgEeqAWraZbMItXQ" factoryType="Queue/Topic">
+    <substitutionBindings xmi:id="_04RqIElgEeqAWraZbMItXQ" template="jndiName" propName="/Connections/SOA/EMS/QueueConnFactory"/>
+    <substitutionBindings xmi:id="_2I918ElgEeqAWraZbMItXQ" template="topicFactoryJNDIName" propName="/Connections/SOA/EMS/TopicConnFactory"/>
+    <userCredentials xmi:id="_jCIvAElgEeqAWraZbMItXQ">
+      <substitutionBindings xmi:id="_jSxMAElgEeqAWraZbMItXQ" template="username" propName="/Connections/SOA/EMS/UserName"/>
+      <substitutionBindings xmi:id="_k6h0AElgEeqAWraZbMItXQ" template="password" propName="/Connections/SOA/EMS/Password"/>
+    </userCredentials>
+  </jndi:configuration>
+</jndi:namedResource>

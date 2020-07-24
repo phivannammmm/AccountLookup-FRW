@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c932/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c932/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+	<complexType name="C932IType">
+		<sequence>
+			<element name="FIXFMTCD" type="inc-field:FieldType"></element>
+			<element name="MSAPP" type="inc-field:FieldType"></element>
+			<element name="MSCNBR" type="inc-field:FieldType"></element>
+			<element name="MSUNUSED" type="inc-field:FieldType">
+				<annotation>
+					<documentation>Unused</documentation>
+				</annotation></element>
+			<element name="MSCHNR" type="inc-field:FieldType"></element>
+			<element name="MSMNBR" type="inc-field:FieldType"></element>
+			<element name="MSFLD" type="inc-field:FieldType"></element>
+			<element name="MSFLDL" type="inc-field:FieldType"></element>
+			<element name="MSOLDD" type="inc-field:FieldType"></element>
+			<element name="MSNEWD" type="inc-field:FieldType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="C932OType"></complexType>
+
+    <element name="C932I" type="tns:C932IType"></element>
+
+    <element name="C932O" type="tns:C932OType"></element>
+</schema>

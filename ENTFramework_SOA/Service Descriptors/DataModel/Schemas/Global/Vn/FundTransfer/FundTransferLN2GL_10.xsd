@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/fundtransfer/fundtransferln2gl/1.0"
+	elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.vietcombank.com.vn/global/vn/fundtransfer/fundtransferln2gl/1.0"
+	xmlns:cmd-xfer="http://www.vietcombank.com.vn/entity/vn/common/xfer"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	<xsd:import schemaLocation="../../../Datatypes/Business/Xfer.xsd"
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/xfer">
+	</xsd:import>
+	<xsd:import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</xsd:import>
+
+	<xsd:import schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"></xsd:import>
+	<xsd:element name="FundTransferLN2GLAddReq" type="FundTransferLN2GLAddReqType"></xsd:element>
+
+	<xsd:element name="FundTransferLN2GLAddRes" type="FundTransferLN2GLAddResType"></xsd:element>
+
+	<xsd:element name="PayloadAddReq" type="PayloadAddReqType"></xsd:element>
+
+	<xsd:element name="PayloadAddRes" type="PayloadAddResType"></xsd:element>
+
+	<xsd:complexType name="FundTransferLN2GLAddReqType">
+		<xsd:complexContent>
+			<xsd:extension base="cmd-svrenv:BaseServiceRequestType">
+				<xsd:sequence>
+					<xsd:element ref="PayloadAddReq"></xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="FundTransferLN2GLAddResType">
+		<xsd:complexContent>
+			<xsd:extension base="cmd-svrenv:BaseServiceResponseType">
+				<xsd:sequence>
+					<xsd:element ref="PayloadAddRes" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="PayloadAddReqType">
+		<xsd:sequence>
+			<xsd:element name="HeaderForClient" type="tns:HeaderForClientType"/>
+			<xsd:element name="xferInfo" type="cmd-xfer:XferInfoType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PayloadAddResType">
+		<xsd:sequence>
+			<xsd:element name="RefNumber" type="xsd:string" minOccurs="0"></xsd:element>
+			<xsd:element name="CifNo" type="xsd:string" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="FundTransferLN2GLRevReq" type="FundTransferLN2GLRevReqType"></xsd:element>
+
+    <xsd:element name="FundTransferLN2GLRevRes" type="FundTransferLN2GLRevResType"></xsd:element>
+
+    <xsd:element name="PayloadRevReq" type="PayloadRevReqType"></xsd:element>
+
+    <xsd:element name="PayloadRevRes" type="PayloadRevResType"></xsd:element>
+    
+	<xsd:complexType name="FundTransferLN2GLRevReqType">
+		<xsd:complexContent>
+			<xsd:extension base="cmd-svrenv:BaseServiceRequestType">
+				<xsd:sequence>
+					<xsd:element ref="PayloadRevReq"></xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="FundTransferLN2GLRevResType">
+		<xsd:complexContent>
+			<xsd:extension base="cmd-svrenv:BaseServiceResponseType">
+				<xsd:sequence>
+					<xsd:element ref="PayloadRevRes" minOccurs="0"></xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="PayloadRevReqType">
+		<xsd:sequence>
+			<xsd:element name="HeaderForClient" type="tns:HeaderForClientType"/>
+			<xsd:element name="xferInfo" type="cmd-xfer:XferInfoType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PayloadRevResType">
+		<xsd:sequence>
+			<xsd:element name="RefNumber" type="xsd:string" minOccurs="0"></xsd:element>
+			<xsd:element name="CifNo" type="xsd:string" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

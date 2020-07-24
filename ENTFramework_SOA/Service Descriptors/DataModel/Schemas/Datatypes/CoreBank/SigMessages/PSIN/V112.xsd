@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v112/1.0" elementFormDefault="qualified" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v112/1.0">
+	<xsd:import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></xsd:import>
+    <xsd:element name="V112O" type="tns:V112OType"></xsd:element>
+    <xsd:complexType name="V112OType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="AccountNumber" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="ShortName"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="RenewalFrequency" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="InterestPaidLastYear" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NextinterestAmount" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="AvailableCapitalisedInterest" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="RetirementFlag" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="ProductType"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="CurrencyCode"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NextMaturityDate" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="InterestRate"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="InterestPaidYTD" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NextInterestDate" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="DispositionOfInterest" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="PriorYearContribution" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="CurrentYearContribution" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="OpeningDate"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="PenaltyAmount" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="CurrentBalance" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="RenewalPeriod" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="LastRenewalDate" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="RenewalOption" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="InterestPaymentFlag" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="BranchNumber"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="UserCode1"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="UserCode2"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NextStatementDate" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="LastStatementDate" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="CollateralHoldAmount" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="IssueAmount"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="IntWithheldLastYear" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="IntWithheldYTD" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="OfficerNumber" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="InterestPaymentPeriod" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NextInterestnetToCustomer" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NextInterestWithHolding" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="PassbookLeadAccount" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="PassbookDepositID" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="Swaprate"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="AccountMemo"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NameAddressline1" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NameAddressline2" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NameAddressline3" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NameAddressline4" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NameAddressline5" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NameAddressline6" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NameAddressline7" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="NameAddressline8" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="PrimaryCIF"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="VATExemptFlag" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="CustomerType"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="VATnumberTaxID" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="CustomerName1" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="VIPClass"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="AccountStatus" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="InterestTransferToAccountType"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="InterestTransferToAccountNumber"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="InternalGLCostCenter" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="AccruedInterest" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="InterestAccruedYTD" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="LastIntPaymentDate" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="HoldAmount"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="LastInterestPaymentAmt" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="InterestAccruedToDate" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="BalanceAtLastRenewal" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="InterestPaidToDate" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="AliasAccountType" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="AliasAccountNumber" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="JointAccount"
+    			type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="AvailableBalance" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element name="CustomerName2" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="LegacyMaturityDate" type="inc-field:FieldType">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="0"
+    			name="OriginMaturityDate" type="inc-field:FieldType">
+    		</xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

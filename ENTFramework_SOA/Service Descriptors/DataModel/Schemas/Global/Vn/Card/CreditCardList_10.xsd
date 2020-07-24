@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 (x64) (http://www.altova.com) by Hai (VSII) -->
+<xs:schema
+	xmlns="http://www.vietcombank.com.vn/global/vn/card/creditcardlist/1.0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:cmd-card="http://www.vietcombank.com.vn/entity/vn/common/card"
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/card/creditcardlist/1.0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	<xs:import namespace="datamodel/datatypes/common/serviceenvelope"
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd" />
+	<xs:import
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/card"
+		schemaLocation="../../../Datatypes/Business/Card.xsd" />
+	<xs:element name="CreditCardListInqReq"
+		type="CreditCardListInqReqType" />
+	<xs:element name="CreditCardListInqRes"
+		type="CreditCardListInqResType" />
+	<xs:complexType name="CreditCardListInqReqType">
+		<xs:complexContent>
+			<xs:extension base="cmd-svrenv:BaseServiceRequestType">
+				<xs:sequence>
+
+					<xs:element ref="PayloadInqReq"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CreditCardListInqResType">
+		<xs:complexContent>
+			<xs:extension base="cmd-svrenv:BaseServiceResponseType">
+				<xs:sequence>
+
+					<xs:element ref="PayloadInqRes" minOccurs="0"
+						maxOccurs="1">
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PayloadInqResType">
+		<xs:sequence>
+			<xs:element name="CardInfo" type="cmd-card:CardInfoType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PayloadInqReqType">
+		<xs:choice>
+			<xs:element name="CifNo" type="xs:string" />
+			<xs:element name="IdNo" type="xs:string"></xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:element name="PayloadInqRes" type="PayloadInqResType"></xs:element>
+
+	<xs:element name="PayloadInqReq" type="PayloadInqReqType"></xs:element>
+</xs:schema>

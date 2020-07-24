@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v10n/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v10n/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+    <element name="V10NI" type="tns:V10NIType"></element>
+
+    <element name="V10NO" type="tns:V10NOType"></element>
+
+    <complexType name="V10NIType">
+    	<sequence>
+    		<element minOccurs="0" maxOccurs="1" name="IRACode" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Alpha1" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Alpha7" type="inc-field:FieldType" />
+    	</sequence>
+    </complexType>
+    
+    <complexType name="V10NOType">
+    	<sequence>
+    		<element name="V10AOFixedField" type="tns:V10NOFixedFieldType" minOccurs="0" maxOccurs="1"/>
+			<element name="V10AORepeatedField" type="tns:V10NORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="V10NOFixedFieldType">
+    	<sequence>
+    		<element minOccurs="0" maxOccurs="1" name="ApplicationNumber" type="inc-field:FieldType" />
+    		<element minOccurs="0" maxOccurs="1" name="AccountNumber" type="inc-field:FieldType" />
+    	</sequence>
+    </complexType>
+    
+    <complexType name="V10NORepeatedFieldType">
+    	<sequence>
+    		<element minOccurs="0" maxOccurs="1"
+    			name="ApplicationNumber" type="inc-field:FieldType" />
+    		<element minOccurs="0" maxOccurs="1" name="AccountNumber"
+    			type="inc-field:FieldType" />
+    		<element minOccurs="0" maxOccurs="1" name="AliasAccountType"
+    			type="inc-field:FieldType" />
+    		<element minOccurs="0" maxOccurs="1"
+    			name="AliasAccountNumber" type="inc-field:FieldType" />
+    		<element minOccurs="0" maxOccurs="1" name="AccountName"
+    			type="inc-field:FieldType" />
+    		<element minOccurs="0" maxOccurs="1" name="AccountStatus"
+    			type="inc-field:FieldType" />
+    		<element minOccurs="0" maxOccurs="1" name="CIFNumber"
+    			type="inc-field:FieldType" />
+    		<element minOccurs="0" maxOccurs="1" name="CurrencyCode"
+    			type="inc-field:FieldType" />
+    		<element minOccurs="0" maxOccurs="1" name="Customer"
+    			type="inc-field:FieldType" />
+    		<element name="AccountName2" type="inc-field:FieldType"
+    			minOccurs="0">
+    		</element>
+    		<element name="LegacyMaturityDate" type="inc-field:FieldType" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="V10NOFixedField" type="tns:V10NOFixedFieldType"></element>
+
+    <element name="V10NORepeatedField" type="tns:V10NORepeatedFieldType"></element>
+</schema>

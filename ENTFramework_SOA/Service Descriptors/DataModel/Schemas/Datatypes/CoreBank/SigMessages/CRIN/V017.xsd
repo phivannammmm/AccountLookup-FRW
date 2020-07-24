@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/crin/v017/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/crin/v017/1.0">
+	<xsd:import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../../Message.xsd"/>
+	<xsd:element name="V017I" type="tns:V017IType"/>
+	<xsd:complexType name="V017IType">
+		<xsd:sequence>
+			<xsd:element name="FIXFMTCD" type="inc-field:FieldType"/>
+			<xsd:element name="MSCNBR" type="inc-field:FieldType"/>
+			<xsd:element name="MSCAPP" type="inc-field:FieldType"/>
+			<xsd:element name="MSCACC" type="inc-field:FieldType"/>
+			<xsd:element name="MSATYP" type="inc-field:FieldType"/>
+			<xsd:element name="MSSELTYP" type="inc-field:FieldType"/>
+			<xsd:element name="MSACCSTAT" type="inc-field:FieldType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="V017OFixedField" type="tns:V017OFixedFieldType"/>
+	<xsd:complexType name="V017OFixedFieldType">
+		<xsd:sequence>
+			<xsd:element name="MSCAPP" type="inc-field:FieldType"/>
+			<xsd:element name="MSCACC" type="inc-field:FieldType"/>
+			<xsd:element name="MSATYP" type="inc-field:FieldType"/>
+			<xsd:element name="MSMNBR" type="inc-field:FieldType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+    <xsd:element name="V017ORepeatedField" type="tns:V017ORepeatedFieldType"/>
+    <xsd:complexType name="V017ORepeatedFieldType">
+    	<xsd:sequence>
+    		<xsd:element name="CUX1AP" type="inc-field:FieldType"/>
+    		<xsd:element name="MSATYP" type="inc-field:FieldType"/>
+    		<xsd:element name="CUX1TY" type="inc-field:FieldType"/>
+    		<xsd:element name="CUXREL" type="inc-field:FieldType"/>
+    		<xsd:element name="MSACNO" type="inc-field:FieldType"/>
+    		<xsd:element name="CUAANT" type="inc-field:FieldType"/>
+    		<xsd:element name="CUAAN" type="inc-field:FieldType"/>
+    		<xsd:element name="CUXBAL" type="inc-field:FieldType"/>
+    		<xsd:element name="CUXPRD" type="inc-field:FieldType"/>
+    		<xsd:element name="CUXCCD" type="inc-field:FieldType"/>
+    		<xsd:element name="MSXGPD" type="inc-field:FieldType"/>
+    		<xsd:element name="MSXPRV" type="inc-field:FieldType"/>
+    		<xsd:element name="MSXSTD" type="inc-field:FieldType"/>
+    		<xsd:element name="MSXMDT" type="inc-field:FieldType"/>
+    		<xsd:element name="MSEFLG" type="inc-field:FieldType"/>
+    		<xsd:element name="MSEFL2" type="inc-field:FieldType"/>
+    		<xsd:element name="MSASTS" type="inc-field:FieldType"/>
+    		<xsd:element name="MSCRDL" type="inc-field:FieldType"/>
+    		<xsd:element name="MSSDWL" type="inc-field:FieldType"/>
+    		<xsd:element name="CUANA1" type="inc-field:FieldType"/>
+    		<xsd:element name="MSCNBR" type="inc-field:FieldType"/>
+    		<xsd:element name="MSBRCH" type="inc-field:FieldType"/>
+    		<xsd:element name="MSHOLD" type="inc-field:FieldType"/>
+    		<xsd:element name="DMTACC" type="inc-field:FieldType"/>
+    		<xsd:element name="DMYIPD" type="inc-field:FieldType"/>
+    		<xsd:element name="DMIODL" type="inc-field:FieldType"/>
+    		<xsd:element name="DMDLA" type="inc-field:FieldType"/>
+    		<xsd:element name="DOTACC" type="inc-field:FieldType"/>
+    		<xsd:element name="TMPBFG" type="inc-field:FieldType"/>
+    		<xsd:element name="TMOPDT" type="inc-field:FieldType"/>
+    		<xsd:element name="TMNXMJ" type="inc-field:FieldType"/>
+    		<xsd:element name="TMRATE" type="inc-field:FieldType"/>
+    		<xsd:element name="TMTERM" type="inc-field:FieldType"/>
+    		<xsd:element name="MSACCINT" type="inc-field:FieldType"/>
+    		<xsd:element name="TMINXA" type="inc-field:FieldType"/>
+    		<xsd:element name="TMRPER" type="inc-field:FieldType"/>
+    		<xsd:element name="TPPACT" type="inc-field:FieldType"/>
+    		<xsd:element name="TMFACE" type="inc-field:FieldType"/>
+    		<xsd:element name="DMCADV" type="inc-field:FieldType"/>
+    		<xsd:element name="DMLIPD" type="inc-field:FieldType"/>
+    		<xsd:element name="TAXID" type="inc-field:FieldType"/>
+    		<xsd:element name="SOTPAP" type="inc-field:FieldType"/>
+    		<xsd:element name="SOINAC" type="inc-field:FieldType"/>
+    		<xsd:element name="SOINCC" type="inc-field:FieldType"/>
+    		<xsd:element name="TMINXT" type="inc-field:FieldType"/>
+    		<xsd:element name="L9TMPD" type="inc-field:FieldType"/>
+    		<xsd:element name="NOTETERM" type="inc-field:FieldType"/>
+    		<xsd:element name="LNIDUE" type="inc-field:FieldType"/>
+    		<xsd:element name="FRELDTE" type="inc-field:FieldType"/>
+    		<xsd:element name="LNRATEX" type="inc-field:FieldType"/>
+    		<xsd:element name="LNDISB" type="inc-field:FieldType"/>
+    		<xsd:element name="LNLFID" type="inc-field:FieldType"/>
+    		<xsd:element name="LNFACE" type="inc-field:FieldType"/>
+    		<xsd:element name="LNPRNDUE" type="inc-field:FieldType"/>
+    		<xsd:element name="LNSCAM" type="inc-field:FieldType"/>
+    		<xsd:element name="DMDINT" type="inc-field:FieldType"/>
+    		<xsd:element name="TMTIPD" type="inc-field:FieldType"/>
+    		<xsd:element name="LNCHGI" type="inc-field:FieldType"/>
+    		<xsd:element name="LNNONI" type="inc-field:FieldType"/>
+    		<xsd:element name="LNNONA" type="inc-field:FieldType"/>
+    		<xsd:element name="DMAVBL" type="inc-field:FieldType"/>
+    		<xsd:element name="TMAVBL" type="inc-field:FieldType"/>
+    		<xsd:element minOccurs="0" name="CUANA2" type="inc-field:FieldType"/>
+    		<xsd:element minOccurs="0" name="TMNXMT" type="inc-field:FieldType"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="V017O" type="tns:V017OType"/>
+   <xsd:complexType name="V017OType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="0" name="V017FixedField" type="tns:V017OFixedFieldType"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="V017ORepeatedField" type="tns:V017ORepeatedFieldType"/>
+		</xsd:sequence>
+	</xsd:complexType> 
+    
+</xsd:schema>

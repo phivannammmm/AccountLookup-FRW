@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_z0tZMJtCEeq1CtSc9yZEPA" targetNamespace="http://tns.tibco.com/bw/composite/AcctInfo" name="AcctInfo" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_0WvIMJtCEeq1CtSc9yZEPA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_0W4SIJtCEeq1CtSc9yZEPA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_0W4SIZtCEeq1CtSc9yZEPA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_0XCDIJtCEeq1CtSc9yZEPA" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_0XCDIZtCEeq1CtSc9yZEPA" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_0XCDIptCEeq1CtSc9yZEPA" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_0XCDI5tCEeq1CtSc9yZEPA" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_0XLNEJtCEeq1CtSc9yZEPA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_0XLNEZtCEeq1CtSc9yZEPA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_pdbqAMf9EeqRGdRaJgzIDg" name="/VCBCORE/Url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_v5cEIMf9EeqRGdRaJgzIDg" name="/VCBCORE/UserName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wGHOMMf9EeqRGdRaJgzIDg" name="/VCBCORE/PassWord" type="property:password" scaext:simpleValue="#!frKksWOt+IpvgULJfa2NfQ==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wKxEsMf9EeqRGdRaJgzIDg" name="/VCBCORE/LoginTimeOut" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wPQjIMf9EeqRGdRaJgzIDg" name="/VCBCORE/TransactionTimeOut" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wTdtsMf9EeqRGdRaJgzIDg" name="/VCBCORE/MaxRow" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wYILQMf9EeqRGdRaJgzIDg" name="/VCBCORE/MaxConnection" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_eh57IMf-EeqRGdRaJgzIDg" name="/GPP/MQ/Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ibgp8Mf-EeqRGdRaJgzIDg" name="/GPP/MQ/Port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ifej8Mf-EeqRGdRaJgzIDg" name="/GPP/MQ/ServerChannelName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ijrHcMf-EeqRGdRaJgzIDg" name="/GPP/MQ/AcctLookupQueueIn" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_iot_gMf-EeqRGdRaJgzIDg" name="/GPP/MQ/AcctLookupQueueOut" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_aNAoYMgHEeqRGdRaJgzIDg" name="/ESB/Url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_cA7dEMgHEeqRGdRaJgzIDg" name="/ESB/UserName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_cOlekMgHEeqRGdRaJgzIDg" name="/ESB/PassWord" type="property:password" scaext:simpleValue="#!045Oq/K8XGzMwgmWvvUaow==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ermTkMgHEeqRGdRaJgzIDg" name="/ESB/LoginTimeOut" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_evzeIMgHEeqRGdRaJgzIDg" name="/ESB/TransactionTimeOut" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ezsfoMgHEeqRGdRaJgzIDg" name="/ESB/MaxRow" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_e3W3oMgHEeqRGdRaJgzIDg" name="/ESB/MaxConnection" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="__UlV0JtCEeq1CtSc9yZEPA" name="ComponentAcctInfo_Inq_10" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="__UlV0ZtCEeq1CtSc9yZEPA" processName="acctinfo.service.AcctInfo_Inq_10"/>
+  </sca:component>
+  <sca:component xmi:id="_TSc0kMgIEeqRGdRaJgzIDg" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_TSc0kcgIEeqRGdRaJgzIDg" processName="acctinfo.service.impl.inq.Process"/>
+  </sca:component>
+</sca:composite>

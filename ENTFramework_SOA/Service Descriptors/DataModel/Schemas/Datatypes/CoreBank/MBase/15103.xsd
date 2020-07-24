@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/mbase/15103/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/mbase/15103/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+    <element name="MB15103O" type="tns:MB15103OType"></element>
+
+    <element name="MB15103I" type="tns:MB15103IType"></element>
+
+    <complexType name="MB15103OType">
+    	<sequence>
+    		<element name="CIF" type="inc-field:FieldType"></element>
+    		<element name="CFFSNM" type="inc-field:FieldType"></element>
+			<element name="CFSSNO" type="inc-field:FieldType"></element>
+			<element name="CFSSCD" type="inc-field:FieldType"></element>
+			<element name="CFBRNN" type="inc-field:FieldType"></element>
+			<element name="CFNA1" type="inc-field:FieldType"></element>
+			<element name="CFNA1A" type="inc-field:FieldType"></element>
+			<element name="RALIAS" type="inc-field:FieldType"></element>
+			<element name="CFCIFT" type="inc-field:FieldType"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="MB15103IType">
+    	<sequence>
+    		<element name="CFCIFN" type="inc-field:FieldType"></element>
+    	</sequence>
+    </complexType>
+</schema>

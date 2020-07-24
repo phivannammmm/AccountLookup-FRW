@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.vietcombank.com/datamodel/datatypes/corebank/aio/aiomessage/1_0" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns-aio="http://www.vietcombank.com/datamodel/datatypes/corebank/aio/aiomessage/1_0">
+
+    <element name="JWHERE" type="tns-aio:JWHEREType"></element>
+
+    <complexType name="JWHEREType">
+    	<sequence>
+    		<element name="Field" type="tns-aio:FieldType" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="FieldType">
+    	<sequence>
+    		<element name="Key" type="string"></element>
+    		<element name="Operator" type="string"></element>
+    		<element name="Value" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

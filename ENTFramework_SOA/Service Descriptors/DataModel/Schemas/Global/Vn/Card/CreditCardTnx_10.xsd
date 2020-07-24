@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 (x64) (http://www.altova.com) by Hai (VSII) -->
+<xs:schema
+	xmlns="http://www.vietcombank.com.vn/global/vn/card/creditcardtnx/1.0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:cmd-trn="http://www.vietcombank.com.vn/entity/vn/common/trn"
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/card/creditcardtnx/1.0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct">
+	<xs:import namespace="datamodel/datatypes/common/serviceenvelope"
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd" />
+
+	<xs:import schemaLocation="../../../Datatypes/Business/Account.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/acct"></xs:import>
+	<xs:element name="CreditCardTnxInqReq"
+		type="CreditCardTnxInqReqType" />
+	<xs:element name="CreditCardTnxInqRes"
+		type="CreditCardTnxInqResType" />
+	<xs:complexType name="CreditCardTnxInqReqType">
+		<xs:complexContent>
+			<xs:extension base="cmd-svrenv:BaseServiceRequestType">
+				<xs:sequence>
+
+
+					<xs:element ref="PayloadInqReq"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CreditCardTnxInqResType">
+		<xs:complexContent>
+			<xs:extension base="cmd-svrenv:BaseServiceResponseType">
+				<xs:sequence>
+
+					<xs:element ref="PayloadInqRes" minOccurs="0"
+						maxOccurs="1">
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PayloadInqReqType">
+		<xs:sequence>
+			<xs:element name="Account" type="cmd-acct:AcctIdType"></xs:element>
+			<xs:element name="Bank" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PayloadInqResType">
+		<xs:sequence>
+			<xs:element name="CardTxnInfo" type="CardTxnInfoType" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="PayloadInqReq" type="PayloadInqReqType"></xs:element>
+
+	<xs:element name="PayloadInqRes" type="PayloadInqResType"></xs:element>
+
+	<xs:complexType name="CardTxnInfoType">
+		<xs:sequence>
+			<xs:element name="RefNumber" type="xs:string" />
+			<xs:element name="WaitingDate" type="xs:string"	minOccurs="0" />
+			<xs:element name="WaitingTime" type="xs:string"	minOccurs="0" />
+			<xs:element name="IssueDate" type="xs:string" minOccurs="0" />
+			<xs:element name="IssueAmount" type="cmd-acct:AmountType" minOccurs="0" />
+			<xs:element name="IssueNumber" type="xs:string"	minOccurs="0" />
+			<xs:element name="RemainDate" type="xs:string" minOccurs="0" />
+			<xs:element name="Remark" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

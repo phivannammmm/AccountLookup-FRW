@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.vietcombank.com.vn/framework/service/logging/logger/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CLELogger" targetNamespace="http://www.vietcombank.com.vn/framework/service/logging/logger/1.0" xmlns:xsd1="http://www.vietcombank.com.vn/framework/utilities/logging/logger/1.0">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.vietcombank.com.vn/framework/utilities/logging/logger/1.0"
+    		schemaLocation="../Schemas/Utilities/Logging/Logger.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="LoggingRequest">
+    <wsdl:part element="xsd1:Logger" name="parameters"/>
+  </wsdl:message>
+   <wsdl:message name="ExceptionLogRequest">
+  	<wsdl:part name="parameters" element="xsd1:Exception"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CLELogger">
+    <wsdl:operation name="Logging">
+      <wsdl:input message="tns:LoggingRequest"/>
+    </wsdl:operation>
+    <wsdl:operation name="ExceptionLog">
+    	<wsdl:input message="tns:ExceptionLogRequest"></wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

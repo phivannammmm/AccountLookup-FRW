@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<xs:schema xmlns:cmd-party="http://www.vietcombank.com.vn/entity/vn/common/party"
+	 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.vietcombank.com.vn/entity/vn/common/party"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:complexType name="AddressInfoType">
+		<xs:sequence>
+			<xs:element name="Address" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Street" type="xs:string" minOccurs="0"/>
+			<xs:element name="City" type="xs:string" minOccurs="0"/>
+			<xs:element name="District" type="xs:string" minOccurs="0"/>
+			<xs:element name="Province" type="xs:string" minOccurs="0"/>
+			<xs:element name="Country" type="xs:string" minOccurs="0"/>
+			<xs:element name="PostalCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="AddressType" type="xs:string" minOccurs="0"/>
+			<xs:element name="StartDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="EndDate" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BankInfoType">
+		<xs:sequence>
+			<xs:element name="BankNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="BankName" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BranchInfoType">
+		<xs:sequence>
+			<xs:element name="BankInfo" type="cmd-party:BankInfoType" minOccurs="0"/>
+			<xs:element name="BranchNo" type="xs:string"/>
+			<xs:element name="BranchCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Mnemonic code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BranchName" type="xs:string" minOccurs="0"/>
+			<xs:element name="ContactInfo" type="cmd-party:ContactInfoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContactInfoType">
+		<xs:sequence>
+			<xs:element name="PhoneInfo" type="cmd-party:PhoneInfoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="AddressInfo" type="cmd-party:AddressInfoType" minOccurs="0"/>
+			<xs:element name="MailInfo" type="cmd-party:MailInfoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CorporateInfoType">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="0" />
+			<xs:element name="ShortName" type="xs:string" minOccurs="0" />
+			<xs:element name="LegalName" type="xs:string" minOccurs="0" />
+			<xs:element name="IDInfo" type="cmd-party:IDInfoType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			<xs:element name="EstablishDate" type="xs:string" minOccurs="0" />            <xs:element name="RegBussIssueDate" type="xs:string" minOccurs="0" />
+            <xs:element name="BussinessType" type="xs:string" minOccurs="0" />
+            <xs:element name="IndustrialLevel" type="xs:string" minOccurs="0" />
+			<xs:element name="SICcode" type="xs:string" minOccurs="0" />
+			<xs:element name="TaxCode" type="xs:string" minOccurs="0" />
+			<xs:element name="ContactInfo" type="cmd-party:ContactInfoType" minOccurs="0" />
+			<xs:element name="Nationality" type="xs:string"	minOccurs="0" />
+			<xs:element name="BomInfo" type="cmd-party:PersonInfoType" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="CitizenshipCode" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustomerInfoType">
+		<xs:sequence>
+			<xs:element name="CifNo" type="xs:string" minOccurs="0" />
+			<xs:choice>
+				<xs:element name="GeneralInfo"	type="cmd-party:GeneralInfoType" minOccurs="0" />
+				<xs:element name="PersonalInfo"	type="cmd-party:PersonInfoType" minOccurs="0" />
+				<xs:element name="CorporateInfo" type="cmd-party:CorporateInfoType" minOccurs="0" />
+			</xs:choice>
+			<xs:element name="CustClassType" type="xs:string" minOccurs="0" />
+			<xs:element name="CustStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="BranchInfo" type="cmd-party:BranchInfoType" minOccurs="0" />
+			<xs:element name="VIPCode" type="xs:string" minOccurs="0" />
+			<xs:element name="BlackListInd" type="xs:string" minOccurs="0" />
+			<xs:element name="OpeningDate" type="xs:string"	minOccurs="0" />
+			<xs:element name="LastUpdDate" type="xs:string"	minOccurs="0" />
+			<xs:element name="VipBranch" type="cmd-party:BranchInfoType" minOccurs="0"/>
+			<xs:element name="PersonalFlag" type="xs:string" minOccurs="0" />
+			<xs:element name="VATNumber" type="xs:string" minOccurs="0" />
+			<xs:element name="VATExemptFlag" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IDInfoType">
+		<xs:sequence>
+			<xs:element name="IDType" type="xs:string" minOccurs="0" />
+			<xs:element name="IDNo" type="xs:string" minOccurs="0" />
+			<xs:element name="IDIssueDate" type="xs:string"	minOccurs="0" />
+			<xs:element name="IDIssuePlace" type="xs:string" minOccurs="0" />
+			<xs:element name="IDIssueState" type="xs:string" minOccurs="0"/>
+			<xs:element name="IDExpiryDate" type="xs:string" minOccurs="0" />
+			<xs:element name="Country" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PersonInfoType">
+		<xs:sequence>
+			<xs:element name="Name" type="cmd-party:PersonNameType" minOccurs="0"/>
+			<xs:element name="IDInfo" type="cmd-party:IDInfoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Gender" type="xs:string" minOccurs="0"/>
+			<xs:element name="Birthday" type="xs:string" minOccurs="0"/>
+			<xs:element name="BirthPlace" type="xs:string" minOccurs="0"/>
+			<xs:element name="ContactInfo" type="cmd-party:ContactInfoType" minOccurs="0"/>
+			<xs:element name="EducationLevel" type="xs:string" minOccurs="0"/>
+			<xs:element name="EmployeeInfo" type="cmd-party:EmployeeInfoType" minOccurs="0"/>
+			<xs:element name="EmployerName" type="xs:string" minOccurs="0"/>
+			<xs:element name="Mnemonic" type="xs:string" minOccurs="0"/>
+			<xs:element name="SpouseName" type="xs:string" minOccurs="0"/>
+			<xs:element name="MaritalStatus" type="xs:string" minOccurs="0"/>
+			<xs:element name="NumberOfChildren" type="xs:int" minOccurs="0"/>
+			<xs:element name="NumberOfDependents" type="xs:int" minOccurs="0"/>
+			<xs:element name="Nationality" type="xs:string" minOccurs="0"/>
+			<xs:element name="CitizenshipCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="LegalResidenceCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="TaxCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="OEDCode" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Valid values include: Director, Employee, Officer</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PersonNameType">
+		<xs:sequence>
+			<xs:element name="TitlePrefix" type="xs:string" minOccurs="0"/>
+			<xs:element name="FirstName" type="xs:string" minOccurs="0"/>
+			<xs:element name="MiddleName" type="xs:string" minOccurs="0"/>
+			<xs:element name="LastName" type="xs:string" minOccurs="0"/>
+			<xs:element name="FullName" type="xs:string" minOccurs="0"/>
+			<xs:element name="ShortName" type="xs:string" minOccurs="0"/>
+			<xs:element name="Nickname" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PhoneInfoType">
+		<xs:sequence>
+			<xs:element name="PhoneNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="PhoneType" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EmployeeInfoType">
+		<xs:sequence>
+			<xs:element name="EmployeeCode" type="xs:string" minOccurs="0" />
+			<xs:element name="EmployeeTitle" type="xs:string" minOccurs="0" />
+			<xs:element name="EmployeeStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="ProfessionCode" type="xs:string" minOccurs="0" />
+			<xs:element name="ContactInfo" type="cmd-party:ContactInfoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GeneralInfoType">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="ContactInfo" type="cmd-party:ContactInfoType" minOccurs="0"/>
+			<xs:element name="IDInfo" type="cmd-party:IDInfoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MailInfoType">
+		<xs:sequence>
+			<xs:element name="MailAddress" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="MailType" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

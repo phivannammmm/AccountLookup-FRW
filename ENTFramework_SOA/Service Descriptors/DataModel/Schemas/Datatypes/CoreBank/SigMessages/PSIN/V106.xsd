@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v106/1.0"
+	elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v106/1.0">
+	<xsd:import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></xsd:import>
+    <xsd:element name="V106O" type="tns:V106OType"></xsd:element>
+    <xsd:complexType name="V106OType">
+    	<xsd:sequence>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="FromAcctName" type= "inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="FromCurrentBalance" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="FromAvaiableBalance" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ToAcctName" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ToCurrentBalance" type="inc-field:FieldType"	></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ToAvaiableBalance" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="FullNameAddFlag" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="FromNameAdd2" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="FromNameAdd3" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="FromNameAdd4" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="FromNameAdd5" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="FromNameAdd6" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="FromNameAdd7" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="FromNameAdd8" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ToNameAdd2" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ToNameAdd3" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ToNameAdd4" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ToNameAdd5" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ToNameAdd6" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ToNameAdd7" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ToNameAdd8" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="SVBCodeFromGLAcct" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="SVBCodeToGLAcct" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="CIFNumberFromAcct" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="CustomerNameFromAcct" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="CIFNumberToAcct" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="CustomerNameToAcct" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="AliasAcctNumberTypeXfer" type="inc-field:FieldType" ></xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="1" name="AliasAcctNumberXfer" type="inc-field:FieldType" ></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

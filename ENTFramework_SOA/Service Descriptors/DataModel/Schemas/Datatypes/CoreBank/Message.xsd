@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<xs:complexType name="FieldType">
+		<xs:sequence>
+			<xs:element name="Type" type="xs:string" minOccurs="0"/>
+			<xs:element name="Length" type="xs:string" minOccurs="0"/>
+			<xs:element name="Size" type="xs:string" minOccurs="0"/>
+			<xs:element name="Value" type="xs:string" minOccurs="0"/>
+			<xs:element minOccurs="0" name="Position" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AS400Message" type="inc-field:AS400MessageType"/>
+	<xs:complexType name="AS400MessageType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="inc-field:Field"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Field" type="inc-field:FieldType"/>
+	<xs:complexType name="BitmapFieldType">
+		<xs:complexContent>
+			<xs:extension base="inc-field:FieldType">
+				<xs:sequence>
+					<xs:element name="Index" type="xs:string" minOccurs="0"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

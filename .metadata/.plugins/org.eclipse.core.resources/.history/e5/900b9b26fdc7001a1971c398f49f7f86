@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" xmlns:tns="http://www.example.com/namespaces/tns/1594968761674" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.example.com/namespaces/tns/1594968761674">
+  <xsd:element name="GetTable">
+    <xsd:complexType>
+      <xsd:sequence>
+                <xsd:element name="T1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ACCTNO" type="xsd:string"/>
+              <xsd:element name="CUX1AC" type="xsd:string"/>
+              <xsd:element name="CUAANTYP" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T2">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="DMCMCN" type="xsd:string"/>
+              <xsd:element name="ACCOUNTSHORTNAME" type="xsd:string"/>
+              <xsd:element name="ACCOUNTSTATUS" type="xsd:string"/>
+              <xsd:element name="BRANCH" type="xsd:integer"/>
+              <xsd:element name="PRODUCTTYPE" type="xsd:integer"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T3">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="CUX1CS" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T4">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="CIFNAME1" type="xsd:string"/>
+              <xsd:element name="CIFNAME2" type="xsd:string"/>
+              <xsd:element name="CIFSHORTNAME" type="xsd:string"/>
+              <xsd:element name="CUSTTYPE" type="xsd:integer"/>
+              <xsd:element name="ADDRESS1" type="xsd:string"/>
+              <xsd:element name="ADDRESS2" type="xsd:string"/>
+              <xsd:element name="ADDRESS3" type="xsd:string"/>
+              <xsd:element name="ADDRESS4" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T5">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ENGLISHNAME1" type="xsd:string"/>
+              <xsd:element name="ENGLISHNAME2" type="xsd:string"/>
+              <xsd:element name="ACCOUNTNAME1" type="xsd:string"/>
+              <xsd:element name="ACCOUNTNAME2" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T6">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="CAFLAG" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T7">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ISRESIDENT" type="xsd:string"/>
+              <xsd:element name="CLASSLEVEL" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T8">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="VATEXEMPT" type="xsd:string"/>
+              <xsd:element name="VIPORNOT" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T9">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="primitive" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+            </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

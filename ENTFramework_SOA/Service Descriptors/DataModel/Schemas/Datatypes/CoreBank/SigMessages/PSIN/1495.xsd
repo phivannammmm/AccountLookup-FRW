@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/1495/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/1495/1.0">
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../../Message.xsd"/>
+	<complexType name="BT1495ORepeatedFieldType">
+		<sequence>
+			<element minOccurs="0" maxOccurs="1" name="Level" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="LineNumber" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="SublimitNumber" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="LevelDescription" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="LineType" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Currency " type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="FacilityAmount" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="UtilisedAmount" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="EarmarkAmount" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="AvailableAmount" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="ExpiryDate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="LineStatus" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="FacilityStatus" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="CreditType" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="FacilityNumber" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="ExternalUncommitedLimitRef" type="inc-field:FieldType" />
+		</sequence>
+	</complexType>
+	<element name="BT1495ORepeatedField" type="tns:BT1495ORepeatedFieldType"/>
+	<complexType name="BT1495OFixedFieldType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="NextCustomerLimitKey" type="inc-field:FieldType"/>		</sequence>
+	</complexType>
+
+    <element name="BT1495OFixedField" type="tns:BT1495OFixedFieldType"/>
+
+    <element name="BT1495O" type="tns:BT1495OType"/>
+
+    <complexType name="BT1495OType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="BT1495OFixedField" type="tns:BT1495OFixedFieldType"/>
+			<element maxOccurs="unbounded" minOccurs="0" name="BT1495ORepeatedField" type="tns:BT1495ORepeatedFieldType"/>
+    	</sequence>
+    </complexType>
+</schema>

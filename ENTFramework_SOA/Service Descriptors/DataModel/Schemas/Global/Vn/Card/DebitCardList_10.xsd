@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/card/debitcardlist/1.0"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/card/debitcardlist/1.0"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:cmd-card="http://www.vietcombank.com.vn/entity/vn/common/card"
+	elementFormDefault="qualified" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+
+	<import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</import>
+	<import schemaLocation="../../../Datatypes/Business/Card.xsd"
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/card">
+	</import>
+
+	<element name="DebitCardListInqReq"
+		type="tns:DebitCardListInqReqType">
+	</element>
+	<element name="DebitCardListInqRes"
+		type="tns:DebitCardListInqResType">
+	</element>
+
+	<complexType name="DebitCardListInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="DebitCardListInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadInqRes" minOccurs="0"
+						maxOccurs="1">
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="DebitCardListType">
+		<sequence>
+			<element name="Base" type="string" minOccurs="0"></element>
+			<element name="Region" type="string" minOccurs="0"></element>
+			<element name="CifNo" type="string" minOccurs="0"></element>
+			<element name="BlockCode" type="string" minOccurs="0"></element>
+			<element name="CardInfo" type="cmd-card:CardInfoType"
+				minOccurs="0">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="DebitCardList" type="tns:DebitCardListType"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqReqType">
+		<sequence>	
+			<element name="CifNo" type="string"></element>
+			<element name="IDNo" type="string"></element>
+			<element name="AcctNo" type="string"></element>
+			<element name="CardHolderNm" type="string"></element>
+		</sequence>
+	</complexType>
+
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"></element>
+
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"></element>
+</schema>

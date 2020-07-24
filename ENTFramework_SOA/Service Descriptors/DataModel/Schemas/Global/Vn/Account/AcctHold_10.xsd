@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct" xmlns:cmd-party="http://www.vietcombank.com.vn/entity/vn/common/party" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/account/accthold/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/account/accthold/1.0">
+
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"/>
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/acct" schemaLocation="../../../Datatypes/Business/Account.xsd"/>
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd">
+	</import>
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/party" schemaLocation="../../../Datatypes/Business/Party.xsd"/>
+	<element name="AcctHoldInqReq" type="tns:AcctHoldInqReqType"/>
+
+	<element name="AcctHoldInqRes" type="tns:AcctHoldInqResType"/>
+
+	<complexType name="AcctHoldInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="AcctHoldInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadInqRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="AcctHoldAddReq" type="tns:AcctHoldAddReqType"/>
+
+	<element name="AcctHoldAddRes" type="tns:AcctHoldAddResType"/>
+
+	<complexType name="AcctHoldAddReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadAddReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="AcctHoldAddResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadAddRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="AcctHoldDelReq" type="tns:AcctHoldDelReqType"/>
+
+	<element name="AcctHoldDelRes" type="tns:AcctHoldDelResType"/>
+
+	<complexType name="AcctHoldDelReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadDelReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="AcctHoldDelResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadDelRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PointerType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="RcdNo" type="string"/>
+		</sequence>
+	</complexType>
+
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"/>
+
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"/>
+
+	<element name="PayloadAddReq" type="tns:PayloadAddReqType"/>
+
+	<element name="PayloadAddRes" type="tns:PayloadAddResType"/>
+
+	<element name="PayloadDelReq" type="tns:PayloadDelReqType"/>
+
+	<element name="PayloadDelRes" type="tns:PayloadDelResType"/>
+
+	<complexType name="PayloadAddReqType">
+		<sequence>
+			<element maxOccurs="1" name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element minOccurs="0" name="AcctID" type="cmd-acct:AcctIdType"/>
+			<element minOccurs="0" name="OldAcctID" type="cmd-acct:AcctIdType"/>
+			<element name="ExpDate" type="string"/>
+			<element name="HoldAmt" type="cmd-acct:AmountType"/>
+			<element minOccurs="0" name="TxnTime" type="string"/>
+			<element minOccurs="0" name="Remark" type="string"/>
+			<element name="UserID" type="string"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadAddResType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="SeqNo" type="string"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadDelReqType">
+		<sequence>
+			<element maxOccurs="1" name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element minOccurs="0" name="AcctID" type="cmd-acct:AcctIdType"/>
+			<element minOccurs="0" name="OldAcctID" type="cmd-acct:AcctIdType"/>
+			<element minOccurs="0" name="SeqNo" type="string"/>
+			<element minOccurs="0" name="TxnTime" type="string"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadDelResType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="SeqNo" type="string"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element maxOccurs="1" name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element maxOccurs="1" minOccurs="0" name="AcctID" type="cmd-acct:AcctIdType"/>
+			<element maxOccurs="1" minOccurs="0" name="OldAcctID" type="cmd-acct:AcctIdType"/>
+			<element maxOccurs="1" minOccurs="0" name="Pointer" type="tns:PointerType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="Pointer" type="tns:PointerType"/>
+			<element maxOccurs="unbounded" minOccurs="0" name="TxnRec" type="tns:TransactionType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="TransactionType">
+
+		<sequence>
+			<element minOccurs="0" name="ExpDate" type="string"/>
+			<element minOccurs="0" name="DateEntered" type="string"/>
+			<element minOccurs="0" name="Remark" type="string"/>
+			<element minOccurs="0" name="UserID" type="string"/>
+			<element minOccurs="0" name="HoldAmt" type="cmd-acct:AmountType"/>
+			<element maxOccurs="1" minOccurs="0" name="TimeSummited" type="string"/>
+			<element maxOccurs="1" minOccurs="0" name="SeqNo" type="string"/>
+			<element minOccurs="0" name="HoldBranch" type="cmd-party:BranchInfoType"/>
+		</sequence>
+	</complexType>
+</schema>

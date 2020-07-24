@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c940/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c940/1.0"
+	xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	<import schemaLocation="../../Message.xsd"
+		namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	</import>
+	<import schemaLocation="../../SigMessage.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"></import>
+	<complexType name="C940IType">
+		<sequence>
+			<element name="FIXFMTCD" type="inc-field:FieldType"></element>
+			<element name="MSNIDX" type="inc-field:FieldType"></element>
+			<element name="MSIDXD" type="pref:MSIDXDType" maxOccurs="unbounded"></element>
+			<element name="SEG90001" type="pref:SEG90001Type" minOccurs="0" maxOccurs="unbounded"></element>
+			<element name="SEG69001" type="pref:SEG69001Type" minOccurs="1" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="C940OType"></complexType>
+
+	<element name="C940I" type="tns:C940IType"></element>
+
+	<element name="C940O" type="tns:C940OType"></element>
+</schema>

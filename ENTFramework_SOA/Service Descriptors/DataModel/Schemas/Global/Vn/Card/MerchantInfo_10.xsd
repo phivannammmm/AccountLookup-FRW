@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/card/merchantinfo/1.0"
+	elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/card/merchantinfo/1.0"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:cmd-card="http://www.vietcombank.com.vn/entity/vn/common/card">
+	<xsd:import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</xsd:import>
+
+	<xsd:import schemaLocation="../../../Datatypes/Business/Card.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/card"></xsd:import>
+	<xsd:element name="MerchantInfoInqReq"
+		type="tns:MerchantInfoInqReqType">
+	</xsd:element>
+
+	<xsd:element name="MerchantInfoInqRes"
+		type="tns:MerchantInfoInqResType">
+	</xsd:element>
+
+	<xsd:element name="PayloadInqReq" type="tns:PayloadInqReqType"></xsd:element>
+
+	<xsd:complexType name="MerchantInfoInqReqType">
+		<xsd:complexContent>
+			<xsd:extension base="cmd-svrenv:BaseServiceRequestType">
+				<xsd:sequence>
+					<xsd:element ref="tns:PayloadInqReq"></xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="MerchantInfoInqResType">
+		<xsd:complexContent>
+			<xsd:extension base="cmd-svrenv:BaseServiceResponseType">
+				<xsd:sequence>
+					<xsd:element ref="tns:PayloadInqRes"
+						minOccurs="0">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="PayloadInqRes" type="tns:PayloadInqResType"></xsd:element>
+
+	<xsd:complexType name="PayloadInqReqType">
+		<xsd:sequence>
+			<xsd:element name="MerchantNo" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PayloadInqResType">
+		<xsd:sequence>
+			<xsd:element name="MerchantInfo" type="cmd-card:MerchantInfoType" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

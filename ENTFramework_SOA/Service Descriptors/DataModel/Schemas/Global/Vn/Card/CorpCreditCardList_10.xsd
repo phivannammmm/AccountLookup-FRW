@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/card/corpcreditcard/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/card/corpcreditcard/1.0"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:cmd-card="http://www.vietcombank.com.vn/entity/vn/common/card">
+	<import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</import>
+	<import schemaLocation="../../../Datatypes/Business/Card.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/card"></import>
+	
+
+	<complexType name="CorpCreditCardListInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CorpCreditCardListInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadInqRes" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="BizRegNo" type="string"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="CardInfo" type="cmd-card:CardInfoType" maxOccurs="unbounded" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+    <element name="CorpCreditCardListInqReq" type="tns:CorpCreditCardListInqReqType"></element>
+
+    <element name="CorpCreditCardListInqRes" type="tns:CorpCreditCardListInqResType"></element>
+
+    <element name="PayloadInqReq" type="tns:PayloadInqReqType"></element>
+
+    <element name="PayloadInqRes" type="tns:PayloadInqResType"></element>
+</schema>

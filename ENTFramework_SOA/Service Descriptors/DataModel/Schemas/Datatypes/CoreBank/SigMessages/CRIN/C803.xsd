@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c803/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c803/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+	<complexType name="C803IType">
+		<sequence>
+			<element name="FIXFMTCD" type="inc-field:FieldType"></element>
+			<element name="CUNBR " type="inc-field:FieldType"></element>
+			<element name="C8THR1" type="inc-field:FieldType"></element>
+			<element name="C8THR2" type="inc-field:FieldType"></element>
+			<element name="C8THR3" type="inc-field:FieldType"></element>
+			<element name="C8THR4" type="inc-field:FieldType"></element>
+			<element name="C8THR5" type="inc-field:FieldType"></element>
+			<element name="C8THR6" type="inc-field:FieldType"></element>
+			<element name="C8THR7" type="inc-field:FieldType"></element>
+			<element name="C8THR8" type="inc-field:FieldType"></element>
+			<element name="C8THR9" type="inc-field:FieldType"></element>
+			<element name="C8THR10" type="inc-field:FieldType"></element>
+			<element name="C8THR11" type="inc-field:FieldType"></element>
+			<element name="C8THR12" type="inc-field:FieldType"></element>
+			<element name="C8THR13" type="inc-field:FieldType"></element>
+			<element name="C8THR14" type="inc-field:FieldType"></element>
+			<element name="C8THR15" type="inc-field:FieldType"></element>
+			<element name="C8FIV1" type="inc-field:FieldType"></element>
+			<element name="C8FIV2" type="inc-field:FieldType"></element>
+			<element name="C8FIV3" type="inc-field:FieldType"></element>
+			<element name="C8FIV4" type="inc-field:FieldType"></element>
+			<element name="C8FIV5" type="inc-field:FieldType"></element>
+			<element name="C8TEN1" type="inc-field:FieldType"></element>
+			<element name="C8TEN2" type="inc-field:FieldType"></element>
+			<element name="C8TEN3" type="inc-field:FieldType"></element>
+			<element name="C8TEN4" type="inc-field:FieldType"></element>
+			<element name="C8TEN5" type="inc-field:FieldType"></element>
+			<element name="C8TWN1" type="inc-field:FieldType"></element>
+			<element name="C8TWN2" type="inc-field:FieldType"></element>
+			<element name="C8TWN3" type="inc-field:FieldType"></element>
+			<element name="C8TWN4" type="inc-field:FieldType"></element>
+			<element name="C8TWN5" type="inc-field:FieldType"></element>
+			<element name="C8TWN6" type="inc-field:FieldType"></element>
+			<element name="C8TWN7" type="inc-field:FieldType"></element>
+			<element name="C8TWN8" type="inc-field:FieldType"></element>
+			<element name="C8TWN9" type="inc-field:FieldType"></element>
+			<element name="C8TWN10" type="inc-field:FieldType"></element>
+			<element name="C8THI1" type="inc-field:FieldType"></element>
+			<element name="C8THI2" type="inc-field:FieldType"></element>
+			<element name="C8THI3" type="inc-field:FieldType"></element>
+			<element name="C8THI4" type="inc-field:FieldType"></element>
+			<element name="C8THI5" type="inc-field:FieldType"></element>
+			<element name="C8SEV1" type="inc-field:FieldType"></element>
+			<element name="C8SEV2" type="inc-field:FieldType"></element>
+			<element name="C8SEV3" type="inc-field:FieldType"></element>
+			<element name="C8SEV4" type="inc-field:FieldType"></element>
+			<element name="C8SEV5" type="inc-field:FieldType"></element>
+			<element name="C8ONN1" type="inc-field:FieldType"></element>
+			<element name="C8ONN2" type="inc-field:FieldType"></element>
+			<element name="C8ONN3" type="inc-field:FieldType"></element>
+			<element name="C8ONN4" type="inc-field:FieldType"></element>
+			<element name="C8ONN5" type="inc-field:FieldType"></element>
+			<element name="C8ONN6" type="inc-field:FieldType"></element>
+			<element name="C8ONN7" type="inc-field:FieldType"></element>
+			<element name="C8ONN8" type="inc-field:FieldType"></element>
+			<element name="C8ONN9" type="inc-field:FieldType"></element>
+			<element name="C8ONN10" type="inc-field:FieldType"></element>
+			<element name="C8ONC1" type="inc-field:FieldType"></element>
+			<element name="C8ONC2" type="inc-field:FieldType"></element>
+			<element name="C8ONC3" type="inc-field:FieldType"></element>
+			<element name="C8ONC4" type="inc-field:FieldType"></element>
+			<element name="C8ONC5" type="inc-field:FieldType"></element>
+			<element name="C8ONC6" type="inc-field:FieldType"></element>
+			<element name="C8ONC7" type="inc-field:FieldType"></element>
+			<element name="C8ONC8" type="inc-field:FieldType"></element>
+			<element name="C8ONC9" type="inc-field:FieldType"></element>
+			<element name="C8ONC10" type="inc-field:FieldType"></element>
+			<element name="C8NIN1" type="inc-field:FieldType"></element>
+			<element name="C8NIN2" type="inc-field:FieldType"></element>
+			<element name="C8NIN3" type="inc-field:FieldType"></element>
+			<element name="C8NIN4" type="inc-field:FieldType"></element>
+			<element name="C8NIN5" type="inc-field:FieldType"></element>
+			<element name="C8EIG1" type="inc-field:FieldType"></element>
+			<element name="C8EIG2" type="inc-field:FieldType"></element>
+			<element name="C8EIG3" type="inc-field:FieldType"></element>
+			<element name="C8EIG4" type="inc-field:FieldType"></element>
+			<element name="C8EIG5" type="inc-field:FieldType"></element>
+			<element name="C8EIG6" type="inc-field:FieldType"></element>
+			<element name="C8EIG7" type="inc-field:FieldType"></element>
+			<element name="C8EIG8" type="inc-field:FieldType"></element>
+			<element name="C8EIG9" type="inc-field:FieldType"></element>
+			<element name="C8EIG10" type="inc-field:FieldType"></element>
+			<element name="C8FIF1" type="inc-field:FieldType"></element>
+			<element name="C8FIF2" type="inc-field:FieldType"></element>
+			<element name="C8FIF3" type="inc-field:FieldType"></element>
+			<element name="C8FIF4" type="inc-field:FieldType"></element>
+			<element name="C8FIF5" type="inc-field:FieldType"></element>
+			<element name="C8THT1" type="inc-field:FieldType"></element>
+			<element name="C8THT2" type="inc-field:FieldType"></element>
+			<element name="C8THT3" type="inc-field:FieldType"></element>
+			<element name="C8THT4" type="inc-field:FieldType"></element>
+			<element name="C8THT5" type="inc-field:FieldType"></element>
+			<element name="C8THT6" type="inc-field:FieldType"></element>
+			<element name="C8THT7" type="inc-field:FieldType"></element>
+			<element name="C8THT8" type="inc-field:FieldType"></element>
+			<element name="C8THT9" type="inc-field:FieldType"></element>
+			<element name="C8THT10" type="inc-field:FieldType"></element>
+			<element name="C8OTE1" type="inc-field:FieldType"></element>
+			<element name="C8OTE2" type="inc-field:FieldType"></element>
+		</sequence>
+	</complexType>
+	
+    <complexType name="C803OType"></complexType>
+
+    <element name="C803I" type="tns:C803IType"></element>
+
+    <element name="C803O" type="tns:C803OType"></element>
+</schema>

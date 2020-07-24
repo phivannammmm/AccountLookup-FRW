@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/customer/contactinfo/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/customer/contactinfo/1.0">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</import>
+
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"/>
+	<element name="ContactInfoInqReq" type="tns:ContactInfoInqReqType">
+	</element>
+	<element name="ContactInfoInqRes" type="tns:ContactInfoInqResType">
+	</element>
+
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"/>
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"/>
+
+	<complexType name="ContactInfoInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element name="CifNo" type="string"/>
+			<element minOccurs="0" name="ContactType" type="string"/>
+			<element minOccurs="0" name="Pointer" type="tns:PointerType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="ContactInfoInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadInqRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+
+		<sequence>			
+			<element maxOccurs="unbounded" minOccurs="0" name="ContactInfo" type="tns:ContactInfoType"/>			
+			<element minOccurs="0" name="Pointer" type="tns:PointerType"/>
+		</sequence>
+
+	</complexType>
+
+	<complexType name="PointerType">
+		<sequence>
+			<element minOccurs="0" name="ContactSeqNo" type="string"/>
+		</sequence>
+	</complexType>
+	<complexType name="ContactInfoType">
+		<sequence>
+			<element minOccurs="0" name="CurrentSeqNo" type="string">
+			</element>
+			<element minOccurs="0" name="CifNo" type="string"/>
+			<element minOccurs="0" name="ContactType" type="string"/>
+			<element minOccurs="0" name="ContactName" type="string"/>
+			<element minOccurs="0" name="ContactDetail" type="string"/>
+			<element minOccurs="0" name="MarketingFlag" type="string"/>
+			<element minOccurs="0" name="DepartmentName" type="string"/>
+			<element minOccurs="0" name="JobDesignCode" type="string"/>
+			<element minOccurs="0" name="MaintainceDate" type="string"/>
+			<element minOccurs="0" name="MaintainceTime" type="string"/>
+			<element maxOccurs="unbounded" minOccurs="0" name="Remark" type="string"/>
+		</sequence>
+	</complexType>
+
+    <element name="ContactInfoAddReq" type="tns:ContactInfoAddReqType"/>
+
+    <element name="ContactInfoAddRes" type="tns:ContactInfoAddResType"/>
+
+    <element name="PayloadAddReq" type="tns:PayloadAddReqType"/>
+
+    <element name="PayloadAddRes" type="tns:PayloadAddResType"/>
+
+    <complexType name="ContactInfoAddReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+					<element ref="tns:PayloadAddReq"/>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="ContactInfoAddResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+					<element minOccurs="0" ref="tns:PayloadAddRes"/>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="PayloadAddReqType">
+    	<sequence>
+    		<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+    		<element name="ContacInfo" type="tns:ContactInfoType"/>
+    		<element minOccurs="0" name="ApplicationNo" type="string"/>
+    		<element minOccurs="0" name="TrnTime" type="string"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PayloadAddResType">
+    	<sequence>
+    		<element minOccurs="0" name="CifNo" type="string"/>
+    		<element minOccurs="0" name="SeqNo" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="PayloadUdpReqType">
+    	<sequence>
+    		<element name="HeaderForClient" type="sig:HeaderForClientType">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="CifNo" type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="ContactSeq" type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="OldData" type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="NewData" type="string"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PayloadUdpResType"/>
+
+    <complexType name="ContactInfoUdpReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+    				<element ref="tns:PayloadUdpReq"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="PayloadUdpReq" type="tns:PayloadUdpReqType"/>
+
+    <element name="PayloadUdpRes" type="tns:PayloadUdpResType"/>
+
+    <complexType name="ContactInfoUdpResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+    				<element minOccurs="0" ref="tns:PayloadUdpRes"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="ContactInfoUdpReq" type="tns:ContactInfoUdpReqType"/>
+
+    <element name="ContactInfoUdpRes" type="tns:ContactInfoUdpResType"/>
+</schema>

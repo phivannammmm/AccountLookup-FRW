@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/account/accttranslist/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/account/accttranslist/1.0" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope">
+	<import schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd" namespace="datamodel/datatypes/common/serviceenvelope"></import>
+
+    <element name="AcctTransListInqReq" type="tns:AcctTransListInqReqType"></element>
+
+    <element name="AcctTransListInqRes" type="tns:AcctTransListInqResType"></element>
+
+    <element name="PayloadInqReq" type="tns:PayloadInqReqType"></element>
+
+    <element name="PayloadInqRes" type="tns:PayloadInqResType"></element>
+
+    <complexType name="AcctTransListInqReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+					<element ref="tns:PayloadInqReq" />
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="AcctTransListInqResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+					<element ref="tns:PayloadInqRes" />
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="PayloadInqReqType">
+    	<sequence>
+    		<element name="BranchNo" type="string" />
+    		<element name="TellerID" type="string" />
+    		<element name="SeqNo" type="string" minOccurs="0"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PayloadInqResType">
+    	<sequence>
+    		<element name="Transaction" type="tns:TransactionType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="TransactionType">
+    	<sequence>
+    		<element name="WorkStation" type="string"></element>
+			<element name="ConUser" type="string"></element>
+			<element name="ProcessingDate" type="string"></element>
+			<element name="Branch" type="string"></element>
+			<element name="Teller" type="string"></element>
+			<element name="SessionNo" type="string"></element>
+			<element name="BatchSeq" type="string"></element>
+			<element name="GroupSeq" type="string"></element>
+			<element name="SequenceNo" type="string"></element>
+			<element name="PCTime" type="string"></element>
+			<element name="ReEntryTime" type="string"></element>
+			<element name="TranCode" type="string"></element>
+			<element name="RespCode" type="string"></element>
+			<element name="PostedCode" type="string"></element>
+			<element name="MsgNo1" type="string"></element>
+			<element name="MsgNo2" type="string"></element>
+			<element name="MsgNo3" type="string"></element>
+			<element name="TranStatus" type="string"></element>
+			<element name="CorrectFlag" type="string"></element>
+			<element name="CorrectSeq" type="string"></element>
+			<element name="DorC" type="string"></element>
+			<element name="FromAcc" type="string"></element>
+			<element name="FromAlias" type="string"></element>
+			<element name="FromAccType" type="string"></element>
+			<element name="FromCurr" type="string"></element>
+			<element name="FromAmount" type="decimal"></element>
+			<element name="FromLCYE" type="decimal"></element>
+			<element name="ToAcc" type="string"></element>
+			<element name="ToAlias" type="string"></element>
+			<element name="ToCurr" type="string"></element>
+			<element name="ToAmount" type="decimal"></element>
+			<element name="ToLCYE" type="decimal"></element>
+			<element name="ToAccType" type="string"></element>
+			<element name="ToCostCenter" type="string"></element>
+			<element name="ExchangeIn" type="decimal"></element>
+			<element name="ExchangeOut" type="decimal"></element>
+			<element name="Fee1" type="decimal"></element>
+			<element name="VAT" type="string"></element>
+			<element name="Promotion" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

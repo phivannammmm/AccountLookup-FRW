@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com.vn/entity/vn/common/loan"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:cmd-ln="http://www.vietcombank.com.vn/entity/vn/common/loan">
+
+	<import schemaLocation="Account.xsd"
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/acct">
+	</import>
+	<complexType name="CollateralType">
+		<sequence>
+			<element name="CifNo" type="string" minOccurs="0"/>
+			<element name="SName" type="string" minOccurs="0"/>
+			<element name="CollItemNo" type="string" minOccurs="0"/>
+			<element name="CollCode" type="string" minOccurs="0"/>
+			<element name="SDesc" type="string" minOccurs="0"/>
+			<element name="Desc" type="string" minOccurs="0"/>
+			<element name="LocationCode" type="string" minOccurs="0"/>
+			<element name="ItemApplNo" type="string" minOccurs="0"/>
+			<element name="ItemRefNo" type="string" minOccurs="0"/>
+			<element name="UnitNumber" type="string" minOccurs="0"/>
+			<element name="UnitPrice" type="cmd-acct:AmountType" minOccurs="0"/>
+			<element name="CollValue" type="cmd-acct:AmountType" minOccurs="0"/>
+			<element name="OrgUnitPrice" type="string" minOccurs="0"/>
+			<element name="OrgCollValue" type="cmd-acct:AmountType"	minOccurs="0"/>
+			<element name="OrgUnitNumber" type="string" minOccurs="0"/>
+			<element name="LastPricedDate" type="string" minOccurs="0"/>
+			<element name="CurrCode" type="string" minOccurs="0"/>
+			<element name="MarginPct" type="string" minOccurs="0"/>
+			<element name="MaxCollValue" type="cmd-acct:AmountType"	minOccurs="0"/>
+			<element name="LastRevalueDate" type="string" minOccurs="0"/>
+			<element name="MatDate" type="string" minOccurs="0"/>
+			<element name="CollInstRate" type="decimal" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="CreditLineType">
+		<sequence>
+			<element name="CifNo" type="string" minOccurs="0"></element>
+			<element name="CustRelation" type="string" minOccurs="0"></element>
+			<element name="LineType" type="string" minOccurs="0"></element>
+			<element name="LineAmt" type="cmd-acct:AmountType" minOccurs="0"></element>
+			<element name="LinePriority" type="string" minOccurs="0"></element>
+			<element name="SubLimitCode" type="string" minOccurs="0"></element>
+			<element name="SubLimitNumber" type="string" minOccurs="0"></element>
+			<element name="InclGroupTotal" type="string" minOccurs="0"></element>
+			<element name="RiskCode" type="string" minOccurs="0"></element>
+			<element name="RatingCode" type="string" minOccurs="0"></element>
+			<element name="ApproveCode" type="string" minOccurs="0"></element>
+			<element name="RevolvingCode" type="string" minOccurs="0"></element>
+			<element name="PctOverAllow" type="decimal" minOccurs="0"></element>
+			<element name="ExpiryDate" type="string" minOccurs="0"></element>
+			<element name="JointOwnrshFlg" type="string" minOccurs="0"></element>
+			<element name="FacilityNo" type="string" minOccurs="0"></element>
+			<element name="WithdrawPeriod" type="string" minOccurs="0"></element>
+			<element name="ApplicationNo" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

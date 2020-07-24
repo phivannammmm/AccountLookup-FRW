@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<xs:schema
+	xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-party="http://www.vietcombank.com.vn/entity/vn/common/party"
+	targetNamespace="http://www.vietcombank.com.vn/entity/vn/common/acct"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns:cmd-xfer="http://www.vietcombank.com.vn/entity/vn/common/xfer">
+	<xs:import
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/party"
+		schemaLocation="Party.xsd" />
+
+	<xs:import schemaLocation="Xfer.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/xfer"></xs:import>
+	<xs:complexType name="AcctInfoType">
+		<xs:sequence>
+			<xs:element name="AcctID" type="cmd-acct:AcctIdType"
+				minOccurs="0" />
+			<xs:element name="OldAcctID" type="cmd-acct:AcctIdType"
+				minOccurs="0" />
+			<xs:element name="AcctName" type="xs:string"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Account holder name
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CurCode" type="xs:string" minOccurs="0" />
+			<xs:element name="AcctStatus" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="AcctRelation" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="AcctBal" type="cmd-acct:AmountType"
+				minOccurs="0" />
+			<xs:element name="AvailBal" type="cmd-acct:AmountType"
+				minOccurs="0" />
+			<xs:element name="BranchInfo"
+				type="cmd-party:BranchInfoType" minOccurs="0" />
+			<xs:element name="OpenDate" type="xs:string" minOccurs="0" />
+			<xs:element name="ClosedDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="Desc" type="xs:string" minOccurs="0" />
+			<xs:element name="VIPClass" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AcctIdType">
+		<xs:sequence>
+			<xs:element name="AcctNo" type="xs:string" />
+			<xs:element name="AcctType" type="xs:string" minOccurs="0" />
+			<xs:element name="GLCostCenter" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="GLSerial" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AcctCDInfoType">
+		<xs:sequence>
+			<xs:element name="AcctInfo" type="cmd-acct:AcctInfoType" />
+			<xs:element name="Amount" type="cmd-xfer:XferAmountType" />
+			<xs:element name="EffDate" type="xs:string" minOccurs="0" />
+			<xs:element name="Remark" type="xs:string" minOccurs="0" />
+			<xs:element name="AdditionalInfo" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="TrnTime" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AmountType">
+		<xs:sequence>
+			<xs:element name="Amount" type="xs:decimal" />
+			<xs:element name="CurCode" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BalanceType">
+		<xs:sequence>
+			<xs:element name="Amount" type="cmd-acct:AmountType" />
+			<xs:element name="BalType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						Valid values include: Available balance, Hold
+						balance...
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="TermInfoType">
+		<xs:sequence>
+			<xs:element name="Term" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="TermCode" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="LNAcctType">
+		<xs:sequence>
+			<xs:element name="AppNo" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="AppSeq" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="ProductId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="Branch" type="xs:string"></xs:element>
+			<xs:element name="OfficerCode" type="xs:string"></xs:element>
+			<xs:element name="NoteType" type="xs:string"></xs:element>
+			<xs:element name="OpenAmt" type="cmd-acct:AmountType"></xs:element>
+			<xs:element name="MatDate" type="xs:string"></xs:element>
+			<xs:element name="IntRate" type="xs:decimal"></xs:element>
+			<xs:element name="Term" type="cmd-acct:TermInfoType"></xs:element>
+			<xs:element name="BillCode" type="xs:string"></xs:element>
+			<xs:element name="LTVPct" type="xs:decimal"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PmtSchedType">
+		<xs:sequence>
+			<xs:element name="UseNumber" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="Amount" type="cmd-acct:AmountType" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PledgeType">
+		<xs:sequence>
+			<xs:element name="PledgeId" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="AcctId" type="cmd-acct:AcctIdType" minOccurs="0"></xs:element>
+			<xs:element name="SubAcct" type="cmd-acct:AcctIdType" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

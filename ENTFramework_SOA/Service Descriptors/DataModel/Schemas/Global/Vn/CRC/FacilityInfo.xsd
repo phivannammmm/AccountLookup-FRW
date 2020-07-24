@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:tns="http://www.vietcombank.com.vn/global/vn/crc/facilityinfo/1.0"
+	 xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	 xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	 targetNamespace="http://www.vietcombank.com.vn/global/vn/crc/facilityinfo/1.0"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"/>
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"/>
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element name="FacilityNo" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"/>
+	<complexType name="FacilityInfoInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="FacilityInfoInqReq" type="tns:FacilityInfoInqReqType"/>
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="FacilityInfoRecords" type="tns:FacilityInfoRecordsType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"/>
+	<complexType name="FacilityInfoInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadInqRes" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="FacilityInfoInqRes" type="tns:FacilityInfoInqResType"/>
+	<complexType name="FacilityInfoRecordsType">
+		<sequence>
+			<element name="FacilityType" type="string"/>
+			<element name="LoanType" type="string"/>
+			<element name="Currency" type="string"/>
+			<element name="LNCurrency" type="string"/>
+			<element name="FacilityNo" type="string"/>
+			<element name="CreateDate" type="string"/>
+			<element name="EffectiveDate" type="string"/>
+			<element name="DateOfLastDWAllowed" type="string"/>
+			<element name="MaximumLoanTermPeriod" type="string"/>
+			<element name="MaximumLoanTermPeriodFreq" type="string"/>
+			<element name="DeferredPaymentPeriod" type="string"/>
+			<element name="DeferredPaymentPeriodFreq" type="string"/>
+			<element name="LineAmt" type="string"/>
+			<element name="LineAmtDisbursed" type="string"/>
+			<element name="AvailableAmtOfLine" type="string"/>
+			<element name="BalanceOutstanding" type="string"/>
+			<element name="LocalBalanceOutstanding" type="string"/>
+			<element name="PaymentSchedulePeriod" type="string"/>
+			<element name="ScheduleFrequency" type="string"/>
+			<element name="IntPaymentPeriod" type="string"/>
+			<element name="IntPaymentFreqCode" type="string"/>
+			<element name="LNAccountNo" type="string"/>
+			<element name="ScheduledPaymentAmt" type="string"/>
+			<element name="LastScheduledPaymentAmt" type="string"/>
+		</sequence>
+	</complexType>
+</schema>

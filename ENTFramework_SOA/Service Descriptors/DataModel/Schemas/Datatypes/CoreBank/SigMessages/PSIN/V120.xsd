@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v120/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v120/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+    <complexType name="V120OType">
+    	<sequence>
+    		<element name="V120OFixedField" type="tns:V120OFixedFieldType" minOccurs="0" maxOccurs="1"/>
+			<element name="V120ORepeatedField" type="tns:V120ORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"/>
+    	</sequence>
+    </complexType>
+
+    <element name="V120O" type="tns:V120OType"></element>
+
+    <complexType name="V120OFixedFieldType">
+    	<sequence>
+    		<element name="NextCIFKey" type="inc-field:FieldType" minOccurs="0"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="V120ORepeatedFieldType">
+    	<sequence>
+    		<element name="CIFKey" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="CustomerName" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="AddressLine" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="IDTypeCode" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="NationalIDNumber" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="BranchNumber" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="NameAddressLine2" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="PersonalFlag" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="CustomerType" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="SName" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="UserKeyField" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="SocialSecurityNumber" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="TaxID" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="NameAddressLine4" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="NameAddressLine5" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="NameAddressLine6" type="inc-field:FieldType" minOccurs="0"/>
+    	</sequence>
+    </complexType>
+
+    <element name="V120OFixedField" type="tns:V120OFixedFieldType"></element>
+
+    <element name="V120ORepeatedField" type="tns:V120ORepeatedFieldType"></element>
+</schema>

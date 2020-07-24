@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:mqcon="http://ns.tibco.com/bw/palette/mqconfiguration" xmi:id="_AWyTUZs7Eeqlj5qzpnZN9A" name="entframework_gpp.GPP_MQConnection" type="mqcon:MqConnectionConfiguration">
+  <jndi:configuration xsi:type="mqcon:MqConnection" xmi:id="_AWyTUps7Eeqlj5qzpnZN9A">
+    <substitutionBindings xmi:id="_O_VREJs7Eeqlj5qzpnZN9A" template="Host" propName="/Connections/GPP/HostName"/>
+    <substitutionBindings xmi:id="_VM4YcJs7Eeqlj5qzpnZN9A" template="Port" propName="/Connections/GPP/Port"/>
+    <substitutionBindings xmi:id="_d_IRMJs7Eeqlj5qzpnZN9A" template="Userid" propName="/Connections/GPP/UserName"/>
+    <substitutionBindings xmi:id="_ejT8UJs7Eeqlj5qzpnZN9A" template="Password" propName="/Connections/GPP/Password"/>
+    <substitutionBindings xmi:id="_ljZ68Js7Eeqlj5qzpnZN9A" template="ServerChannel" propName="/Connections/GPP/ServerChannelName"/>
+  </jndi:configuration>
+</jndi:namedResource>

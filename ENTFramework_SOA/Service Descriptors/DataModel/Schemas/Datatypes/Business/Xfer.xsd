@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<xs:schema
+	xmlns:Q1="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct"
+	xmlns:cmd-party="http://www.vietcombank.com.vn/entity/vn/common/party"
+	xmlns:cmd-xfer="http://www.vietcombank.com.vn/entity/vn/common/xfer"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://www.vietcombank.com.vn/entity/vn/common/xfer">
+	<xs:import
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/party"
+		schemaLocation="Party.xsd" />
+
+	<xs:import
+		namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+		schemaLocation="../CoreBank/SigMessage.xsd" />
+	<xs:import schemaLocation="Account.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/acct"></xs:import>
+	<xs:complexType name="XferInfoType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="SeqNo" type="xs:string" />
+			<xs:element minOccurs="0" name="CorrectSeq"
+				type="xs:string" />
+			<xs:element name="FromAcct" type="cmd-acct:AcctInfoType" />
+			<xs:element name="ToAcct" type="cmd-acct:AcctInfoType" />
+			<xs:element minOccurs="0" name="FromAmount"
+				type="cmd-xfer:XferAmountType" />
+			<xs:element minOccurs="0" name="ToAmount"
+				type="cmd-xfer:XferAmountType" />
+			<xs:element minOccurs="0" name="FeeInfo"
+				type="cmd-xfer:FeeInfoType" />
+			<xs:element minOccurs="0" name="ExchangeInfo"
+				type="cmd-xfer:ExchangeInfoType" />
+			<xs:element minOccurs="0" name="EffDate" type="xs:string" />
+			<xs:element minOccurs="0" name="TrnTime" type="xs:string" />
+			<xs:element minOccurs="0" name="ReEntryTime"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Remark" type="xs:string" />
+			<xs:element minOccurs="0" name="CorrectDate"
+				type="xs:string" />
+			<xs:element name="TransType" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FeeInfoType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Fee1" type="cmd-xfer:FeeDetailType" />
+			<xs:element minOccurs="0" name="Fee2" type="cmd-xfer:FeeDetailType" />
+			<xs:element minOccurs="0" name="Fee3" type="cmd-xfer:FeeDetailType" />
+			<xs:element minOccurs="0" name="Fee4" type="cmd-xfer:FeeDetailType" />
+			<xs:element minOccurs="0" name="Fee5" type="cmd-xfer:FeeDetailType" />
+			<xs:element minOccurs="0" name="Fee6" type="cmd-xfer:FeeDetailType" />
+			<xs:element minOccurs="0" name="ChargeType"	type="xs:string" />
+			<xs:element minOccurs="0" name="VIPClass" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FeeDetailType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="FeeAcct" type="cmd-acct:AcctIdType" />
+			<xs:element minOccurs="0" name="FeeType" type="xs:string" />
+			<xs:element minOccurs="0" name="FeeAmt"	type="cmd-acct:AmountType" />
+			<xs:element minOccurs="0" name="LCEAmt"	type="cmd-acct:AmountType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="XferAmountType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Amount"	type="cmd-xfer:PositiveAmountType" />
+			<xs:element minOccurs="0" name="LCEAmount" type="cmd-xfer:PositiveAmountType" />
+			<xs:element minOccurs="0" name="ExchangeRate" type="xs:decimal" />
+			<xs:element minOccurs="0" name="RedLineFlg" type="xs:string" ></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="XferInfo" type="cmd-xfer:XferInfoType" />
+
+	<xs:complexType name="ExchangeInfoType">
+		<xs:sequence>
+			<xs:element name="ExchangeIn" type="xs:decimal" />
+			<xs:element name="ExchangeOut" type="xs:decimal" />
+			<xs:element name="ToExchangeInAmount " type="xs:decimal" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ExchangeInType">
+		<xs:sequence>
+			<xs:element name="FromAmt" type="cmd-acct:AmountType" />
+			<xs:element name="ToAmt" type="cmd-acct:AmountType" />
+			<xs:element name="Fee" type="cmd-acct:AmountType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ExchangeOutType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="FromAmt" type="cmd-acct:AmountType" />
+			<xs:element minOccurs="0" name="ToAmt" type="cmd-acct:AmountType" />
+			<xs:element minOccurs="0" name="Fee" type="cmd-acct:AmountType" />
+			<xs:element minOccurs="0" name="Exchange" type="cmd-xfer:ExchangeInfoType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="ExchangeIn" type="cmd-xfer:ExchangeInType"></xs:element>
+
+	<xs:element name="ExchangeOut" type="cmd-xfer:ExchangeOutType"></xs:element>
+
+	<xs:complexType name="PositiveAmountType">
+		<xs:sequence>
+			<xs:element name="Amount">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minExclusive value="0"></xs:minExclusive>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CurCode" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

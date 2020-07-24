@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/account/acctinfo/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/account/acctinfo/1.0"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct">
+	<import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</import>
+	<import schemaLocation="../../../Datatypes/Business/Account.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/acct"></import>
+	<element name="AcctInfoCheckReq" type="tns:AcctInfoCheckReqType"></element>
+
+	<element name="AcctInfoCheckRes" type="tns:AcctInfoCheckResType"></element>
+
+	<element name="PayloadCheckReq" type="tns:PayloadCheckReqType"></element>
+
+	<element name="PayloadCheckRes" type="tns:PayloadCheckResType"></element>
+
+	<complexType name="AcctInfoCheckReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadCheckReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="AcctInfoCheckResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadCheckRes" minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadCheckReqType">
+		<sequence>
+			<element name="Account" type="cmd-acct:AcctIdType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadCheckResType">
+		<sequence>
+			<element name="OldAcctFlag" type="string"></element>
+		</sequence>
+	</complexType>
+</schema>

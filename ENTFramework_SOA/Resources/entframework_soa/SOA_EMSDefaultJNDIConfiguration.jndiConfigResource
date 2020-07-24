@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://xsd.tns.tibco.com/bw/models/sharedresource/jms" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_3kFEkZtbEeq1CtSc9yZEPA" name="entframework_soa.SOA_EMSDefaultJNDIConfiguration" type="jms:JNDIConnection">
+  <jndi:configuration xsi:type="jms:JNDIConnectionConfiguration" xmi:id="_3kFroJtbEeq1CtSc9yZEPA" providerUrl="tibjmsnaming://10.1.139.26:7222">
+    <userCredentials xmi:id="_OQBRAJtcEeq1CtSc9yZEPA">
+      <substitutionBindings xmi:id="_OjgNsJtcEeq1CtSc9yZEPA" template="username" propName="/Connections/SOA_System/EMS/UserName"/>
+      <substitutionBindings xmi:id="_PLtdMJtcEeq1CtSc9yZEPA" template="password" propName="/Connections/SOA_System/EMS/Password"/>
+    </userCredentials>
+  </jndi:configuration>
+</jndi:namedResource>

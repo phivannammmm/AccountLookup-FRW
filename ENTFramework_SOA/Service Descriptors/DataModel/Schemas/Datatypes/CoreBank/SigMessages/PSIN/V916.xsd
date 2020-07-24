@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v916/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v916/1.0">
+	<xsd:import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../../Message.xsd"/>
+    <xsd:element name="V916OFixedField" type="tns:V916OFixedFieldType"/>
+    <xsd:complexType name="V916OFixedFieldType">
+    	<xsd:sequence>
+    		<xsd:element minOccurs="0" name="InterestPlanNumber" type="inc-field:FieldType"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="V916ORepeatedFieldType">
+    	<xsd:sequence>
+    		<xsd:element minOccurs="0" name="CurrencyCode" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="InterestPlanNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="PlanDescription" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateNumber1" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateNumber2" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateNumber3" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateNumber4" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateNumber5" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateNumber6" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateNumber7" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateNumber8" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateNumber9" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Rate1" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Rate2" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Rate3" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Rate4" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Rate5" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Rate6" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Rate7" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Rate8" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Rate9" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateVariance1" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateVariance2" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateVariance3" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateVariance4" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateVariance5" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateVariance6" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateVariance7" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateVariance8" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="IndexRateVariance9" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="RefTable" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="ReferenceIndex" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="ReferenceVariance" type="inc-field:FieldType"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="V916ORepeatedField" type="tns:V916ORepeatedFieldType"></xsd:element>
+
+    <xsd:element name="V916O" type="tns:V916OType"></xsd:element>
+
+    <xsd:complexType name="V916OType">
+    	<xsd:sequence>
+    		<xsd:element name="V180OFixedField" type="tns:V916OFixedFieldType" minOccurs="0" maxOccurs="1"></xsd:element>
+			<xsd:element name="V180ORepeatedField" type="tns:V916ORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/account/acctcredit/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:cmd-xfer="http://www.vietcombank.com.vn/entity/vn/common/xfer" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/account/acctcredit/1.0">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</import>
+
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd">
+	</import>
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/acct" schemaLocation="../../../Datatypes/Business/Account.xsd"/>
+	<element name="AcctCreditAddReq" type="tns:AcctCreditAddReqType">
+	</element>
+
+	<element name="AcctCreditAddRes" type="tns:AcctCreditAddResType">
+	</element>
+
+	<element name="PayloadAddReq" type="tns:PayloadAddReqType"/>
+
+	<element name="PayloadAddRes" type="tns:PayloadAddResType"/>
+
+	<complexType name="PayloadAddReqType">
+		<sequence>
+			<element name="HeaderForClient"
+				type="pref:HeaderForClientType">
+			</element>
+			<element name="AcctCreditInfo"
+				type="cmd-acct:AcctCDInfoType">
+			</element>
+			<element minOccurs="0" name="RevFlg" type="string" />
+			<element name="OpenPosFlg" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadAddResType">
+		<sequence>
+			<element name="RefNumber" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="AcctCreditAddResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadAddRes" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="AcctCreditAddReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadAddReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

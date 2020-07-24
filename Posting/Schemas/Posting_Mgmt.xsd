@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.vietcombank.com.vn/posting/common/1.0" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com.vn/posting/common/1.0">
+
+    <element name="Posting_Mgmt">
+    	<complexType>
+    		<sequence>
+    			<element name="P_MID" type="string"></element>
+    			<element name="TELLER_ID" type="string"></element>
+    			<element name="SEQ" type="string"></element>
+    			<element name="PC_TIME" type="string"></element>
+    			<element name="TRAN_DATE" type="string"></element>
+    			<element name="COST_CENTER" type="string"></element>
+    			<element name="POSTING_REQ_ID" type="string"></element>
+    			<element name="STATUS" type="string" minOccurs="0"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+
+    <element name="get_TellerSeq">
+    	<complexType>
+    		<sequence>
+    			<element name="Teller" type="string" minOccurs="0"></element>
+    			<element name="Seq" type="string" minOccurs="0"></element>
+    			<element name="MOP" type="string" minOccurs="0"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+</schema>

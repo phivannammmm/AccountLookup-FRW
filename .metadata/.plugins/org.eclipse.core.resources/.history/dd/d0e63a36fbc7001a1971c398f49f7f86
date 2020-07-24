@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" xmlns:tns="http://www.example.com/namespaces/tns/1594968761674" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.example.com/namespaces/tns/1594968761674">
+  <xsd:element name="GetTable">
+    <xsd:complexType>
+      <xsd:sequence>
+                <xsd:element name="T1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="primitive" type="xsd:string"/>
+              <xsd:element name="primitive1" type="xsd:string"/>
+              <xsd:element name="primitive2" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T2">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="primitive" type="xsd:string"/>
+              <xsd:element name="primitive1" type="xsd:string"/>
+              <xsd:element name="primitive2" type="xsd:string"/>
+              <xsd:element name="primitive3" type="xsd:string"/>
+              <xsd:element name="primitive4" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T3">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="primitive" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T4">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="primitive" type="xsd:string"/>
+              <xsd:element name="primitive1" type="xsd:string"/>
+              <xsd:element name="primitive2" type="xsd:string"/>
+              <xsd:element name="primitive3" type="xsd:string"/>
+              <xsd:element name="primitive4" type="xsd:string"/>
+              <xsd:element name="primitive5" type="xsd:string"/>
+              <xsd:element name="primitive6" type="xsd:string"/>
+              <xsd:element name="primitive7" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T5">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="primitive" type="xsd:string"/>
+              <xsd:element name="primitive1" type="xsd:string"/>
+              <xsd:element name="primitive2" type="xsd:string"/>
+              <xsd:element name="primitive3" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T6">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="primitive" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T7">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="primitive" type="xsd:string"/>
+              <xsd:element name="primitive1" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T8">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="primitive" type="xsd:string"/>
+              <xsd:element name="primitive1" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+                <xsd:element name="T9">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="primitive" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+            </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v807/1.0" elementFormDefault="qualified" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v807/1.0">
+	<xsd:import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></xsd:import>    <xsd:complexType name="V807OType">    	<xsd:sequence>    		<xsd:element name="ShortName" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="AcctNoOrCIFNo" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="ApplicationNumber" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="LinkNumber" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="ItemID" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+			<xsd:element name="ItemType" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+			<xsd:element name="ItemDescription" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="MemoRequiredView" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="ItemStatus" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="ExpirationDate" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="MessageText" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+			<xsd:element name="ExtendMessage1" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+			<xsd:element name="PrimaryOfficer" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="SecondaryOfficer" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+    		<xsd:element name="AliasAccountType" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+			<xsd:element name="AliasAccountNumber" type="inc-field:FieldType" minOccurs="0"></xsd:element>		
+    	</xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="V807O" type="tns:V807OType"></xsd:element>
+</xsd:schema>

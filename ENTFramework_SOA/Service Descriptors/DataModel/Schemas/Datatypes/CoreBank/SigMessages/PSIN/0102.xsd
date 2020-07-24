@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/0102/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/0102/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+	<element name="BT0102O" type="tns:BT0102OType"></element>
+	<complexType name="BT0102OType">
+		<sequence>
+			<element name="ShortName" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="Branch" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="CurrentBalance" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="AvailableBalance" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="DateOpened" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="ACALimit" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="CurrencyCode" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="NumberOfOpenItems" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="PassbookStyleCode" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="Filler" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="PenaltyAssessed" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="NoticeOfWithdrawal" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="FullNameAndAddressFlag" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="NameAddressLine1" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="NameAddressLine2" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="NameAddressLine3" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="NameAddressLine4" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="NameAddressLine5" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="NameAddressLine6" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="NameAddressLine7" type="inc-field:FieldType" minOccurs="0"></element>
+			<element name="NameAddressLine8" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

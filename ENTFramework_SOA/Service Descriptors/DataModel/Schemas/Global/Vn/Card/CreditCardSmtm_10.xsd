@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/card/creditcardsmtm/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/card/creditcardsmtm/1.0"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct" xmlns:cmd-card="http://www.vietcombank.com.vn/entity/vn/common/card">
+	<import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</import>
+
+	<import schemaLocation="../../../Datatypes/Business/Account.xsd"
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/acct">
+	</import>
+	<import schemaLocation="../../../Datatypes/Business/Card.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/card"></import>
+	<element name="CreditCardSmtmInqReq"
+		type="tns:CreditCardSmtmInqReqType">
+	</element>
+
+	<element name="CreditCardSmtmInqRes"
+		type="tns:CreditCardSmtmInqResType">
+	</element>
+
+	<complexType name="CreditCardSmtmInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CreditCardSmtmInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadInqRes" minOccurs="0"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"></element>
+
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"></element>
+
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="Account" type="cmd-acct:AcctIdType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="CardSmtmInfo" type="cmd-card:CardSmtmInfoType" minOccurs="0"	maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+    <element name="CreditCardSmtmPmtRes" type="tns:CreditCardSmtmPmtResType"></element>
+
+    <element name="CreditCardSmtmPmtReq" type="tns:CreditCardSmtmPmtReqType"></element>
+
+    <element name="CreditCardSmtmRefReq" type="tns:CreditCardSmtmRefReqType"></element>
+
+    <element name="CreditCardSmtmRefRes" type="tns:CreditCardSmtmRefResType"></element>
+
+    <element name="CreditCardSmtmRePmtReq" type="tns:CreditCardSmtmRePmtReqType"></element>
+
+    <element name="CreditCardSmtmRePmtRes" type="tns:CreditCardSmtmRePmtResType"></element>
+    
+    <element name="CreditCardSmtmReRefReq" type="tns:CreditCardSmtmReRefReqType"></element>
+
+    <element name="CreditCardSmtmReRefRes" type="tns:CreditCardSmtmReRefResType"></element>
+
+    <complexType name="CreditCardSmtmPmtReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+					<element ref="tns:PayloadPmtReq"></element>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="CreditCardSmtmPmtResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+					<element ref="tns:PayloadPmtRes" minOccurs="0"></element>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="PayloadPmtReqType">
+    	<sequence>
+    		<element name="TellerID" type="string"></element>
+			<element name="Sequence" type="string"></element>
+			<element name="TxnDate" type="string"></element>
+    		<element name="Account" type="cmd-acct:AcctIdType"></element>
+    		<element name="Amount" type="cmd-acct:AmountType"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PayloadPmtResType">
+    	<sequence>
+    		<element name="CardSmtmInfo" type="cmd-card:CardSmtmInfoType" minOccurs="0"	maxOccurs="unbounded"/>
+    	</sequence>
+    </complexType>
+    
+    <element name="PayloadPmtReq" type="tns:PayloadPmtReqType"></element>
+
+    <element name="PayloadPmtRes" type="tns:PayloadPmtResType"></element>
+
+    <complexType name="CreditCardSmtmRefReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+					<element ref="tns:PayloadRefReq" ></element>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="CreditCardSmtmRefResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+					<element ref="tns:PayloadRefRes" minOccurs="0"></element>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="PayloadRefReqType">
+    	<sequence>
+	    	<element name="TellerID" type="string"></element>
+			<element name="Sequence" type="string"></element>
+			<element name="TxnDate" type="string"></element>
+    		<element name="Account" type="cmd-acct:AcctIdType"></element>
+    		<element name="Amount" type="cmd-acct:AmountType"></element>
+	    </sequence>
+    </complexType>
+
+    <complexType name="PayloadRefResType">
+    	<sequence>
+    		<element name="CardSmtmInfo" type="cmd-card:CardSmtmInfoType" minOccurs="0"	maxOccurs="unbounded"/>
+    	</sequence>
+    </complexType>
+
+    <element name="PayloadRefRes" type="tns:PayloadRefResType"></element>
+
+    <element name="PayloadRefReq" type="tns:PayloadRefReqType"></element>
+
+    <complexType name="CreditCardSmtmRePmtReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+					<element ref="tns:PayloadRePmtReq"></element>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="CreditCardSmtmRePmtResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+					<element ref="tns:PayloadRePmtRes" minOccurs="0"></element>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="PayloadRePmtReq" type="tns:PayloadRePmtReqType"></element>
+
+    <element name="PayloadRePmtRes" type="tns:PayloadRePmtResType"></element>
+
+    <complexType name="PayloadRePmtReqType">
+    	<sequence>
+    		<element name="TellerID" type="string"></element>
+			<element name="Sequence" type="string"></element>
+			<element name="TxnDate" type="string"></element>
+    		<element name="Account" type="cmd-acct:AcctIdType"></element>
+    		<element name="Amount" type="cmd-acct:AmountType"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PayloadRePmtResType">
+    	<sequence>
+    		<element name="CardSmtmInfo" type="cmd-card:CardSmtmInfoType" minOccurs="0"	maxOccurs="unbounded"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="CreditCardSmtmReRefReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+					<element ref="tns:PayloadReRefReq"></element>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="CreditCardSmtmReRefResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+					<element ref="tns:PayloadReRefRes" minOccurs="0"></element>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="PayloadReRefReq" type="tns:PayloadReRefReqType"></element>
+
+    <element name="PayloadReRefRes" type="tns:PayloadReRefResType"></element>
+
+    <complexType name="PayloadReRefReqType">
+    	<sequence>
+    		<element name="TellerID" type="string"></element>
+			<element name="Sequence" type="string"></element>
+			<element name="TxnDate" type="string"></element>
+    		<element name="Account" type="cmd-acct:AcctIdType"></element>
+    		<element name="Amount" type="cmd-acct:AmountType"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PayloadReRefResType">
+    	<sequence>
+    		<element name="CardSmtmInfo" type="cmd-card:CardSmtmInfoType" minOccurs="0"	maxOccurs="unbounded"/>
+    	</sequence>
+    </complexType>
+</schema>

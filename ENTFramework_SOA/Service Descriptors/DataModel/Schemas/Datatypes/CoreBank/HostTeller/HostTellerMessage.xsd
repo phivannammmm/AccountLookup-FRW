@@ -1,0 +1,2091 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/datamodel/datatypes/corebank/hostteller/hosttellermessage/1_0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns-ht="http://www.vietcombank.com/datamodel/datatypes/corebank/hostteller/hosttellermessage/1_0">
+	<xs:import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../Message.xsd"/>
+
+
+	<xs:element name="HostTellerBodyReq" type="tns-ht:HostTellerBodyReqType"/>
+
+	<xs:complexType name="HostTellerBodyReqType">
+		<xs:sequence>
+			<xs:element name="TLBID" type="inc-field:FieldType"/>
+			<xs:element name="TLBSEQ" type="inc-field:FieldType"/>
+			<xs:element name="TLBCOR" type="inc-field:FieldType"/>
+			<xs:element name="TLBOSQ" type="inc-field:FieldType"/>
+			<xs:element name="TLBTCD" type="inc-field:FieldType"/>
+			<xs:element name="TLBTDT" type="inc-field:FieldType"/>
+			<xs:element name="TLBEDT" type="inc-field:FieldType"/>
+			<xs:element name="TLBCUD" type="inc-field:FieldType"/>
+			<xs:element name="TLBWS" type="inc-field:FieldType"/>
+			<xs:element name="TLBSOV" type="inc-field:FieldType"/>
+			<xs:element name="TLBBRC" type="inc-field:FieldType"/>
+			<xs:element name="TLBPST" type="inc-field:FieldType"/>
+			<xs:element name="TLBAPM" type="inc-field:FieldType"/>
+			<xs:element name="TLBFRD" type="inc-field:FieldType"/>
+			<xs:element name="TLBTRN" type="inc-field:FieldType"/>
+			<xs:element name="TLBRBD" type="inc-field:FieldType"/>
+			<xs:element name="TLBTLO" type="inc-field:FieldType"/>
+			<xs:element name="TLBSVO" type="inc-field:FieldType"/>
+			<xs:element name="TLBFEO" type="inc-field:FieldType"/>
+			<xs:element name="TLBREL" type="inc-field:FieldType"/>
+			<xs:element name="TLBF01" type="inc-field:FieldType"/>
+			<xs:element name="TLBF02" type="inc-field:FieldType"/>
+			<xs:element name="TLBF03" type="inc-field:FieldType"/>
+			<xs:element name="TLBF04" type="inc-field:FieldType"/>
+			<xs:element name="TLBF05" type="inc-field:FieldType"/>
+			<xs:element name="TLBF06" type="inc-field:FieldType"/>
+			<xs:element name="TLBF07" type="inc-field:FieldType"/>
+			<xs:element name="TLBF08" type="inc-field:FieldType"/>
+			<xs:element name="TLBF09" type="inc-field:FieldType"/>
+			<xs:element name="TLBF10" type="inc-field:FieldType"/>
+			<xs:element name="TLBF11" type="inc-field:FieldType"/>
+			<xs:element name="TLBF12" type="inc-field:FieldType"/>
+			<xs:element name="TLBF13" type="inc-field:FieldType"/>
+			<xs:element name="TLBF14" type="inc-field:FieldType"/>
+			<xs:element name="TLBF15" type="inc-field:FieldType"/>
+			<xs:element name="TLBF16" type="inc-field:FieldType"/>
+			<xs:element name="TLBF17" type="inc-field:FieldType"/>
+			<xs:element name="TLBF18" type="inc-field:FieldType"/>
+			<xs:element name="TLBF19" type="inc-field:FieldType"/>
+			<xs:element name="TLBF20" type="inc-field:FieldType"/>
+			<xs:element name="TLBF21" type="inc-field:FieldType"/>
+			<xs:element name="TLBF22" type="inc-field:FieldType"/>
+			<xs:element name="TLBF23" type="inc-field:FieldType"/>
+			<xs:element name="TLBF24" type="inc-field:FieldType"/>
+			<xs:element name="TLBF25" type="inc-field:FieldType"/>
+			<xs:element name="TLBF26" type="inc-field:FieldType"/>
+			<xs:element name="TLBF27" type="inc-field:FieldType"/>
+			<xs:element name="TLBF28" type="inc-field:FieldType"/>
+			<xs:element name="TLBF29" type="inc-field:FieldType"/>
+			<xs:element name="TLBF30" type="inc-field:FieldType"/>
+			<xs:element name="TLBCUR" type="inc-field:FieldType"/>
+			<xs:element name="TLBCIF" type="inc-field:FieldType"/>
+			<xs:element name="TLBPRD" type="inc-field:FieldType"/>
+			<xs:element name="TLBSRC" type="inc-field:FieldType"/>
+			<xs:element name="TLBTPN" type="inc-field:FieldType"/>
+			<xs:element name="TLBPNM" type="inc-field:FieldType"/>
+			<xs:element name="TLBREN" type="inc-field:FieldType"/>
+			<xs:element name="TLBIDC" type="inc-field:FieldType"/>
+			<xs:element name="TLBMDC" type="inc-field:FieldType"/>
+			<xs:element name="TLBXAT" type="inc-field:FieldType"/>
+			<xs:element name="TLBXMT" type="inc-field:FieldType"/>
+			<xs:element name="TLBRFN" type="inc-field:FieldType"/>
+			<xs:element name="TLCUR1" type="inc-field:FieldType"/>
+			<xs:element name="TLCUR2" type="inc-field:FieldType"/>
+			<xs:element name="TLCUR3" type="inc-field:FieldType"/>
+			<xs:element name="TLCUR4" type="inc-field:FieldType"/>
+			<xs:element name="TLCUR5" type="inc-field:FieldType"/>
+			<xs:element name="TLBC01" type="inc-field:FieldType"/>
+			<xs:element name="TLBC02" type="inc-field:FieldType"/>
+			<xs:element name="TLBC03" type="inc-field:FieldType"/>
+			<xs:element name="TLBC04" type="inc-field:FieldType"/>
+			<xs:element name="TLBC05" type="inc-field:FieldType"/>
+			<xs:element name="TLBC06" type="inc-field:FieldType"/>
+			<xs:element name="TLBC07" type="inc-field:FieldType"/>
+			<xs:element name="TLBC08" type="inc-field:FieldType"/>
+			<xs:element name="TLBC09" type="inc-field:FieldType"/>
+			<xs:element name="TLBC10" type="inc-field:FieldType"/>
+			<xs:element name="TLBC11" type="inc-field:FieldType"/>
+			<xs:element name="TLBC12" type="inc-field:FieldType"/>
+			<xs:element name="TLBC13" type="inc-field:FieldType"/>
+			<xs:element name="TLBC14" type="inc-field:FieldType"/>
+			<xs:element name="TLBC15" type="inc-field:FieldType"/>
+			<xs:element name="TLBC16" type="inc-field:FieldType"/>
+			<xs:element name="TLBC17" type="inc-field:FieldType"/>
+			<xs:element name="TLBC18" type="inc-field:FieldType"/>
+			<xs:element name="TLBC19" type="inc-field:FieldType"/>
+			<xs:element name="TLBC20" type="inc-field:FieldType"/>
+			<xs:element name="TLBC21" type="inc-field:FieldType"/>
+			<xs:element name="TLBC22" type="inc-field:FieldType"/>
+			<xs:element name="TLBC23" type="inc-field:FieldType"/>
+			<xs:element name="TLBC24" type="inc-field:FieldType"/>
+			<xs:element name="TLBC25" type="inc-field:FieldType"/>
+			<xs:element name="TLBC26" type="inc-field:FieldType"/>
+			<xs:element name="TLBC27" type="inc-field:FieldType"/>
+			<xs:element name="TLBC28" type="inc-field:FieldType"/>
+			<xs:element name="TLBC29" type="inc-field:FieldType"/>
+			<xs:element name="TLBC30" type="inc-field:FieldType"/>
+			<xs:element name="TLBL01" type="inc-field:FieldType"/>
+			<xs:element name="TLBL02" type="inc-field:FieldType"/>
+			<xs:element name="TLBL03" type="inc-field:FieldType"/>
+			<xs:element name="TLBL04" type="inc-field:FieldType"/>
+			<xs:element name="TLBL05" type="inc-field:FieldType"/>
+			<xs:element name="TLBL06" type="inc-field:FieldType"/>
+			<xs:element name="TLBL07" type="inc-field:FieldType"/>
+			<xs:element name="TLBL08" type="inc-field:FieldType"/>
+			<xs:element name="TLBL09" type="inc-field:FieldType"/>
+			<xs:element name="TLBL10" type="inc-field:FieldType"/>
+			<xs:element name="TLBL11" type="inc-field:FieldType"/>
+			<xs:element name="TLBL12" type="inc-field:FieldType"/>
+			<xs:element name="TLBL13" type="inc-field:FieldType"/>
+			<xs:element name="TLBL14" type="inc-field:FieldType"/>
+			<xs:element name="TLBL15" type="inc-field:FieldType"/>
+			<xs:element name="TLBL16" type="inc-field:FieldType"/>
+			<xs:element name="TLBL17" type="inc-field:FieldType"/>
+			<xs:element name="TLBL18" type="inc-field:FieldType"/>
+			<xs:element name="TLBL19" type="inc-field:FieldType"/>
+			<xs:element name="TLBL20" type="inc-field:FieldType"/>
+			<xs:element name="TLBL21" type="inc-field:FieldType"/>
+			<xs:element name="TLBL22" type="inc-field:FieldType"/>
+			<xs:element name="TLBL23" type="inc-field:FieldType"/>
+			<xs:element name="TLBL24" type="inc-field:FieldType"/>
+			<xs:element name="TLBL25" type="inc-field:FieldType"/>
+			<xs:element name="TLBL26" type="inc-field:FieldType"/>
+			<xs:element name="TLBL27" type="inc-field:FieldType"/>
+			<xs:element name="TLBL28" type="inc-field:FieldType"/>
+			<xs:element name="TLBL29" type="inc-field:FieldType"/>
+			<xs:element name="TLBL30" type="inc-field:FieldType"/>
+			<xs:element name="TLXUFD" type="inc-field:FieldType"/>
+			<xs:element name="TLXSNM" type="inc-field:FieldType"/>
+			<xs:element name="TLXFNM" type="inc-field:FieldType"/>
+			<xs:element name="TLXANM" type="inc-field:FieldType"/>
+			<xs:element name="TLXWHC" type="inc-field:FieldType"/>
+			<xs:element name="TLBACF" type="inc-field:FieldType"/>
+			<xs:element name="TLBCDT" type="inc-field:FieldType"/>
+			<xs:element name="TLBCDC" type="inc-field:FieldType"/>
+			<xs:element name="TLBINT" type="inc-field:FieldType"/>
+			<xs:element name="TLBINC" type="inc-field:FieldType"/>
+			<xs:element name="TXOV01" type="inc-field:FieldType"/>
+			<xs:element name="TXOV02" type="inc-field:FieldType"/>
+			<xs:element name="TXOV03" type="inc-field:FieldType"/>
+			<xs:element name="TXOV04" type="inc-field:FieldType"/>
+			<xs:element name="TXOV05" type="inc-field:FieldType"/>
+			<xs:element name="TXOV06" type="inc-field:FieldType"/>
+			<xs:element name="TXOV07" type="inc-field:FieldType"/>
+			<xs:element name="TXOV08" type="inc-field:FieldType"/>
+			<xs:element name="TXOV09" type="inc-field:FieldType"/>
+			<xs:element name="TXOV10" type="inc-field:FieldType"/>
+			<xs:element name="TXOV11" type="inc-field:FieldType"/>
+			<xs:element name="TXOV12" type="inc-field:FieldType"/>
+			<xs:element name="TXOV13" type="inc-field:FieldType"/>
+			<xs:element name="TXOV14" type="inc-field:FieldType"/>
+			<xs:element name="TXOV15" type="inc-field:FieldType"/>
+			<xs:element name="TXOV16" type="inc-field:FieldType"/>
+			<xs:element name="TXOV17" type="inc-field:FieldType"/>
+			<xs:element name="TXOV18" type="inc-field:FieldType"/>
+			<xs:element name="TXOV19" type="inc-field:FieldType"/>
+			<xs:element name="TXOV20" type="inc-field:FieldType"/>
+			<xs:element name="TXOV21" type="inc-field:FieldType"/>
+			<xs:element name="TXOV22" type="inc-field:FieldType"/>
+			<xs:element name="TXOV23" type="inc-field:FieldType"/>
+			<xs:element name="TXOV24" type="inc-field:FieldType"/>
+			<xs:element name="TXOV25" type="inc-field:FieldType"/>
+			<xs:element name="TXOV26" type="inc-field:FieldType"/>
+			<xs:element name="TXOV27" type="inc-field:FieldType"/>
+			<xs:element name="TXOV28" type="inc-field:FieldType"/>
+			<xs:element name="TXOV29" type="inc-field:FieldType"/>
+			<xs:element name="TXOV30" type="inc-field:FieldType"/>
+			<xs:element name="TLCPCD" type="inc-field:FieldType"/>
+			<xs:element name="TLOVRB" type="inc-field:FieldType"/>
+			<xs:element name="TLOVRR" type="inc-field:FieldType"/>
+			<xs:element name="FILL02" type="inc-field:FieldType"/>
+			<xs:element name="TLBFIL" type="inc-field:FieldType"/>
+			<xs:element name="TLB256" type="inc-field:FieldType"/>
+			<xs:element name="TLB120" type="inc-field:FieldType"/>
+			<xs:element name="TLBO01" type="inc-field:FieldType"/>
+			<xs:element name="TLBO02" type="inc-field:FieldType"/>
+			<xs:element name="TLBO03" type="inc-field:FieldType"/>
+			<xs:element name="TLBO04" type="inc-field:FieldType"/>
+			<xs:element name="TLBO05" type="inc-field:FieldType"/>
+			<xs:element name="TLBO06" type="inc-field:FieldType"/>
+			<xs:element name="TLBO07" type="inc-field:FieldType"/>
+			<xs:element name="TLBO08" type="inc-field:FieldType"/>
+			<xs:element name="TLBO09" type="inc-field:FieldType"/>
+			<xs:element name="TLBO10" type="inc-field:FieldType"/>
+			<xs:element name="TLBO11" type="inc-field:FieldType"/>
+			<xs:element name="TLBO12" type="inc-field:FieldType"/>
+			<xs:element name="TLBO13" type="inc-field:FieldType"/>
+			<xs:element name="TLBO14" type="inc-field:FieldType"/>
+			<xs:element name="TLBO15" type="inc-field:FieldType"/>
+			<xs:element name="TLBO16" type="inc-field:FieldType"/>
+			<xs:element name="TLBO17" type="inc-field:FieldType"/>
+			<xs:element name="TLBO18" type="inc-field:FieldType"/>
+			<xs:element name="TLBO19" type="inc-field:FieldType"/>
+			<xs:element name="TLBO20" type="inc-field:FieldType"/>
+			<xs:element name="TLBO21" type="inc-field:FieldType"/>
+			<xs:element name="TLBO22" type="inc-field:FieldType"/>
+			<xs:element name="TLBO23" type="inc-field:FieldType"/>
+			<xs:element name="TLBO24" type="inc-field:FieldType"/>
+			<xs:element name="TLBO25" type="inc-field:FieldType"/>
+			<xs:element name="TLBO26" type="inc-field:FieldType"/>
+			<xs:element name="TLBO27" type="inc-field:FieldType"/>
+			<xs:element name="TLBO28" type="inc-field:FieldType"/>
+			<xs:element name="TLBO29" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLBO30" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLB300" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:element name="HostTellerHeader" type="tns-ht:HostTellerHeaderType"/>
+
+	<xs:complexType name="HostTellerHeaderType">
+		<xs:sequence>
+			<xs:element name="MessageLength" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="MessageHeader" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RouterQueue" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="Device" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="Messagenumber" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CommunicationsQueue" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="Finalsocketaddr" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="Entrytime" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="Transactiontype" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RESERVED" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="EOMgroupindicator" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="HostTellerMessageReq" type="tns-ht:HostTellerMessageReqType"/>
+
+	<xs:complexType name="HostTellerMessageReqType">
+		<xs:sequence>
+
+
+
+			<xs:element minOccurs="0" ref="tns-ht:HostTellerHeader" />
+			<xs:element minOccurs="0" ref="tns-ht:HostTellerBodyReq" />
+			<xs:element name="LegacyName" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="I1Type">
+		<xs:sequence>
+			<xs:element name="I1RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1BRANCH" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ACCTNO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ACTYPE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SNAME" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ACNAME" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1CIFNO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1OFFICR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1STATUS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDNUM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1CLOSTS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1CLASS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDCTYP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDCDEC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDGRUP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DMCOST" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DMPRDC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SPCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1HDCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ATCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SICODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1PCHECK" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DATOP7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DATST7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DATEN7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DTOD7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DLA7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DLINP7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DLSTM7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DLFLM7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DTLDP7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DATOP6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DATST6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DATEN6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DTOD6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DPDA6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DLA6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DLC6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DLINP6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DLSTM6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DLFLM6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DTLDP6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DTSC6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AMTDP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1HOLD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTOC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTOCP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTODOC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTMC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTIBT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTLLC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTXTR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTSA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTFLDL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1CBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1YBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1STMBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1MINBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1MAXBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1COLECT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ODINT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AGGDAY" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AGGAMT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AGGCOL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AGGDAN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AGGCON" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AGGAMN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AGCODN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1MINBAI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1MAXBAI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AGGDAI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AGGAMI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AGGCOI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ACCRUE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ALTACR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1YTDINT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1YTDODI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1LINTPD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1STCYC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1STCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1INTCYC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCCYC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCTYPE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDUSER" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1NODR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AMTDR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1NOCR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AMTCR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCDR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCDRA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCCR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCCRA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1NODRC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AMTDRC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1NOCRC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AMTCRC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCDRC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCDRAC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCCRC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCCRAC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ATCRNO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ATCRAO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ATDRNO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ATDRAO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ATCRNF" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ATCRAF" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ATDRNF" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ATDRAF" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1NDEPDY" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AMTNSF" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ODLMT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SGCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ODPROT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1CHKGTY" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ATMCRD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1MALHLD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AUTNSF" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1BADCKI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TIMOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TIMOD1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TIMOD2" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TIMOD3" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TIMOD4" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ODLSYR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ODLTD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1RELACT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1RACTTP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ONUSCK" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1FORNCK" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1RATE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1PVAR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1PVAR1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1PFLOOR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1PCEIL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1REVDT7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1REVDT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TERM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TERMCD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ORATE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1OPVAR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1OPVAR1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1OPFLOR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1OPCEIL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ORVDT7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1ORVDT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1OTERM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1OTRMCD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1NPLFLG" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1NPLSTA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1EXCDT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1EXCDT7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DR3" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DR6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DR3EXC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DR6EXC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1CASHDP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1CASHPO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDSIC1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDSIC2" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDSIC3" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDSIC4" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SPMESG" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TMNSF" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTFLOT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTFLAV" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TTFLCA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1EFTFLG" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1MINCHG" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WHCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WHSCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1STATE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WALTAC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WALTTP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WALTRT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WALTSR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WHTDY" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WHMTD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WHSTDY" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WHSMTD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WHLYR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WHSLYR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1WHHIRT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1NFCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AFCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1STMPAS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1TLRINQ" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1CLACOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDSNUM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SECACC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SECACT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1UNUSED" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1AVBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SBVCD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1SCCODEX" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="I1DDRES8" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="D3Type">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA2" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA3" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA4" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA5" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA8" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACNA1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACNA2" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACNA3" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACNA4" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACNA5" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACNA6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACNA7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACNA8" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:element name="D3" type="tns-ht:D3Type"/>
+
+
+	<xs:element name="I1" type="tns-ht:I1Type"/>
+
+	<xs:complexType name="D1RType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSNME" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFFSNM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACNAME" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFCIFN" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="I2ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACCTNO" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACTYPE" type="xs:string" minOccurs="0"/>
+			<xs:element name="SNAME " type="xs:string" minOccurs="0"/>
+			<xs:element name="ACNAME" type="xs:string" minOccurs="0"/>
+			<xs:element name="CIFNO " type="xs:string" minOccurs="0"/>
+			<xs:element name="TYPE  " type="xs:string" minOccurs="0"/>
+			<xs:element name="BRN   " type="xs:string" minOccurs="0"/>
+			<xs:element name="RBRN  " type="xs:string" minOccurs="0"/>
+			<xs:element name="GROUP " type="xs:string" minOccurs="0"/>
+			<xs:element name="CMCOST" type="xs:string" minOccurs="0"/>
+			<xs:element name="CMPRDC" type="xs:string" minOccurs="0"/>
+			<xs:element name="OFFCR " type="xs:string" minOccurs="0"/>
+			<xs:element name="STATUS" type="xs:string" minOccurs="0"/>
+			<xs:element name="PRSTAT" type="xs:string" minOccurs="0"/>
+			<xs:element name="CLASS " type="xs:string" minOccurs="0"/>
+			<xs:element name="CDNUM " type="xs:string" minOccurs="0"/>
+			<xs:element name="ORGDSC" type="xs:string" minOccurs="0"/>
+			<xs:element name="ORGBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="CBAL  " type="xs:string" minOccurs="0"/>
+			<xs:element name="HOLD  " type="xs:string" minOccurs="0"/>
+			<xs:element name="HLDESC" type="xs:string" minOccurs="0"/>
+			<xs:element name="STMPAS" type="xs:string" minOccurs="0"/>
+			<xs:element name="AMTLIN" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACCINT" type="xs:string" minOccurs="0"/>
+			<xs:element name="ANTINT" type="xs:string" minOccurs="0"/>
+			<xs:element name="WDRINT" type="xs:string" minOccurs="0"/>
+			<xs:element name="WDRWH " type="xs:string" minOccurs="0"/>
+			<xs:element name="DAYINT" type="xs:string" minOccurs="0"/>
+			<xs:element name="YTDINT" type="xs:string" minOccurs="0"/>
+			<xs:element name="PREYTD" type="xs:string" minOccurs="0"/>
+			<xs:element name="PREPEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="PREFWH" type="xs:string" minOccurs="0"/>
+			<xs:element name="PRESWH" type="xs:string" minOccurs="0"/>
+			<xs:element name="TTDINT" type="xs:string" minOccurs="0"/>
+			<xs:element name="TTDPEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="TTDFWH" type="xs:string" minOccurs="0"/>
+			<xs:element name="TTDSWH" type="xs:string" minOccurs="0"/>
+			<xs:element name="LTDINT" type="xs:string" minOccurs="0"/>
+			<xs:element name="INTPEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="PRVPAY" type="xs:string" minOccurs="0"/>
+			<xs:element name="PRVBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="YTDCON" type="xs:string" minOccurs="0"/>
+			<xs:element name="PENAMT" type="xs:string" minOccurs="0"/>
+			<xs:element name="BEGACC" type="xs:string" minOccurs="0"/>
+			<xs:element name="BEGACM" type="xs:string" minOccurs="0"/>
+			<xs:element name="YESBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="YESACC" type="xs:string" minOccurs="0"/>
+			<xs:element name="TODACR" type="xs:string" minOccurs="0"/>
+			<xs:element name="TODIDR" type="xs:string" minOccurs="0"/>
+			<xs:element name="TODICR" type="xs:string" minOccurs="0"/>
+			<xs:element name="INTDRP" type="xs:string" minOccurs="0"/>
+			<xs:element name="INTBCK" type="xs:string" minOccurs="0"/>
+			<xs:element name="INTPDT" type="xs:string" minOccurs="0"/>
+			<xs:element name="STMBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="COLECT" type="xs:string" minOccurs="0"/>
+			<xs:element name="DEPTRM" type="xs:string" minOccurs="0"/>
+			<xs:element name="WDTRM " type="xs:string" minOccurs="0"/>
+			<xs:element name="PENBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="AGGBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="AGGACC" type="xs:string" minOccurs="0"/>
+			<xs:element name="AGGDAY" type="xs:string" minOccurs="0"/>
+			<xs:element name="ISSDT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="RENDT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="LPDAT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="NPDAT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="MATDT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="RDMDT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="LMDAT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="REVDT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="STMDT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="STATD6" type="xs:string" minOccurs="0"/>
+			<xs:element name="ENTDT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="DAYMO " type="xs:string" minOccurs="0"/>
+			<xs:element name="ISSDT " type="xs:string" minOccurs="0"/>
+			<xs:element name="RENDT " type="xs:string" minOccurs="0"/>
+			<xs:element name="LPDAT " type="xs:string" minOccurs="0"/>
+			<xs:element name="NPDAT " type="xs:string" minOccurs="0"/>
+			<xs:element name="MATDT " type="xs:string" minOccurs="0"/>
+			<xs:element name="RDMDT " type="xs:string" minOccurs="0"/>
+			<xs:element name="LMDAT " type="xs:string" minOccurs="0"/>
+			<xs:element name="REVDT " type="xs:string" minOccurs="0"/>
+			<xs:element name="STMDT " type="xs:string" minOccurs="0"/>
+			<xs:element name="STATDT" type="xs:string" minOccurs="0"/>
+			<xs:element name="ENTDT " type="xs:string" minOccurs="0"/>
+			<xs:element name="CDTERM" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDTCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="INTERM" type="xs:string" minOccurs="0"/>
+			<xs:element name="ITCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="RENEW " type="xs:string" minOccurs="0"/>
+			<xs:element name="DISP  " type="xs:string" minOccurs="0"/>
+			<xs:element name="METHOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="YRBASE" type="xs:string" minOccurs="0"/>
+			<xs:element name="EVENCD" type="xs:string" minOccurs="0"/>
+			<xs:element name="EVNCHG" type="xs:string" minOccurs="0"/>
+			<xs:element name="DACTN " type="xs:string" minOccurs="0"/>
+			<xs:element name="DACTYP" type="xs:string" minOccurs="0"/>
+			<xs:element name="CKPCIF" type="xs:string" minOccurs="0"/>
+			<xs:element name="RATE  " type="xs:string" minOccurs="0"/>
+			<xs:element name="VARY  " type="xs:string" minOccurs="0"/>
+			<xs:element name="VARYCD" type="xs:string" minOccurs="0"/>
+			<xs:element name="FLOOR " type="xs:string" minOccurs="0"/>
+			<xs:element name="CEIL  " type="xs:string" minOccurs="0"/>
+			<xs:element name="REVTRM" type="xs:string" minOccurs="0"/>
+			<xs:element name="RTCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="RATEN " type="xs:string" minOccurs="0"/>
+			<xs:element name="RATSCH" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDBLT2" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDRTT2" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDBLT3" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDRTT3" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDBLT4" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDRTT4" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDBLT5" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDRTT5" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDSPLA" type="xs:string" minOccurs="0"/>
+			<xs:element name="TTFLOT" type="xs:string" minOccurs="0"/>
+			<xs:element name="TTFLAV" type="xs:string" minOccurs="0"/>
+			<xs:element name="TTFLCA" type="xs:string" minOccurs="0"/>
+			<xs:element name="TTOC  " type="xs:string" minOccurs="0"/>
+			<xs:element name="TTOCP " type="xs:string" minOccurs="0"/>
+			<xs:element name="TTODOC" type="xs:string" minOccurs="0"/>
+			<xs:element name="TTMC  " type="xs:string" minOccurs="0"/>
+			<xs:element name="TTIBT " type="xs:string" minOccurs="0"/>
+			<xs:element name="TTLLC " type="xs:string" minOccurs="0"/>
+			<xs:element name="TTXTR " type="xs:string" minOccurs="0"/>
+			<xs:element name="TTSA  " type="xs:string" minOccurs="0"/>
+			<xs:element name="WHCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="WALTAC" type="xs:string" minOccurs="0"/>
+			<xs:element name="WALTTP" type="xs:string" minOccurs="0"/>
+			<xs:element name="WALTRT" type="xs:string" minOccurs="0"/>
+			<xs:element name="WHTDY " type="xs:string" minOccurs="0"/>
+			<xs:element name="WHMTD " type="xs:string" minOccurs="0"/>
+			<xs:element name="WHQTD " type="xs:string" minOccurs="0"/>
+			<xs:element name="WHYTD " type="xs:string" minOccurs="0"/>
+			<xs:element name="WHLTD " type="xs:string" minOccurs="0"/>
+			<xs:element name="STATE " type="xs:string" minOccurs="0"/>
+			<xs:element name="WHSCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="WALTSR" type="xs:string" minOccurs="0"/>
+			<xs:element name="WHSTDY" type="xs:string" minOccurs="0"/>
+			<xs:element name="WHSMTD" type="xs:string" minOccurs="0"/>
+			<xs:element name="WHSQTD" type="xs:string" minOccurs="0"/>
+			<xs:element name="WHSYTD" type="xs:string" minOccurs="0"/>
+			<xs:element name="WHSLTD" type="xs:string" minOccurs="0"/>
+			<xs:element name="WHHIRT" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDSIC1" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDSIC2" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDSIC3" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDSIC4" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDUSER" type="xs:string" minOccurs="0"/>
+			<xs:element name="MESSAG" type="xs:string" minOccurs="0"/>
+			<xs:element name="INCLUD" type="xs:string" minOccurs="0"/>
+			<xs:element name="HMAIL " type="xs:string" minOccurs="0"/>
+			<xs:element name="PMAIL " type="xs:string" minOccurs="0"/>
+			<xs:element name="CHKCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CHDCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="IRACOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="BLOCKN" type="xs:string" minOccurs="0"/>
+			<xs:element name="PENTYP" type="xs:string" minOccurs="0"/>
+			<xs:element name="OIDFLG" type="xs:string" minOccurs="0"/>
+			<xs:element name="MATCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="STMTCD" type="xs:string" minOccurs="0"/>
+			<xs:element name="ALMTYP" type="xs:string" minOccurs="0"/>
+			<xs:element name="ORGSRC" type="xs:string" minOccurs="0"/>
+			<xs:element name="PAPLES" type="xs:string" minOccurs="0"/>
+			<xs:element name="PALAST" type="xs:string" minOccurs="0"/>
+			<xs:element name="ALNXTI" type="xs:string" minOccurs="0"/>
+			<xs:element name="CURTYP" type="xs:string" minOccurs="0"/>
+			<xs:element name="CURDEC" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACMETH" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDRSRN" type="xs:string" minOccurs="0"/>
+			<xs:element name="TLRINQ" type="xs:string" minOccurs="0"/>
+			<xs:element name="CONETA" type="xs:string" minOccurs="0"/>
+			<xs:element name="MTDISP" type="xs:string" minOccurs="0"/>
+			<xs:element name="MTACTN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RATEV " type="xs:string" minOccurs="0"/>
+			<xs:element name="CKINST" type="xs:string" minOccurs="0"/>
+			<xs:element name="RFNOWH" type="xs:string" minOccurs="0"/>
+			<xs:element name="MTATYP" type="xs:string" minOccurs="0"/>
+			<xs:element name="SBVCD " type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="I6ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CKAMT" type="xs:string" minOccurs="0"/>
+			<xs:element name="FORACM" type="xs:string" minOccurs="0"/>
+			<xs:element name="PTWDRL" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDAVL" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACROUT" type="xs:string" minOccurs="0"/>
+			<xs:element name="CDRSRA" type="xs:string" minOccurs="0"/>
+			<xs:element name="CHQAMT" type="xs:string" minOccurs="0"/>
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="D1" type="tns-ht:D1RType"/>
+
+	<xs:element name="HostTeller41Res" type="tns-ht:HostTeller41ResType"/>
+
+	<xs:complexType name="HostTeller41ResType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLTXCD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLXMNE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLBSEQ" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLBID" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLBCUD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLBWS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="HOVREQ" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ER" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="HostTeller42Res" type="tns-ht:HostTeller42ResType"/>
+
+	<xs:complexType name="HostTeller42ResType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ERN1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ERO1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="APL1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="APT1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ADT1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ADF1" type="inc-field:FieldType" minOccurs="0"/>
+
+
+
+
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="HostTellerMessageRes" type="tns-ht:HostTellerMessageResType"/>
+
+	<xs:complexType name="HostTellerMessageResType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="Order"
+				type="xs:string" />
+			<xs:element minOccurs="0" ref="tns-ht:HostTellerHeader" />
+			<xs:element ref="tns-ht:HostTeller41Res" minOccurs="0" />
+			<xs:element ref="tns-ht:HostTeller42Res" minOccurs="0" />
+			<xs:element ref="tns-ht:I1" minOccurs="0" />
+			<xs:element ref="tns-ht:I2" minOccurs="0" />
+
+			<xs:element ref="tns-ht:I3" minOccurs="0" />
+			<xs:element ref="tns-ht:I6" minOccurs="0" />
+			<xs:element ref="tns-ht:D1" minOccurs="0" />
+			<xs:element ref="tns-ht:D3" minOccurs="0" />
+
+			<xs:element ref="tns-ht:F1" minOccurs="0" />
+			<xs:element ref="tns-ht:F4" minOccurs="0" />
+
+			<xs:element ref="tns-ht:V6" minOccurs="0" />
+			<xs:element ref="tns-ht:D5" minOccurs="0" />
+			<xs:element name="T3" type="tns-ht:T3Type" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="FieldList" type="tns-ht:FieldListType"/>
+
+	<xs:complexType name="FieldListType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="inc-field:Field"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="HostTellerResValue" type="tns-ht:HostTellerResValueType"/>
+
+	<xs:complexType name="HostTellerResValueType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="Order"
+				type="xs:string" />
+			<xs:element name="HostTellerHeaderValue"
+				type="tns-ht:HostTellerHeaderValueType" minOccurs="0"
+				maxOccurs="1">
+			</xs:element>
+			<xs:element name="HostTeller41Value"
+				type="tns-ht:HostTeller41ValueType" minOccurs="0">
+			</xs:element>
+			<xs:element name="HostTeller42Value"
+				type="tns-ht:HostTeller42ValueType" minOccurs="0">
+			</xs:element>
+			<xs:element name="I1Value" type="tns-ht:I1ValueType"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="I2Value" type="tns-ht:I2ValueType"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="I3Value" type="tns-ht:I3ValueType"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="I6Value" type="tns-ht:I6ValueType"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="D1Value" type="tns-ht:D1ValueType"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="D3Value" type="tns-ht:D3ValueType"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="F1Value" type="tns-ht:F1ValueType"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="F4Value" type="tns-ht:F4ValueType"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="V6Value" type="tns-ht:V6ValueType"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="D5Value" type="tns-ht:D5ValueType"
+				minOccurs="0" />
+			<xs:element name="T3Value" type="tns-ht:T3ValueType" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="HostTellerHeaderValueType">
+		<xs:sequence>
+			<xs:element name="MessageLength" type="xs:string" minOccurs="0"/>
+			<xs:element name="MessageHeader" type="xs:string" minOccurs="0"/>
+			<xs:element name="RouterQueue" type="xs:string" minOccurs="0"/>
+			<xs:element name="Device" type="xs:string" minOccurs="0"/>
+			<xs:element name="Messagenumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="CommunicationsQueue" type="xs:string" minOccurs="0"/>
+			<xs:element name="Finalsocketaddr" type="xs:string" minOccurs="0"/>
+			<xs:element name="Entrytime" type="xs:string" minOccurs="0"/>
+			<xs:element name="Transactiontype" type="xs:string" minOccurs="0"/>
+			<xs:element name="RESERVED" type="xs:string" minOccurs="0"/>
+			<xs:element name="EOMgroupindicator" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="HostTeller41ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="TLTXCD" type="xs:string" minOccurs="0"/>
+			<xs:element name="TLXMNE" type="xs:string" minOccurs="0"/>
+			<xs:element name="TLBSEQ" type="xs:string" minOccurs="0"/>
+			<xs:element name="TLBID" type="xs:string" minOccurs="0"/>
+			<xs:element name="TLBCUD" type="xs:string" minOccurs="0"/>
+			<xs:element name="TLBWS" type="xs:string" minOccurs="0"/>
+			<xs:element name="HOVREQ" type="xs:string" minOccurs="0"/>
+			<xs:element name="ER" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="HostTeller42ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="ERN1" type="xs:string" minOccurs="0"/>
+			<xs:element name="ERO1" type="xs:string" minOccurs="0"/>
+			<xs:element name="APL1" type="xs:string" minOccurs="0"/>
+			<xs:element name="APT1" type="xs:string" minOccurs="0"/>
+			<xs:element name="ADT1" type="xs:string" minOccurs="0"/>
+			<xs:element name="ADF1" type="xs:string" minOccurs="0"/>
+
+
+
+
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="I1ValueType">
+		<xs:sequence>
+			<xs:element name="I1RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1BRANCH" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ACCTNO" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ACTYPE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SNAME" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ACNAME" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1CIFNO" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1OFFICR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1STATUS" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDNUM" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1CLOSTS" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1CLASS" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDCTYP" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDCDEC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDGRUP" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DMCOST" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DMPRDC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SPCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1HDCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ATCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SICODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1PCHECK" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DATOP7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DATST7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DATEN7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DTOD7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DLA7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DLINP7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DLSTM7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DLFLM7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DTLDP7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DATOP6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DATST6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DATEN6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DTOD6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DPDA6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DLA6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DLC6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DLINP6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DLSTM6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DLFLM6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DTLDP6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DTSC6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AMTDP" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1HOLD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTOC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTOCP" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTODOC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTMC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTIBT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTLLC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTXTR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTSA" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTFLDL" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1CBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1YBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1STMBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1MINBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1MAXBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1COLECT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ODINT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AGGDAY" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AGGAMT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AGGCOL" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AGGDAN" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AGGCON" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AGGAMN" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AGCODN" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1MINBAI" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1MAXBAI" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AGGDAI" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AGGAMI" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AGGCOI" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ACCRUE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ALTACR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1YTDINT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1YTDODI" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1LINTPD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1STCYC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1STCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1INTCYC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCCYC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCTYPE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDUSER" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1NODR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AMTDR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1NOCR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AMTCR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCDR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCDRA" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCCR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCCRA" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1NODRC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AMTDRC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1NOCRC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AMTCRC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCDRC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCDRAC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCCRC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCCRAC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ATCRNO" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ATCRAO" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ATDRNO" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ATDRAO" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ATCRNF" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ATCRAF" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ATDRNF" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ATDRAF" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1NDEPDY" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AMTNSF" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ODLMT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SGCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ODPROT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1CHKGTY" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ATMCRD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1MALHLD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AUTNSF" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1BADCKI" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TIMOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TIMOD1" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TIMOD2" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TIMOD3" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TIMOD4" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ODLSYR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ODLTD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1RELACT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1RACTTP" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ONUSCK" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1FORNCK" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1RATE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1PVAR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1PVAR1" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1PFLOOR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1PCEIL" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1REVDT7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1REVDT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TERM" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TERMCD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ORATE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1OPVAR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1OPVAR1" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1OPFLOR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1OPCEIL" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ORVDT7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1ORVDT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1OTERM" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1OTRMCD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1NPLFLG" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1NPLSTA" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1EXCDT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1EXCDT7" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DR3" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DR6" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DR3EXC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DR6EXC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1CASHDP" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1CASHPO" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDSIC1" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDSIC2" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDSIC3" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDSIC4" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SPMESG" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TMNSF" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTFLOT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTFLAV" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TTFLCA" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1EFTFLG" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1MINCHG" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WHCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WHSCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1STATE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WALTAC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WALTTP" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WALTRT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WALTSR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WHTDY" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WHMTD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WHSTDY" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WHSMTD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WHLYR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WHSLYR" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1WHHIRT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1NFCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AFCODE" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1STMPAS" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1TLRINQ" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1CLACOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDSNUM" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SECACC" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SECACT" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1UNUSED" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1AVBAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SBVCD" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1SCCODEX" type="xs:string" minOccurs="0"/>
+			<xs:element name="I1DDRES8" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="D1ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA1" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSNME" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFFSNM" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACNAME" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFCIFN" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="D3ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA1" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA2" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA3" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA4" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA5" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA6" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA7" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA8" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACNA1" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACNA2" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACNA3" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACNA4" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACNA5" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACNA6" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACNA7" type="xs:string" minOccurs="0"/>
+			<xs:element name="ACNA8" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="F1" type="tns-ht:F1Type"/>
+
+	<xs:complexType name="F1Type">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLXMNE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="SNAME " type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="F1ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="TLXMNE" type="xs:string" minOccurs="0"/>
+			<xs:element name="SNAME " type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:element name="F4" type="tns-ht:F4Type"/>
+
+	<xs:complexType name="F4Type">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLXMNE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSSNAM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="QMSID1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="QMSD1 " type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="F4ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="TLXMNE" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSSNAM" type="xs:string" minOccurs="0"/>
+			<xs:element name="QMSID1" type="xs:string" minOccurs="0"/>
+			<xs:element name="QMSD1 " type="xs:string" minOccurs="0"/>
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="I3Type">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="RSPCOD" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="BRN" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="RBRN" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="ACCTNO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="ACTYPE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="SNAME" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="ACNAME" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CFSSNO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CLASS" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TYPEX" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CURTYP" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="AANO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="FCODE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="FSEQ" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CIFNO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="OFFCR" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="STATUS" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TLRINQ" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="NETAMT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="SETDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PDTOD6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PDTODT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PPTOD6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PPTODT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="BILPRN" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="BILINT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="BILESC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="BILLC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="BILOC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="BILMC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CBAL" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="ACR112" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="ASSLC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PAIDLC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PEN112" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="OTHCHG" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="MISCD" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="COM112" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="AMRSUS" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TOTRBS" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PMTAMT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PRTPMT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="DRLIMT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="ORGAMT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="AMTREL" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="SCHREL" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PDIEM" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="INSARR" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="INSNO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="INTARR" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="INTNO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="SCHARR" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="SCHNO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TOTARR" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TOTNO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="NPLFLG" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="NPLSTA" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="ORGDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="NPDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="NSPDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="LPDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PRATEN" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PVARI" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PVCODE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PFLOOR" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PCEIL" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TIER" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="MATDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PNICNO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PICTYP" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="RATE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TERM" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TMCODE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="IBASE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="FREQ" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="FRCODE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="IFREQ" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PMTCOD" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="ALTSCH" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="NIPDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CPD10" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CPD30" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CPD60" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CPD90" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="YTDINT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="INTPRE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CLCODE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="REVOLV" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="USER1" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="USER2" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="MEMAMT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="INTREB" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="BKDISC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="BKDSC2" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="DLRDSC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="MIPREM" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CLPREM" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="AHPREM" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TTFLOT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TTFLAV" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TTOC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TTMC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TTIBT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TTLLC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="RELEAC" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PURCNO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="PURVAL" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="COMMIT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="COMRAT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CAPREP" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="RESIDV" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="DLRGP" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="VARYTD" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="RESYTD" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="VARPRE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="RESPRE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="BORWCD" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="GUARNO" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="GUARCV" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="LONGRP" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="ADVMRG" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CSHBON" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="DRWSCH" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="FNLPMT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="INTPAY" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="MINBAL" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="MAXBAL" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="RESDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="VARDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CHQDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="FRELD6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="FULLD6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="CLIEX6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="AHIEX6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="POFFD6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="LREBD6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="NREBD6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="REFND6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="NPLDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="STSDT6" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="VARNPL" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="INTSUP" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="LCSUP" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="SPFLAG" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="FDRATE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="ALTRAT" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="YBASE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="SICODE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TERCDE" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="COLTYP" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="LNSIC1" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="LNSIC2" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="LNSIC3" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="LNSIC4" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="IISTAX" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="IISNTX" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="SBVCD" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="MCLNID" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="OINTAD" type="inc-field:FieldType"
+    			minOccurs="0" />
+			<xs:element name="TYPE" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="I3ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0" />
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0" />
+			<xs:element name="BRN" type="xs:string" minOccurs="0" />
+			<xs:element name="RBRN" type="xs:string" minOccurs="0" />
+			<xs:element name="ACCTNO" type="xs:string" minOccurs="0" />
+			<xs:element name="ACTYPE" type="xs:string" minOccurs="0" />
+			<xs:element name="SNAME" type="xs:string" minOccurs="0" />
+			<xs:element name="ACNAME" type="xs:string" minOccurs="0" />
+			<xs:element name="CFSSNO" type="xs:string" minOccurs="0" />
+			<xs:element name="CLASS" type="xs:string" minOccurs="0" />
+			<xs:element name="TYPEX" type="xs:string" minOccurs="0" />
+			<xs:element name="CURTYP" type="xs:string" minOccurs="0" />
+			<xs:element name="AANO" type="xs:string" minOccurs="0" />
+			<xs:element name="FCODE" type="xs:string" minOccurs="0" />
+			<xs:element name="FSEQ" type="xs:string" minOccurs="0" />
+			<xs:element name="CIFNO" type="xs:string" minOccurs="0" />
+			<xs:element name="OFFCR" type="xs:string" minOccurs="0" />
+			<xs:element name="STATUS" type="xs:string" minOccurs="0" />
+			<xs:element name="TLRINQ" type="xs:string" minOccurs="0" />
+			<xs:element name="NETAMT" type="xs:string" minOccurs="0" />
+			<xs:element name="SETDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="PDTOD6" type="xs:string" minOccurs="0" />
+			<xs:element name="PDTODT" type="xs:string" minOccurs="0" />
+			<xs:element name="PPTOD6" type="xs:string" minOccurs="0" />
+			<xs:element name="PPTODT" type="xs:string" minOccurs="0" />
+			<xs:element name="BILPRN" type="xs:string" minOccurs="0" />
+			<xs:element name="BILINT" type="xs:string" minOccurs="0" />
+			<xs:element name="BILESC" type="xs:string" minOccurs="0" />
+			<xs:element name="BILLC" type="xs:string" minOccurs="0" />
+			<xs:element name="BILOC" type="xs:string" minOccurs="0" />
+			<xs:element name="BILMC" type="xs:string" minOccurs="0" />
+			<xs:element name="CBAL" type="xs:string" minOccurs="0" />
+			<xs:element name="ACR112" type="xs:string" minOccurs="0" />
+			<xs:element name="ASSLC" type="xs:string" minOccurs="0" />
+			<xs:element name="PAIDLC" type="xs:string" minOccurs="0" />
+			<xs:element name="PEN112" type="xs:string" minOccurs="0" />
+			<xs:element name="OTHCHG" type="xs:string" minOccurs="0" />
+			<xs:element name="MISCD" type="xs:string" minOccurs="0" />
+			<xs:element name="COM112" type="xs:string" minOccurs="0" />
+			<xs:element name="AMRSUS" type="xs:string" minOccurs="0" />
+			<xs:element name="TOTRBS" type="xs:string" minOccurs="0" />
+			<xs:element name="PMTAMT" type="xs:string" minOccurs="0" />
+			<xs:element name="PRTPMT" type="xs:string" minOccurs="0" />
+			<xs:element name="DRLIMT" type="xs:string" minOccurs="0" />
+			<xs:element name="ORGAMT" type="xs:string" minOccurs="0" />
+			<xs:element name="AMTREL" type="xs:string" minOccurs="0" />
+			<xs:element name="SCHREL" type="xs:string" minOccurs="0" />
+			<xs:element name="PDIEM" type="xs:string" minOccurs="0" />
+			<xs:element name="INSARR" type="xs:string" minOccurs="0" />
+			<xs:element name="INSNO" type="xs:string" minOccurs="0" />
+			<xs:element name="INTARR" type="xs:string" minOccurs="0" />
+			<xs:element name="INTNO" type="xs:string" minOccurs="0" />
+			<xs:element name="SCHARR" type="xs:string" minOccurs="0" />
+			<xs:element name="SCHNO" type="xs:string" minOccurs="0" />
+			<xs:element name="TOTARR" type="xs:string" minOccurs="0" />
+			<xs:element name="TOTNO" type="xs:string" minOccurs="0" />
+			<xs:element name="NPLFLG" type="xs:string" minOccurs="0" />
+			<xs:element name="NPLSTA" type="xs:string" minOccurs="0" />
+			<xs:element name="ORGDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="NPDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="NSPDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="LPDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="PRATEN" type="xs:string" minOccurs="0" />
+			<xs:element name="PVARI" type="xs:string" minOccurs="0" />
+			<xs:element name="PVCODE" type="xs:string" minOccurs="0" />
+			<xs:element name="PFLOOR" type="xs:string" minOccurs="0" />
+			<xs:element name="PCEIL" type="xs:string" minOccurs="0" />
+			<xs:element name="TIER" type="xs:string" minOccurs="0" />
+			<xs:element name="MATDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="PNICNO" type="xs:string" minOccurs="0" />
+			<xs:element name="PICTYP" type="xs:string" minOccurs="0" />
+			<xs:element name="RATE" type="xs:string" minOccurs="0" />
+			<xs:element name="TERM" type="xs:string" minOccurs="0" />
+			<xs:element name="TMCODE" type="xs:string" minOccurs="0" />
+			<xs:element name="IBASE" type="xs:string" minOccurs="0" />
+			<xs:element name="FREQ" type="xs:string" minOccurs="0" />
+			<xs:element name="FRCODE" type="xs:string" minOccurs="0" />
+			<xs:element name="IFREQ" type="xs:string" minOccurs="0" />
+			<xs:element name="PMTCOD" type="xs:string" minOccurs="0" />
+			<xs:element name="ALTSCH" type="xs:string" minOccurs="0" />
+			<xs:element name="NIPDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="CPD10" type="xs:string" minOccurs="0" />
+			<xs:element name="CPD30" type="xs:string" minOccurs="0" />
+			<xs:element name="CPD60" type="xs:string" minOccurs="0" />
+			<xs:element name="CPD90" type="xs:string" minOccurs="0" />
+			<xs:element name="YTDINT" type="xs:string" minOccurs="0" />
+			<xs:element name="INTPRE" type="xs:string" minOccurs="0" />
+			<xs:element name="CLCODE" type="xs:string" minOccurs="0" />
+			<xs:element name="REVOLV" type="xs:string" minOccurs="0" />
+			<xs:element name="USER1" type="xs:string" minOccurs="0" />
+			<xs:element name="USER2" type="xs:string" minOccurs="0" />
+			<xs:element name="MEMAMT" type="xs:string" minOccurs="0" />
+			<xs:element name="INTREB" type="xs:string" minOccurs="0" />
+			<xs:element name="BKDISC" type="xs:string" minOccurs="0" />
+			<xs:element name="BKDSC2" type="xs:string" minOccurs="0" />
+			<xs:element name="DLRDSC" type="xs:string" minOccurs="0" />
+			<xs:element name="MIPREM" type="xs:string" minOccurs="0" />
+			<xs:element name="CLPREM" type="xs:string" minOccurs="0" />
+			<xs:element name="AHPREM" type="xs:string" minOccurs="0" />
+			<xs:element name="TTFLOT" type="xs:string" minOccurs="0" />
+			<xs:element name="TTFLAV" type="xs:string" minOccurs="0" />
+			<xs:element name="TTOC" type="xs:string" minOccurs="0" />
+			<xs:element name="TTMC" type="xs:string" minOccurs="0" />
+			<xs:element name="TTIBT" type="xs:string" minOccurs="0" />
+			<xs:element name="TTLLC" type="xs:string" minOccurs="0" />
+			<xs:element name="RELEAC" type="xs:string" minOccurs="0" />
+			<xs:element name="PURCNO" type="xs:string" minOccurs="0" />
+			<xs:element name="PURVAL" type="xs:string" minOccurs="0" />
+			<xs:element name="COMMIT" type="xs:string" minOccurs="0" />
+			<xs:element name="COMRAT" type="xs:string" minOccurs="0" />
+			<xs:element name="CAPREP" type="xs:string" minOccurs="0" />
+			<xs:element name="RESIDV" type="xs:string" minOccurs="0" />
+			<xs:element name="DLRGP" type="xs:string" minOccurs="0" />
+			<xs:element name="VARYTD" type="xs:string" minOccurs="0" />
+			<xs:element name="RESYTD" type="xs:string" minOccurs="0" />
+			<xs:element name="VARPRE" type="xs:string" minOccurs="0" />
+			<xs:element name="RESPRE" type="xs:string" minOccurs="0" />
+			<xs:element name="BORWCD" type="xs:string" minOccurs="0" />
+			<xs:element name="GUARNO" type="xs:string" minOccurs="0" />
+			<xs:element name="GUARCV" type="xs:string" minOccurs="0" />
+			<xs:element name="LONGRP" type="xs:string" minOccurs="0" />
+			<xs:element name="ADVMRG" type="xs:string" minOccurs="0" />
+			<xs:element name="CSHBON" type="xs:string" minOccurs="0" />
+			<xs:element name="DRWSCH" type="xs:string" minOccurs="0" />
+			<xs:element name="FNLPMT" type="xs:string" minOccurs="0" />
+			<xs:element name="INTPAY" type="xs:string" minOccurs="0" />
+			<xs:element name="MINBAL" type="xs:string" minOccurs="0" />
+			<xs:element name="MAXBAL" type="xs:string" minOccurs="0" />
+			<xs:element name="RESDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="VARDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="CHQDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="FRELD6" type="xs:string" minOccurs="0" />
+			<xs:element name="FULLD6" type="xs:string" minOccurs="0" />
+			<xs:element name="CLIEX6" type="xs:string" minOccurs="0" />
+			<xs:element name="AHIEX6" type="xs:string" minOccurs="0" />
+			<xs:element name="POFFD6" type="xs:string" minOccurs="0" />
+			<xs:element name="LREBD6" type="xs:string" minOccurs="0" />
+			<xs:element name="NREBD6" type="xs:string" minOccurs="0" />
+			<xs:element name="REFND6" type="xs:string" minOccurs="0" />
+			<xs:element name="NPLDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="STSDT6" type="xs:string" minOccurs="0" />
+			<xs:element name="VARNPL" type="xs:string" minOccurs="0" />
+			<xs:element name="INTSUP" type="xs:string" minOccurs="0" />
+			<xs:element name="LCSUP" type="xs:string" minOccurs="0" />
+			<xs:element name="SPFLAG" type="xs:string" minOccurs="0" />
+			<xs:element name="FDRATE" type="xs:string" minOccurs="0" />
+			<xs:element name="ALTRAT" type="xs:string" minOccurs="0" />
+			<xs:element name="YBASE" type="xs:string" minOccurs="0" />
+			<xs:element name="SICODE" type="xs:string" minOccurs="0" />
+			<xs:element name="TERCDE" type="xs:string" minOccurs="0" />
+			<xs:element name="COLTYP" type="xs:string" minOccurs="0" />
+			<xs:element name="LNSIC1" type="xs:string" minOccurs="0" />
+			<xs:element name="LNSIC2" type="xs:string" minOccurs="0" />
+			<xs:element name="LNSIC3" type="xs:string" minOccurs="0" />
+			<xs:element name="LNSIC4" type="xs:string" minOccurs="0" />
+			<xs:element name="IISTAX" type="xs:string" minOccurs="0" />
+			<xs:element name="IISNTX" type="xs:string" minOccurs="0" />
+			<xs:element name="SBVCD" type="xs:string" minOccurs="0" />
+			<xs:element name="MCLNID" type="xs:string" minOccurs="0" />
+			<xs:element name="OINTAD" type="xs:string" minOccurs="0" />
+			<xs:element name="TYPE" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="I3" type="tns-ht:I3Type"/>
+
+	<xs:complexType name="V6Type">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TRDAT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TREFF6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TXCD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="AUXTRC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="DORC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="BORI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="DESCP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="AMT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="SOURCE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CHSRC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TRRATE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TRUSER" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="LHCTYP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TELLSEQ" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="V6ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="TRDAT6" type="xs:string" minOccurs="0"/>
+			<xs:element name="TREFF6" type="xs:string" minOccurs="0"/>
+			<xs:element name="TXCD" type="xs:string" minOccurs="0"/>
+			<xs:element name="AUXTRC" type="xs:string" minOccurs="0"/>
+			<xs:element name="DORC" type="xs:string" minOccurs="0"/>
+			<xs:element name="BORI" type="xs:string" minOccurs="0"/>
+			<xs:element name="DESCP" type="xs:string" minOccurs="0"/>
+			<xs:element name="AMT" type="xs:string" minOccurs="0"/>
+			<xs:element name="SOURCE" type="xs:string" minOccurs="0"/>
+			<xs:element name="CHSRC" type="xs:string" minOccurs="0"/>
+			<xs:element name="TRRATE" type="xs:string" minOccurs="0"/>
+			<xs:element name="TRUSER" type="xs:string" minOccurs="0"/>
+			<xs:element name="LHCTYP" type="xs:string" minOccurs="0"/>
+			<xs:element name="TELLSEQ" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="V6" type="tns-ht:V6Type"/>
+
+	<xs:element name="D5" type="tns-ht:D5Type"/>
+
+	<xs:complexType name="D5ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="NAM1" type="xs:string" minOccurs="0"/>
+			<xs:element name="ID1" type="xs:string" minOccurs="0"/>
+			<xs:element name="RT1" type="xs:string" minOccurs="0"/>
+			<xs:element name="SGCODE" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="D5Type">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="NAM1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ID1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RT1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="SGCODE" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="I2Type">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACCTNO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACTYPE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="SNAME " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACNAME" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CIFNO " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TYPE  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="BRN   " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RBRN  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="GROUP " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CMCOST" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CMPRDC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="OFFCR " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="STATUS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PRSTAT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CLASS " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDNUM " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ORGDSC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ORGBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CBAL  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="HOLD  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="HLDESC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="STMPAS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="AMTLIN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACCINT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ANTINT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WDRINT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WDRWH " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="DAYINT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="YTDINT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PREYTD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PREPEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PREFWH" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PRESWH" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTDINT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTDPEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTDFWH" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTDSWH" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="LTDINT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="INTPEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PRVPAY" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PRVBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="YTDCON" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PENAMT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="BEGACC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="BEGACM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="YESBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="YESACC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TODACR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TODIDR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TODICR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="INTDRP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="INTBCK" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="INTPDT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="STMBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="COLECT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="DEPTRM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WDTRM " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PENBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="AGGBAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="AGGACC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="AGGDAY" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ISSDT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RENDT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="LPDAT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="NPDAT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="MATDT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RDMDT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="LMDAT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="REVDT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="STMDT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="STATD6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ENTDT6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="DAYMO " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ISSDT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RENDT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="LPDAT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="NPDAT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="MATDT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RDMDT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="LMDAT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="REVDT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="STMDT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="STATDT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ENTDT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDTERM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDTCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="INTERM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ITCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RENEW " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="DISP  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="METHOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="YRBASE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="EVENCD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="EVNCHG" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="DACTN " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="DACTYP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CKPCIF" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RATE  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="VARY  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="VARYCD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="FLOOR " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CEIL  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="REVTRM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RTCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RATEN " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RATSCH" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDBLT2" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDRTT2" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDBLT3" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDRTT3" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDBLT4" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDRTT4" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDBLT5" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDRTT5" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDSPLA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTFLOT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTFLAV" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTFLCA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTOC  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTOCP " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTODOC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTMC  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTIBT " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTLLC " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTXTR " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TTSA  " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHCODE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WALTAC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WALTTP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WALTRT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHTDY " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHMTD " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHQTD " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHYTD " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHLTD " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="STATE " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHSCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WALTSR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHSTDY" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHSMTD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHSQTD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHSYTD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHSLTD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="WHHIRT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDSIC1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDSIC2" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDSIC3" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDSIC4" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDUSER" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="MESSAG" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="INCLUD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="HMAIL " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PMAIL " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CHKCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CHDCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="IRACOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="BLOCKN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PENTYP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="OIDFLG" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="MATCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="STMTCD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ALMTYP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ORGSRC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PAPLES" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PALAST" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ALNXTI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CURTYP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CURDEC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACMETH" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDRSRN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="TLRINQ" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CONETA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="MTDISP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="MTACTN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RATEV " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CKINST" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RFNOWH" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="MTATYP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="SBVCD " type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>    
+	</xs:complexType>
+	<xs:element name="I2" type="tns-ht:I2Type"/>
+	<xs:complexType name="I6Type">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CKAMT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="FORACM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="PTWDRL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDAVL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="ACROUT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CDRSRA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CHQAMT" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:element name="I6" type="tns-ht:I6Type"/>
+
+
+
+	<xs:element name="T3" type="tns-ht:T3Type"/>
+
+	<xs:complexType name="T3Type">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFRECI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFRETN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFBNKN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFBRNN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFCOST" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFCSTS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFCIFN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFCIFT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSNME" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSNPH" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFINQC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFOFFR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFEMPL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFINSC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFVIPC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFDEAD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFBADA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFHLDM" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFPROA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSIC1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSIC2" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSIC3" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSIC4" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSIC5" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSIC6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSIC7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSIC8" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA1 " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNA1A" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFRESD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFCNTY" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFCITZ" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFRACE" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFMNIN" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFBTIS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFBTIL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFFNAS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFFNAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFMNAS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFMNAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFLNAS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFLNAL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSFXS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSFXL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFATIS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFATIL" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFNAMC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFORGD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFORG6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFDLM " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFDLM6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFHPHO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFBPHO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFFSDT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFFSD6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSSNO" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSSCD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSSFX" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFBIRD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFBIR6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSEX " type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFCLAS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFINDI" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSMSA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFBUST" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFSCLA" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFCRAT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFGRUP" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFCCYC" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFTINS" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFWHCD" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFWHPR" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFWHDT" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFWHD6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFUIC1" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFUIC2" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFUIC3" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFUIC4" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFUIC5" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFUIC6" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFUIC7" type="inc-field:FieldType" minOccurs="0"/>
+			<xs:element name="CFUIC8" type="inc-field:FieldType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="T3ValueType">
+		<xs:sequence>
+			<xs:element name="RSPLEN" type="xs:string" minOccurs="0"/>
+			<xs:element name="RSPCOD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFRECI" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFRETN" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFBNKN" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFBRNN" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFCOST" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFCSTS" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFCIFN" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFCIFT" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSNME" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSNPH" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFINQC" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFOFFR" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFEMPL" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFINSC" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFVIPC" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFDEAD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFBADA" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFHLDM" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFPROA" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSIC1" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSIC2" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSIC3" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSIC4" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSIC5" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSIC6" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSIC7" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSIC8" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA1 " type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNA1A" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFRESD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFCNTY" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFCITZ" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFRACE" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFMNIN" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFBTIS" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFBTIL" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFFNAS" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFFNAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFMNAS" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFMNAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFLNAS" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFLNAL" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSFXS" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSFXL" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFATIS" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFATIL" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFNAMC" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFORGD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFORG6" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFDLM " type="xs:string" minOccurs="0"/>
+			<xs:element name="CFDLM6" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFHPHO" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFBPHO" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFFSDT" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFFSD6" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSSNO" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSSCD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSSFX" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFBIRD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFBIR6" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSEX " type="xs:string" minOccurs="0"/>
+			<xs:element name="CFCLAS" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFINDI" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSMSA" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFBUST" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFSCLA" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFCRAT" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFGRUP" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFCCYC" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFTINS" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFWHCD" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFWHPR" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFWHDT" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFWHD6" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFUIC1" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFUIC2" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFUIC3" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFUIC4" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFUIC5" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFUIC6" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFUIC7" type="xs:string" minOccurs="0"/>
+			<xs:element name="CFUIC8" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

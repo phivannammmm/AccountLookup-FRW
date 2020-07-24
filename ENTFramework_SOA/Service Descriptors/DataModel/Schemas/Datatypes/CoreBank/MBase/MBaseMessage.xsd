@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/entities/mbasemessage/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/entities/mbasemessage/1.0">
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../Message.xsd"/>
+
+	<complexType name="SocketHeaderType">
+		<sequence>
+			<element minOccurs="0" name="SocketMessageLength" type="inc-field:FieldType"/>
+			<element name="HeaderType" type="inc-field:FieldType"/>
+			<element name="DeviceName" type="inc-field:FieldType"/>
+			<element name="SocketNumber" type="inc-field:FieldType"/>
+			<element name="PortNumber" type="inc-field:FieldType"/>
+			<element minOccurs="0" name="Filler" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="DSPHeaderType">
+		<sequence>
+			<element name="HeaderLength" type="inc-field:FieldType"/>
+			<element name="MessageLength" type="inc-field:FieldType"/>
+			<element name="VersionNumber" type="inc-field:FieldType"/>
+			<element name="HeaderFormarID" type="inc-field:FieldType"/>
+			<element name="DataFormatID" type="inc-field:FieldType"/>
+			<element name="SourceID" type="inc-field:FieldType"/>
+			<element name="DestinationID" type="inc-field:FieldType"/>
+			<element name="RoutingNumber" type="inc-field:FieldType"/>
+			<element name="MessageStatus" type="inc-field:FieldType"/>
+			<element name="BankIDNumber" type="inc-field:FieldType"/>
+			<element name="Node" type="inc-field:FieldType"/>
+			<element name="ExchangeID" type="inc-field:FieldType"/>
+			<element name="ScenarioNumber" type="inc-field:FieldType"/>
+			<element name="TransactionCode" type="inc-field:FieldType"/>
+			<element name="RetrievalReferenceNumber" type="inc-field:FieldType"/>
+			<element name="AcquiredReferenceNumber" type="inc-field:FieldType"/>
+			<element name="TransmissionNumber" type="inc-field:FieldType"/>
+			<element name="NumberOfRecordsToBeLoaded" type="inc-field:FieldType"/>
+			<element name="numberOfErrorsToBeLoaded" type="inc-field:FieldType"/>
+			<element name="UserId" type="inc-field:FieldType"/>
+			<element name="TerminalId" type="inc-field:FieldType"/>
+			<element name="SupervisorId" type="inc-field:FieldType"/>
+			<element name="MoreRecordIndicator" type="inc-field:FieldType"/>
+			<element name="CutoffIndicator" type="inc-field:FieldType"/>
+			<element name="UserData" type="inc-field:FieldType"/>
+			<element minOccurs="0" name="SystemData" type="inc-field:FieldType"/>
+			<element minOccurs="0" name="TransactionType" type="inc-field:FieldType"/>
+			<element minOccurs="0" name="ReconMsgFormat" type="inc-field:FieldType"/>
+			<element minOccurs="0" name="ReconNumber" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="MBaseHeaderType">
+		<sequence>
+			<element name="ResponseResultCode" type="inc-field:FieldType"/>
+			<element name="UserID" type="inc-field:FieldType"/>
+			<element name="ReferenceNumber" type="inc-field:FieldType"/>
+			<element name="RebidNumber" type="inc-field:FieldType"/>
+			<element name="EndofGroupIndicator" type="inc-field:FieldType"/>
+			<element name="BlockMessageNumber" type="inc-field:FieldType"/>
+			<element name="SourceID" type="inc-field:FieldType"/>
+			<element name="DestinationID" type="inc-field:FieldType"/>
+			<element name="ReturnDataQueueName" type="inc-field:FieldType"/>
+			<element name="TerminalID" type="inc-field:FieldType"/>
+			<element name="BankNumber" type="inc-field:FieldType"/>
+			<element name="BranchNumber" type="inc-field:FieldType"/>
+			<element name="ReviewSupervisorID" type="inc-field:FieldType"/>
+			<element name="TransmitSupervisorID" type="inc-field:FieldType"/>
+			<element name="HostSupervisorID" type="inc-field:FieldType"/>
+			<element name="TransactionCode" type="inc-field:FieldType"/>
+			<element name="ActionCode" type="inc-field:FieldType"/>
+			<element name="TransactionMode" type="inc-field:FieldType"/>
+			<element name="NoOfRecordsToRetrieve" type="inc-field:FieldType"/>
+			<element name="MoreRecordsIndicator" type="inc-field:FieldType"/>
+			<element name="SearchMethod" type="inc-field:FieldType"/>
+			<element name="ResponseErrorCode1" type="inc-field:FieldType"/>
+			<element name="ResponseReasonForCode1" type="inc-field:FieldType"/>
+			<element name="ResponseErrorCode2" type="inc-field:FieldType"/>
+			<element name="ResponseReasonForCode2" type="inc-field:FieldType"/>
+			<element name="ResponseErrorCode3" type="inc-field:FieldType"/>
+			<element name="ResponseReasonForCode3" type="inc-field:FieldType"/>
+			<element name="ResponseErrorCode4" type="inc-field:FieldType"/>
+			<element name="ResponseReasonForCode4" type="inc-field:FieldType"/>
+			<element name="ResponseErrorCode5" type="inc-field:FieldType"/>
+			<element name="ResponseReasonForCode5" type="inc-field:FieldType"/>
+			<element name="DateInFromClientDDMMYYYY" type="inc-field:FieldType"/>
+			<element name="TimeInFromClientHHMMSS" type="inc-field:FieldType"/>
+			<element name="AccountNo" type="inc-field:FieldType"/>
+			<element name="AccountType" type="inc-field:FieldType"/>
+			<element name="CIFNo" type="inc-field:FieldType"/>
+			<element name="Filler" type="inc-field:FieldType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="MBHeaderFullType">
+		<sequence>
+			<element ref="tns:SocketHeader"/>
+			<element ref="tns:DSPHeader"/>
+			<element ref="tns:MBaseHeader"/>
+		</sequence>
+	</complexType>
+
+  	<element name="DSPHeader" type="tns:DSPHeaderType"/>
+
+    <element name="SocketHeader" type="tns:SocketHeaderType"/>
+
+    <element name="MBaseHeader" type="tns:MBaseHeaderType"/>
+
+    <complexType name="MBaseMessageType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" ref="tns:MBaseHeaderFull"/>
+			<element maxOccurs="1" minOccurs="0" name="MBasePayload" type="tns:MBasePayloadType"/>
+			<element maxOccurs="1" minOccurs="0" name="BinaryData" type="base64Binary"/>
+            <element maxOccurs="1" minOccurs="0" name="SOAMsgId" type="string" />
+        </sequence>
+    </complexType>
+
+    <element name="MBaseHeaderFull" type="tns:MBHeaderFullType"/>
+
+
+    <complexType name="MBaseMessagesType">
+    		<sequence maxOccurs="unbounded" minOccurs="0">
+			<element ref="tns:MBaseMessage"/>
+		</sequence>
+    </complexType>
+
+    <element name="MBaseMessage" type="tns:MBaseMessageType"/>
+
+    <element name="MBaseMessages" type="tns:MBaseMessagesType"/>
+
+    <complexType name="MBasePayloadType">
+    	
+      
+        <sequence>
+			<any maxOccurs="1" minOccurs="0" namespace="##any" processContents="lax">
+			</any>
+
+		</sequence>
+    </complexType>
+</schema>

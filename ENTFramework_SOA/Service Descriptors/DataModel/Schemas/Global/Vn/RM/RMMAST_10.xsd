@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vietcombank.com.vn/global/vn/RM/RMMAST/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/RM/RMMAST/1.0" elementFormDefault="qualified">
+	<element name="AddRMMastReq" type="tns:RMMastTypeV01"></element>
+    <element name="AddRMMastRes" >
+    	<complexType>
+    		<sequence>
+    			<element minOccurs="0" maxOccurs="1" name="AddRMMastResult" type="string"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+	<complexType name="RMMastTypeV01">
+		<sequence>
+			<element name="RMNumber" minOccurs="1" maxOccurs="1" type="string"/>
+			<element minOccurs="0" name="Status" type="int" />
+			<element minOccurs="0" name="OutwardCreditAmount" type="decimal" />
+			<element minOccurs="0" name="OutwardCreditCurrencySymbol" type="string" />
+			<element minOccurs="0" name="OutwardCreditAccount" type="string" />
+			<element minOccurs="0" name="OutwardCreditGLCostCenter" type="string" />
+			<element minOccurs="0" name="OutwardCreditGLSerial" type="string" />
+			<element minOccurs="0" name="OutwardDebitAmount" type="decimal" />
+			<element minOccurs="0" name="OutwardDebitCurrencySymbol" type="string" />
+			<element minOccurs="0" name="OutwardDebitAccount" type="string" />
+			<element minOccurs="0" name="OutwardDebitAccountType" type="int" />
+			<element minOccurs="0" name="OutwardDebitGLCostCenter" type="string" />
+			<element minOccurs="0" name="OutwardDebitGLSerial" type="string" />
+			<element minOccurs="0" name="InwardCreditAmount" type="decimal" />
+			<element minOccurs="0" name="InwardCreditCurrencySymbol" type="string" />
+			<element minOccurs="0" name="InwardCreditAccount" type="string" />
+			<element minOccurs="0" name="InwardCreditAccountType" type="int" />
+			<element minOccurs="0" name="InwardCreditGLCostCenter" type="string" />
+			<element minOccurs="0" name="InwardCreditGLSerial" type="string" />
+			<element minOccurs="0" name="InwardDebitAmount" type="decimal" />
+			<element minOccurs="0" name="InwardDebitCurrencySymbol" type="string" />
+			<element minOccurs="0" name="InwardDebitAccount" type="string" />
+			<element minOccurs="0" name="InwardDebitAccountType" type="int" />
+			<element minOccurs="0" name="InwardDebitGLCostCenter" type="string" />
+			<element minOccurs="0" name="InwardDebitGLSerial" type="string" />
+			<element minOccurs="0" name="CusAccount" type="string" />
+			<element minOccurs="0" name="CusName" type="string" />
+			<element minOccurs="0" name="CusIDNumber" type="string" />
+			<element minOccurs="0" name="CusIDIssueDate" type="string" />
+			<element minOccurs="0" name="CusIDIssuePlace" type="string" />
+			<element minOccurs="0" name="CusAddress" type="string" />
+			<element minOccurs="0" name="BenAccount" type="string" />
+			<element minOccurs="0" name="BenName" type="string" />
+			<element minOccurs="0" name="BenIDNumber" type="string" />
+			<element minOccurs="0" name="BenIDIssueDate" type="string" />
+			<element minOccurs="0" name="BenIDIssuePlace" type="string" />
+			<element minOccurs="0" name="BenAddress" type="string" />
+			<element minOccurs="0" name="InwardBranch" type="int" />
+			<element minOccurs="0" name="OutwardBranch" type="int" />
+			<element minOccurs="0" name="ForwardingBranch" type="string" />
+			<element minOccurs="0" name="ProductType" type="string" />
+			<element minOccurs="0" name="TellerNumber" type="int" />
+			<element minOccurs="0" name="OutwardEffDate" type="string" />
+			<element minOccurs="0" name="InwardEffDate" type="string" />
+			<element minOccurs="0" name="TotalFee" type="decimal" />
+			<element minOccurs="0" name="FeeCurSymbol" type="string" />
+			<element minOccurs="0" name="InwardSequence" type="string" />
+			<element minOccurs="0" name="OutwardSequence" type="string" />
+			<element minOccurs="0" name="InwardIPAddress" type="string" />
+			<element minOccurs="0" name="OutwardIPAddress" type="string" />
+			<element minOccurs="0" name="InwardWorkstation" type="string" />
+			<element minOccurs="0" name="OutwardWorkstation" type="string" />
+			<element minOccurs="0" name="InwardDescription" type="string" />
+			<element minOccurs="0" name="OutwardDescription" type="string" />
+			<element minOccurs="0" name="PaymentBranch" type="string" />
+			<element minOccurs="0" name="PaymentDate" type="string" />
+		</sequence>
+	</complexType>
+
+	<element name="UpdateRMMastReq" type="tns:RMMastTypeV01"></element>
+
+	<element name="UpdateRMMastRes">
+		<complexType>
+    		<sequence>
+    			<element minOccurs="0" maxOccurs="1" name="UpdateRMMastResult" type="string"></element>
+    		</sequence>
+    	</complexType>
+	</element>
+
+	<element name="InquiryRMMastReq" type="tns:RMMastTypeV01"></element>
+
+    <element name="InquiryRMMastRes">
+    	<complexType>
+    		<sequence>
+    			<element minOccurs="0" maxOccurs="1" name="AddRMMastResult" type="string"></element>
+    		</sequence>
+    	</complexType>
+    </element>
+</schema>

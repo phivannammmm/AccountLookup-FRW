@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_xYDZYIYhEeqPqs4qnSrLXg" targetNamespace="http://tns.tibco.com/bw/composite/PaymenHubCLEFramework" name="PaymenHubCLEFramework" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_xlmtMIYhEeqPqs4qnSrLXg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xlq-oIYhEeqPqs4qnSrLXg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xluB8IYhEeqPqs4qnSrLXg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xlweMIYhEeqPqs4qnSrLXg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xl0voIYhEeqPqs4qnSrLXg" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xl3y8IYhEeqPqs4qnSrLXg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xl6PMIYhEeqPqs4qnSrLXg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xl95kIYhEeqPqs4qnSrLXg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_xmA84IYhEeqPqs4qnSrLXg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_GeYwAIg9EeqOKruCC6ObBQ" name="/Logging/EnableLog" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Cv70kIh6EeqOKruCC6ObBQ" name="/Destinations/LogFile/LogFailureFile" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_AYZT8I6lEeqorNFibnBHxA" name="/Destinations/LogFile/ExceptionFailureFile" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_qjT5sIYiEeqPqs4qnSrLXg" name="ComponentLogging" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_qjT5sYYiEeqPqs4qnSrLXg" processName="cleframework.logging.Logging"/>
+  </sca:component>
+  <sca:component xmi:id="_gYDPEI4DEeqUXcbEV3RH1g" name="ComponentExceptionLogging" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_gYDPEY4DEeqUXcbEV3RH1g" processName="cleframework.exception.ExceptionLogging"/>
+  </sca:component>
+</sca:composite>

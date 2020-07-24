@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/vsts/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/vsts/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+    <element name="VSTSO" type="tns:VSTSOType"></element>
+
+    <complexType name="VSTSOType">
+    	<sequence>
+    		<element name="BatchStatus" type="inc-field:FieldType" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

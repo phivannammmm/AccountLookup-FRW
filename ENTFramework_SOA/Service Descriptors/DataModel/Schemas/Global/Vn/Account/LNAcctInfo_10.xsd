@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct"
+	xmlns:cmd-prod="http://www.vietcombank.com.vn/entity/vn/common/product"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/account/lnacctinfo/1.0"
+	elementFormDefault="qualified"
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/account/lnacctinfo/1.0"
+	xmlns:Q1="http://www.vietcombank.com.vn/entity/vn/common/xfer">
+	<import namespace="datamodel/datatypes/common/serviceenvelope"
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd" />
+
+	<import
+		namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+		schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd">
+	</import>
+	<import
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/product"
+		schemaLocation="../../../Datatypes/Business/Product.xsd" />
+	<import schemaLocation="../../../Datatypes/Business/Account.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/acct"></import>
+	<element name="LNAcctInfoInqReq" type="tns:LNAcctInfoInqReqType" />
+	<element name="LNAcctInfoInqRes" type="tns:LNAcctInfoInqResType" />
+	<complexType name="LNAcctInfoInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LNAcctInfoInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadInqRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType" />
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient"
+				type="sig:HeaderForClientType" />
+			<element minOccurs="0" name="AcctID"
+				type="cmd-acct:AcctIdType" />
+			<element minOccurs="0" name="OldAcctID"
+				type="cmd-acct:AcctIdType" />
+			<element minOccurs="0" name="EffDate" type="string" />
+		</sequence>
+	</complexType>
+	<element name="PayloadInqRes" type="tns:PayloadInqResType" />
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element minOccurs="0" name="AcctInfo"
+				type="cmd-acct:AcctInfoType" />
+			<element minOccurs="0" name="OrgBal"
+				type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="CifNo" type="string" />
+			<element minOccurs="0" name="AccrualInt"
+				type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="NextMatDate" type="string" />
+			<element minOccurs="0" name="IntRate" type="string" />
+			<element minOccurs="0" name="IntDue"
+				type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="LoanOrgDate" type="string" />
+			<element minOccurs="0" name="LoanTerm" type="string" />
+			<element minOccurs="0" name="LoanTermCode" type="string" />
+			<element minOccurs="0" name="LoanType" type="string" />
+			<element minOccurs="0" name="LoanTypeDesc" type="string" />
+			<element minOccurs="0" name="PenInt"
+				type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="PrinDue"
+				type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="PartCode" type="string" />
+			<element minOccurs="0" name="NextPmtAmt"
+				type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="NextPmtDueDate" type="string" />
+			<element minOccurs="0" name="NextIntPmtDueDate"
+				type="string" />
+			<element minOccurs="0" name="AccrualFlg" type="string" />
+			<element minOccurs="0" name="AccrualAmt"
+				type="cmd-acct:AmountType" />
+			<element maxOccurs="1" minOccurs="0" name="AANo"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="FacilityCode"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="ReleaseAmt"
+				type="cmd-acct:AmountType" />
+			<element maxOccurs="1" minOccurs="0" name="FirstRelDate"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="FullRelDate"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="ProdInfo"
+				type="cmd-prod:ProductInfoType" />
+			<element maxOccurs="unbounded" minOccurs="0" name="Addr"
+				type="string" />
+			<element minOccurs="0" name="LateChargePercent"
+				type="decimal" />
+			<element minOccurs="0" name="FinalPmt"
+				type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="PmtFreq" type="int" />
+			<element minOccurs="0" name="PmtFreqCode" type="string" />
+			<element minOccurs="0" name="IntPmtFreq" type="int" />
+			<element minOccurs="0" name="IntPmtFreqCode" type="string" />
+			<element name="PaymentsPastDue" type="cmd-acct:AmountType" minOccurs="0" maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<element name="LNAcctMemoInqReq" type="tns:LNAcctMemoInqReqType" />
+
+	<element name="LNAcctMemoInqRes" type="tns:LNAcctMemoInqResType" />
+
+	<complexType name="LNAcctMemoInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadMemoInqReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="LNAcctMemoInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadMemoInqRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="PayloadMemoInqReq" type="tns:PayloadMemoInqReqType" />
+
+	<element name="PayloadMemoInqRes" type="tns:PayloadMemoInqResType" />
+
+	<complexType name="PayloadMemoInqReqType">
+		<sequence>
+			<element name="HeaderForClient"
+				type="sig:HeaderForClientType" />
+			<element minOccurs="0" name="AcctID"
+				type="cmd-acct:AcctIdType" />
+			<element minOccurs="0" name="OldAcctID"
+				type="cmd-acct:AcctIdType" />
+			<element name="Pointer" type="tns:PointerType" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadMemoInqResType">
+		<sequence>
+			<element name="Pointer" type="tns:PointerType" />
+			<element maxOccurs="unbounded" minOccurs="0" name="MemoInfo"
+				type="tns:MemoInfoType" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PointerType">
+		<sequence>
+			<element minOccurs="0" name="LinkageNo" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="MemoInfoType">
+		<sequence>
+			<element minOccurs="0" name="ID" type="string" />
+			<element name="Type" type="string" />
+			<element name="Status" type="string" />
+			<element name="LinkageNo" type="string" />
+			<element name="CifNo" type="string" />
+			<element minOccurs="0" name="CreatedUser" type="string" />
+			<element minOccurs="0" name="CreatedDate" type="string" />
+			<element minOccurs="0" name="LastMaintDate" type="string" />
+			<element minOccurs="0" name="ExpiryDate" type="string" />
+			<element minOccurs="0" name="ExtendMsg" type="string" />
+		</sequence>
+	</complexType>
+
+	<element name="LNAcctAddinInqReq" type="tns:LNAcctAddinInqReqType" />
+
+	<element name="LNAcctAddinInqRes" type="tns:LNAcctAddinInqResType" />
+
+	<complexType name="LNAcctAddinInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadAddinInqReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="LNAcctAddinInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadAddinInqRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="PayloadAddinInqReq"
+		type="tns:PayloadAddinInqReqType" />
+
+	<element name="PayloadAddinInqRes"
+		type="tns:PayloadAddinInqResType" />
+
+	<complexType name="PayloadAddinInqReqType">
+		<sequence>
+			<element name="HeaderForClient"
+				type="sig:HeaderForClientType" />
+			<element minOccurs="0" name="AcctID"
+				type="cmd-acct:AcctIdType" />
+			<element minOccurs="0" name="OldAcctID"
+				type="cmd-acct:AcctIdType" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadAddinInqResType">
+		<sequence>
+			<element minOccurs="0" name="SchedFreq" type="decimal" />
+			<element minOccurs="0" name="PmtSchedPerd" type="string" />
+			<element minOccurs="0" name="IntBillFreq" type="decimal" />
+			<element minOccurs="0" name="IntBillPerd" type="string" />
+			<element minOccurs="0" name="SchedSpecDate" type="string" />
+			<element minOccurs="0" name="IntBillSpecDate" type="string" />
+			<element minOccurs="0" name="CustLineNum" type="decimal" />
+			<element minOccurs="0" name="FacilityNum" type="string" />
+			<element minOccurs="0" name="LineAmtAppr" type="decimal" />
+			<element minOccurs="0" name="LineSts" type="string" />
+			<element minOccurs="0" name="LineBrn" type="decimal" />
+			<element minOccurs="0" name="SBVLnPrdCd" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadPayoffInqReqType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="1" name="HeaderForClient"
+				type="sig:HeaderForClientType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="AcctID"
+				type="cmd-acct:AcctIdType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="OldAcctID"
+				type="cmd-acct:AcctIdType" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadPayoffInqResType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="SName"
+				type="string">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="PrinciplePayoff"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="InterestDue"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="LateFeesDue"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="FeesDue"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="TotalOfRebates"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="UnpaidInsurance"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="EscrowBalance"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="ChargeOff"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="Penalty"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="PayoffFee"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="NetPayoff"
+				type="cmd-acct:AmountType">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="CurCode"
+				type="string">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="BranchNo"
+				type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="LNAcctPayoffInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadPayoffInqReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="LNAcctPayoffInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadPayoffInqRes"
+						minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="PayloadPayoffInqReq"
+		type="tns:PayloadPayoffInqReqType" />
+
+	<element name="PayloadPayoffInqRes"
+		type="tns:PayloadPayoffInqResType" />
+
+	<element name="LNAcctPayoffInqReq"
+		type="tns:LNAcctPayoffInqReqType">
+	</element>
+
+	<element name="LNAcctPayoffInqRes"
+		type="tns:LNAcctPayoffInqResType">
+	</element>
+
+	<complexType name="LNAcctInfoAddReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadAddReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="LNAcctInfoAddResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadAddRes" minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadAddReqType">
+		<sequence>
+			<element name="HeaderForClient"	type="sig:HeaderForClientType" />
+			<element name="CifNo" type="string"></element>
+			<element name="CustRelation" type="string" minOccurs="0"></element>
+			<element name="LNAcctInfo" type="cmd-acct:LNAcctType"></element>
+			<element name="PmtSched" type="cmd-acct:PmtSchedType" minOccurs="0" maxOccurs="unbounded"></element>
+			<element name="CollectAcct" type="cmd-acct:AcctIdType" minOccurs="0"></element>
+			<element name="CollateralInfo" type="tns:LNCollateralType" minOccurs="0"></element>
+			<element name="CreditLine" type="string" minOccurs="0"></element>
+			<element name="SubCreditLine" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadAddResType"></complexType>
+
+	<element name="LNAcctInfoAddReq" type="tns:LNAcctInfoAddReqType"></element>
+
+	<element name="LNAcctInfoAddRes" type="tns:LNAcctInfoAddResType"></element>
+
+	<element name="PayloadAddReq" type="tns:PayloadAddReqType"></element>
+
+	<element name="PayloadAddRes" type="tns:PayloadAddResType"></element>
+
+	<complexType name="LNCollateralType">
+		<sequence>
+			<element name="CollId" type="string" minOccurs="0"></element>
+			<element name="PledgeInfo" type="cmd-acct:PledgeType" minOccurs="0"></element>
+			<element name="DepAcct" type="cmd-acct:AcctIdType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="LNAcctInfoDisbReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadDisbReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="LNAcctInfoDisbResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadDisbRes" minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadDisbReqType">
+		<sequence>
+			<element name="HeaderForClient"	type="sig:HeaderForClientType" />
+			<element name="CifNo" type="string" minOccurs="0"></element>
+			<element name="LNAcct" type="cmd-acct:AcctIdType"></element>
+			<element name="DisbAmt" type="cmd-acct:AmountType"></element>
+			<element name="PrepDeductAmt" type="cmd-acct:AmountType" minOccurs="0"></element>
+			<element name="PrepInterestAmt" type="cmd-acct:AmountType" minOccurs="0"></element>
+			<element name="TransAmt" type="cmd-acct:AmountType"></element>
+			<element name="DisbType" type="string" minOccurs="0"></element>
+			<element name="OutChannelPmt" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	
+    <complexType name="PayloadDisbResType"></complexType>
+
+    <element name="LNAcctInfoDisbReq" type="tns:LNAcctInfoDisbReqType"></element>
+
+    <element name="LNAcctInfoDisbRes" type="tns:LNAcctInfoDisbResType"></element>
+
+    <element name="PayloadDisbReq" type="tns:PayloadDisbReqType"></element>
+
+    <element name="PayloadDisbRes" type="tns:PayloadDisbResType"></element>
+</schema>

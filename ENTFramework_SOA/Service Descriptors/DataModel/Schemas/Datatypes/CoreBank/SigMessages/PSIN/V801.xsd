@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema elementFormDefault="qualified"
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v801/1.0"
+	xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"
+	xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v801/1.0">
+	<xsd:import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></xsd:import>
+	<xsd:element name="V801ORepeatedField" type="tns:V801ORepeatedFieldType" />
+	<xsd:complexType name="V801ORepeatedFieldType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="1" name="TellerNumber"
+				type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1"
+				name="SequenceNumber" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1"
+				name="PSTransactionCode" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1"
+				name="ProcessingDate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DorC"
+				type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1"
+				name="TransactionAmount" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="CurrencyCode"
+				type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="Description"
+				type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SupervisorID"
+				type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1"
+				name="ServicingBranch" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1"
+				name="AccountBranch" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1"
+				name="ApplicationNumber" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1"
+				name="AccountNumber" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1"
+				name="LocalCurrencyEquivalentAmount" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1"
+				name="PCTransactionTime" type="inc-field:FieldType" />
+			<xsd:element name="EffectiveDate" type="inc-field:FieldType" minOccurs="0" maxOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+    <xsd:element name="V801I" type="tns:V801IType"></xsd:element>
+    <xsd:complexType name="V801IType">
+    	<xsd:sequence>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="inc-field:FieldType"></xsd:element>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="inc-field:FieldType"></xsd:element>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="ApplicationNumber" type="inc-field:FieldType"></xsd:element>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="Alpha6" type="inc-field:FieldType"></xsd:element>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="Alpha7" type="inc-field:FieldType"></xsd:element>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="AliasAccountType" type="inc-field:FieldType"></xsd:element>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="AliasAccountNumber" type="inc-field:FieldType"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="V801OFixedFieldType">
+    	<xsd:sequence>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="PCTime" type="inc-field:FieldType" />
+    	</xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FixedFieldType" type="tns:V801OFixedFieldType"></xsd:element>
+
+    <xsd:complexType name="V801OType">
+    	<xsd:sequence>
+    		<xsd:element name="V801OFixedField"
+    			type="tns:V801OFixedFieldType">
+    		</xsd:element>
+    		<xsd:element name="V801ORepeatedField" type="tns:V801ORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="V801O" type="tns:V801OType"></xsd:element>
+</xsd:schema>

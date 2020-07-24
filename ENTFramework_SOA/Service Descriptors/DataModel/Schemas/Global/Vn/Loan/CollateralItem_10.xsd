@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:pref="http://www.vietcombank.com.vn/entity/vn/common/loan" xmlns:pref1="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/loan/collateralitem/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/loan/collateralitem/1.0">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</import>
+
+
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/loan" schemaLocation="../../../Datatypes/Business/Loan.xsd">
+	</import>
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"/>
+	<complexType name="CollateralItemAddReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadAddReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CollateralItemAddResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadAddRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadAddReqType">
+		<sequence>
+			<element name="HeaderForClient" type="pref1:HeaderForClientType"/>
+			<element name="CollInfoInfo" type="pref:CollateralType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadAddResType">
+		<sequence>
+			<element minOccurs="0" name="CollNo" type="string"/>
+			<element minOccurs="0" name="WarningMsg" type="string"/>
+		</sequence>
+	</complexType>
+
+	<element name="CollateralItemAddReq" type="tns:CollateralItemAddReqType">
+	</element>
+
+	<element name="CollateralItemAddRes" type="tns:CollateralItemAddResType">
+	</element>
+
+	<element name="PayloadAddReq" type="tns:PayloadAddReqType"/>
+
+	<element name="PayloadAddRes" type="tns:PayloadAddResType"/>
+</schema>

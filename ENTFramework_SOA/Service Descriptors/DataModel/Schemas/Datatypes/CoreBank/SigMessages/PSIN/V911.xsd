@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v911/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v911/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+    <element name="V911O" type="tns:V911OType"></element>
+
+    <complexType name="V911OType">
+    	<sequence>
+    		<element minOccurs="0" maxOccurs="1" name="BranchNumber" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="BranchName" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="BranchAddress1" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="BranchAddress2" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="PostalCode" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="StateCode" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="BranchManagerPhoneNum" type="inc-field:FieldType" />
+    	</sequence>
+    </complexType>
+</schema>

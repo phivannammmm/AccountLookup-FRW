@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct"
+	 xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	 xmlns:cmd-xfer="http://www.vietcombank.com.vn/entity/vn/common/xfer"
+	 xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	 xmlns:tns="http://www.vietcombank.com.vn/global/vn/aft/autofundtransfer/1.0"
+	 targetNamespace="http://www.vietcombank.com.vn/global/vn/aft/autofundtransfer/1.0"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"/>
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"/>
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/acct" schemaLocation="../../../Datatypes/Business/Account.xsd"/>
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/xfer" schemaLocation="../../../Datatypes/Business/Xfer.xsd"/>
+	<element name="AutoFundTranferDD2FDAddReq" type="tns:AutoFundTransferDD2FDAddReqType"/>
+	<element name="AutoFundTranferDD2FDAddRes" type="tns:AutoFundTransferDD2FDAddResType"/>
+	<complexType name="AutoFundTransferDD2FDAddReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadAddReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AutoFundTransferDD2FDAddResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadAddRes" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="PayloadAddReq" type="tns:PayloadAddReqType"/>
+	<complexType name="PayloadAddReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element name="DDRedemption" type="tns:RedemptionType" minOccurs="0"/>
+			<element name="TMRedemption" type="tns:RedemptionType" minOccurs="0"/>
+			<element name="TermInfo" type="tns:TermInfoType" minOccurs="0"/>
+			<element name="IssueDate" type="string" minOccurs="0"/>
+			<element name="MatDate" type="string" minOccurs="0"/>
+			<element name="ExpDate" type="string" minOccurs="0"/>
+			<element name="Remark" type="string" minOccurs="0"/>
+			<element name="ProductID" type="string" minOccurs="0"/>
+			<element name="OfficerCode" type="string" minOccurs="0"/>
+			<element name="ChannelID" type="string" minOccurs="0"/>
+			<element name="ReEntryTime" type="string" minOccurs="0"/>
+			<element name="TrnDate" type="string" minOccurs="0"/>
+			<element name="TrnTime" type="string" minOccurs="0"/>
+			<element name="UserInfo" type="tns:UserInfoType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="PayloadAddResType">
+		<sequence>
+			<element name="TransferOrderNo" type="string" minOccurs="0"/>
+			<element name="DDAcctNo" type="string" minOccurs="0"/>
+			<element name="TMAcctNo" type="string" minOccurs="0"/>
+			<element name="FromAmt" type="string" minOccurs="0"/>
+			<element name="ToAmt" type="string" minOccurs="0"/>
+			<element name="Remark" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadAddRes" type="tns:PayloadAddResType"/>
+	<complexType name="PayloadUpdResType">
+		<sequence>
+			<element name="ReserveData" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadUpdRes" type="tns:PayloadUpdResType"/>
+	<complexType name="PayloadUpdReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element name="TransferOrderNo" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadUpdReq" type="tns:PayloadUpdReqType"/>
+	<complexType name="AutoFundTransferDD2FDUpdReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadUpdReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="AutoFundTransferDD2FDUpdReq" type="tns:AutoFundTransferDD2FDUpdReqType"/>
+	<complexType name="AutoFundTransferDD2FDUpdResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadUpdRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="AutoFundTransferDD2FDUpdRes" type="tns:AutoFundTransferDD2FDUpdResType"/>
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element name="CIFNo" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"/>
+	<complexType name="AutoFundTransferDD2FDInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="AutoFundTransferDD2FDInqReq" type="tns:AutoFundTransferDD2FDInqReqType"/>
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="AFTRecords" type="tns:AFTRecordsType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"/>
+	<complexType name="AutoFundTransferDD2FDInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadInqRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="AutoFundTransferDD2FDInqRes" type="tns:AutoFundTransferDD2FDInqResType"/>
+	<complexType name="AFTRecordsType">
+		<sequence>
+			<element name="TransferOrderNo" type="string" minOccurs="0"/>
+			<element name="DDAccountNo" type="string" minOccurs="0"/>
+			<element name="DDOldAcctNo" type="string" minOccurs="0"/>
+			<element name="DDAccountName" type="string" minOccurs="0"/>
+			<element name="DDTransferAmt" type="string" minOccurs="0"/>
+			<element name="DDCurrency" type="string" minOccurs="0"/>
+			<element name="ExchangeRate" type="string" minOccurs="0"/>
+			<element name="FDAccountNo" type="string" minOccurs="0"/>
+			<element name="FDOldAcctNo" type="string" minOccurs="0"/>
+			<element name="FDAccountName" type="string" minOccurs="0"/>
+			<element name="FDTransferAmt" type="string" minOccurs="0"/>
+			<element name="TermInfo" type="tns:TermInfoType" minOccurs="0"/>
+			<element name="IssueDate" type="string" minOccurs="0"/>
+			<element name="MatDate" type="string" minOccurs="0"/>
+			<element name="ExpDate" type="string" minOccurs="0"/>
+			<element name="Remark" type="string" minOccurs="0"/>
+			<element name="Status" type="string" minOccurs="0"/>
+			<element name="TellerID" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="RedemptionType">
+		<sequence>
+			<element name="AccountInfo" type="cmd-acct:AcctInfoType"/>
+			<element name="AmountInfo" type="cmd-xfer:XferAmountType"/>
+		</sequence>
+	</complexType>
+	<complexType name="TermInfoType">
+		<sequence>
+			<element name="Term" type="string" minOccurs="0"/>
+			<element name="TermCode" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="SOP00301InputType">
+		<sequence>
+			<element name="SOBK" type="string"/>
+			<element name="SOBR" type="string"/>
+			<element name="SOORDN" type="string"/>
+			<element name="SOSORD" type="string"/>
+			<element name="SOAPAP" type="string"/>
+			<element name="SOAPAC" type="string"/>
+			<element name="SOCURR" type="string"/>
+			<element name="SOACNM" type="string"/>
+			<element name="SOAPPN" type="string"/>
+			<element name="SOPER" type="string"/>
+			<element name="SOFRQ" type="string"/>
+			<element name="SODAY1" type="string"/>
+			<element name="SOFSDT" type="string"/>
+			<element name="SOEXDT" type="string"/>
+			<element name="SODESC" type="string"/>
+			<element name="SOAMT" type="string"/>
+			<element name="SOATOT" type="string"/>
+			<element name="SONXDT" type="string"/>
+			<element name="SOTORT" type="string"/>
+			<element name="SOTEXR" type="string"/>
+			<element name="SOAPDR" type="string"/>
+			<element name="SOAPCR" type="string"/>
+			<element name="SOAPFR" type="string"/>
+			<element name="SOSTAT" type="string"/>
+			<element name="SOFCTL" type="string"/>
+			<element name="SOAPEN" type="string"/>
+			<element name="SOAPLA" type="string"/>
+			<element name="SOAPAL" type="string"/>
+			<element name="SOAPWD" type="string"/>
+			<element name="SOAPCI" type="string"/>
+			<element name="SOAPAF" type="string"/>
+			<element name="SOAPNR" type="string"/>
+			<element name="SODRCR" type="string"/>
+			<element name="SOORDT" type="string"/>
+			<element name="SOACTC" type="string"/>
+			<element name="SOEXTC" type="string"/>
+			<element name="SOX3AP" type="string"/>
+			<element name="SOX3AC" type="string"/>
+			<element name="SORJFN" type="string"/>
+			<element name="SOCLFN" type="string"/>
+			<element name="SORJFW" type="string"/>
+			<element name="SOCLFW" type="string"/>
+			<element name="SORJC" type="string"/>
+			<element name="SORNTC" type="string"/>
+			<element name="SOCNTC" type="string"/>
+			<element name="SOPSEQ" type="string"/>
+			<element name="SOPPST" type="string"/>
+			<element name="SOACTG" type="string"/>
+			<element name="SOONE" type="string"/>
+			<element name="SOAPCA" type="string"/>
+			<element name="SOPDMA" type="string"/>
+			<element name="SOATBL" type="string"/>
+			<element name="SOAMTR" type="string"/>
+			<element name="SOATAI" type="string"/>
+			<element name="SOAPBK" type="string"/>
+			<element name="SOAPEX" type="string"/>
+			<element name="SOCHNL" type="string"/>
+			<element name="SOUSER" type="string"/>
+		</sequence>
+	</complexType>
+	<complexType name="SOP00401InputType">
+		<sequence>
+			<element name="SOBK" type="string"/>
+			<element name="SOTBR" type="string"/>
+			<element name="SOTORD" type="string"/>
+			<element name="SOTSOR" type="string"/>
+			<element name="SOTPNO" type="string"/>
+			<element name="SOTPAP" type="string"/>
+			<element name="SOINAC" type="string"/>
+			<element name="SOTACM" type="string"/>
+			<element name="SOTAMT" type="string"/>
+			<element name="SOTTOT" type="string"/>
+			<element name="SOTCUR" type="string"/>
+			<element name="SOTEXR" type="string"/>
+			<element name="SOTDES" type="string"/>
+			<element name="SOTDRC" type="string"/>
+			<element name="SOEXIN" type="string"/>
+			<element name="SOX4AP" type="string"/>
+			<element name="SOX4AC" type="string"/>
+			<element name="SOTPEN" type="string"/>
+			<element name="SOTPRN" type="string"/>
+			<element name="SOTPCN" type="string"/>
+			<element name="SOTCTG" type="string"/>
+			<element name="SOTPMA" type="string"/>
+			<element name="SOTPRD" type="string"/>
+			<element name="SOTBRN" type="string"/>
+			<element name="SOTOFF" type="string"/>
+			<element name="SOTPCA" type="string"/>
+			<element name="SOTSEQ" type="string"/>
+			<element name="SOTSPAC" type="string"/>
+		</sequence>
+	</complexType>
+	<complexType name="SOP90301InputType">
+		<sequence>
+			<element name="SOBK" type="string"/>
+			<element name="SOORDN" type="string"/>
+			<element name="SOUSID" type="string"/>
+			<element name="SOWKST" type="string"/>
+			<element name="SOSOPD" type="string"/>
+			<element name="SOSOP6" type="string"/>
+			<element name="SOSOPT" type="string"/>
+			<element name="SOUSBR" type="string"/>
+			<element name="SOUSDP" type="string"/>
+			<element name="SODSCX" type="string"/>
+		</sequence>
+	</complexType>
+	<complexType name="SOP90401InputType">
+		<sequence>
+			<element name="SOBK" type="string"/>
+			<element name="SOTORD" type="string"/>
+			<element name="SOTSOR" type="string"/>
+			<element name="SOUSID" type="string"/>
+			<element name="SOWKST" type="string"/>
+			<element name="SOSOPD" type="string"/>
+			<element name="SOSOP6" type="string"/>
+			<element name="SOSOPT" type="string"/>
+			<element name="SOSPID" type="string"/>
+			<element name="SOUSBR" type="string"/>
+			<element name="SOUSDP" type="string"/>
+			<element name="SOTDSX" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="SOP00301Input" type="tns:SOP00301InputType"/>
+	<element name="SOP00401Input" type="tns:SOP00401InputType"/>
+	<element name="SOP90301Input" type="tns:SOP90301InputType"/>
+	<element name="SOP90401Input" type="tns:SOP90401InputType"/>
+	<complexType name="UserInfoType">
+		<sequence>
+			<element name="UserID" type="string" minOccurs="0"/>
+			<element name="WorkstationID" type="string" minOccurs="0"/>
+			<element name="UserBranch" type="string" minOccurs="0"/>
+			<element name="UserDepartment" type="string" minOccurs="0"/>
+			<element name="SupervisorID" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>

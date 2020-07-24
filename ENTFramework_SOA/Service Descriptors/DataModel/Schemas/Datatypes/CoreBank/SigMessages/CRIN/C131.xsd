@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c131/1.0" elementFormDefault="qualified" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c131/1.0">
+	<xsd:import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	</xsd:import>
+	<xsd:import schemaLocation="../../SigMessage.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"></xsd:import>
+	<xsd:complexType name="C131IType">
+		<xsd:sequence>
+			<xsd:element name="FIXFMTCD" type="inc-field:FieldType"></xsd:element>
+			<xsd:element name="MSNIDX" type="inc-field:FieldType"></xsd:element>
+			<xsd:element name="MSIDXD" type="pref:MSIDXDType" maxOccurs="unbounded"></xsd:element>
+			<xsd:element name="SEG50020" type="pref:SEG50020Type" maxOccurs="unbounded"></xsd:element>
+			<xsd:element name="SEG21001" type="pref:SEG21001Type" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+			<xsd:element name="SEG21002" type="pref:SEG21002Type" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="C131OType"></xsd:complexType>
+
+    <xsd:element name="C131I" type="tns:C131IType"></xsd:element>
+
+    <xsd:element name="C131O" type="tns:C131OType"></xsd:element>
+</xsd:schema>

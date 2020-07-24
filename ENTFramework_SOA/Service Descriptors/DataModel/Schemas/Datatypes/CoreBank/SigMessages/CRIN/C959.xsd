@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c959/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c959/1.0">
+	<xsd:import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../../Message.xsd"/>
+	<xsd:element name="C959I" type="tns:C959IType"/>
+	<xsd:complexType name="C959IType">
+		<xsd:sequence>
+			<xsd:element name="MSCAPP" type="inc-field:FieldType"/>
+			<xsd:element name="MSCACC" type="inc-field:FieldType"/>
+			<xsd:element name="MSCCIF" type="inc-field:FieldType"/>
+			<xsd:element name="MSAANT" type="inc-field:FieldType"/>
+			<xsd:element name="MSAAN" type="inc-field:FieldType"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="C959OFixedField" type="tns:C959OFixedFieldType"/>
+	<xsd:complexType name="C959OFixedFieldType">
+		<xsd:sequence>
+			<xsd:element name="MSCNBR" type="inc-field:FieldType"/>
+			<xsd:element name="MSMNBR" type="inc-field:FieldType"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+    <xsd:element name="C959ORepeatedField" type="tns:C959ORepeatedFieldType"/>
+    <xsd:complexType name="C959ORepeatedFieldType">
+    	<xsd:sequence>
+    		<xsd:element name="CNBR" type="inc-field:FieldType"/>
+			<xsd:element name="RELC" type="inc-field:FieldType"/>
+			<xsd:element name="RELT" type="inc-field:FieldType"/>
+			<xsd:element name="TRAT" type="inc-field:FieldType"/>				
+    	</xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="C959O" type="tns:C959OType"/>
+   <xsd:complexType name="C959OType">
+		<xsd:sequence>
+			<xsd:element name="C959FixedField" type="tns:C959OFixedFieldType" minOccurs="0" maxOccurs="1"></xsd:element>
+			<xsd:element name="C959ORepeatedField" type="tns:C959ORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>     
+</xsd:schema>

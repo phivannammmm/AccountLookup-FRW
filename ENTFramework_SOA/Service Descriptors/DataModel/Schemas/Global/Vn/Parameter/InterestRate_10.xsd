@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.vietcombank.com.vn/global/vn/parameter/interestrate/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com.vn/global/vn/parameter/interestrate/1.0" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	<import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</import>
+	<import schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"></import>
+
+    <element name="InterestRateInqReq" type="tns:InterestRateInqReqType"></element>
+
+    <element name="InterestRateInqRes" type="tns:InterestRateInqResType"></element>
+
+    <complexType name="InterestRateInqReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+    				<element ref="tns:PayloadInqReq"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="InterestRateInqResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+    				<element ref="tns:PayloadInqRes" minOccurs="0"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="PayloadInqReq" type="tns:PayloadInqReqType"></element>
+
+    <element name="PayloadInqRes" type="tns:PayloadInqResType"></element>
+
+    <complexType name="PayloadInqReqType">
+    	<sequence>
+    		<element name="HeaderForClient"	type="sig:HeaderForClientType"/>
+    		<choice>
+    			<element name="IntPlans" type="tns:IntPlansReqType"></element>
+    			<element name="IndexNo" type="string" maxOccurs="unbounded"></element>
+    		</choice>
+    	</sequence>
+    </complexType>
+
+    <complexType name="PayloadInqResType">
+    	<sequence>    		   		
+    		<element name="IndexRateInfo" type="tns:IndexRateInfoType" maxOccurs="unbounded" minOccurs="0"></element>
+			<element name="IntPlanInfo" type="tns:IntPlanInfoType" maxOccurs="unbounded" minOccurs="0"></element>
+			<element name="Pointer" type="tns:PointerType" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="IndexRateInfoType">
+    	<sequence>    		
+    		<element name="IndexNo" type="string" minOccurs="0"></element>
+    		<element name="Description" type="string" minOccurs="0"></element>
+			<element name="Rate" type="decimal" minOccurs="0"></element>
+    		<element name="EffDt" type="string" minOccurs="0"></element>
+    		<element name="RateChangedToday" type="string" minOccurs="0"></element>
+    		<element name="PendingIntRate" type="decimal" minOccurs="0"></element>
+    		<element name="PendingEffDt" type="string" minOccurs="0"></element>
+    		<element name="RefInfo" type="tns:RefInfoType" minOccurs="0"></element>			
+    	</sequence>
+    </complexType>
+	
+	<complexType name="IntPlanInfoType">
+    	<sequence>    		
+    		<element name="CurCode" type="string" minOccurs="0"></element>
+    		<element name="PlanNo" type="string" minOccurs="0"></element>
+			<element name="PlanDesc" type="string" minOccurs="0"></element>
+    		<element name="RateInfo" type="tns:RateInfoType" minOccurs="0" maxOccurs="unbounded"></element>
+    		<element name="RefInfo" type="tns:RefInfoType" minOccurs="0"></element>    		   		
+    	</sequence>
+    </complexType>
+	
+	 <complexType name="IntPlansReqType">
+    	<sequence>
+    		<element name="CurCode" type="string"></element>
+    		<element name="Pointer" type="tns:PointerType" minOccurs="0"></element>    		
+    	</sequence>
+    </complexType>
+	
+	<complexType name="RefInfoType">
+    	<sequence>
+    		<element name="RefTable" type="string" minOccurs="0"></element>
+    		<element name="RefIndex" type="string" minOccurs="0"></element>
+    		<element name="RefVariance" type="decimal" minOccurs="0"></element>    		
+    	</sequence>
+    </complexType>
+	
+	<complexType name="RateInfoType">
+    	<sequence>
+    		<element name="IndexRateNo" type="string" minOccurs="0"></element>
+    		<element name="Rate" type="decimal" minOccurs="0"></element>
+    		<element name="IndexRateVariance" type="decimal" minOccurs="0"></element>    		
+    	</sequence>
+    </complexType>
+	<complexType name="PointerType">
+		<sequence>
+			<element name="PlanNo" type="string" minOccurs="0"/>
+			<element name="IndexNo" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+    <element name="PayloadIndexInqReq" type="tns:PayloadIndexInqReqType"></element>
+
+    <element name="PayloadIndexInqRes" type="tns:PayloadIndexInqResType"></element>
+
+    <complexType name="PayloadIndexInqReqType">
+    	<sequence>
+    		<element name="HeaderForClient"	type="sig:HeaderForClientType" />
+    		<element name="CurCode" type="string"></element>
+    		<element name="Pointer" type="tns:PointerType" minOccurs="0"></element>    		
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PayloadIndexInqResType">
+    	<sequence>
+    		<element name="CurCode" type="string" minOccurs="0"></element>
+    		<element name="IndexRateInfo" type="tns:IndexRateInfoType" minOccurs="0"	maxOccurs="unbounded"></element>
+    		<element name="Pointer" type="tns:PointerType" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="InterestRateIndexInqReq" type="tns:InterestRateIndexInqReqType"></element>
+
+    <element name="InterestRateIndexInqRes" type="tns:InterestRateIndexInqResType"></element>
+
+    <complexType name="InterestRateIndexInqReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+    				<element ref="tns:PayloadIndexInqReq"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="InterestRateIndexInqResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+    				<element ref="tns:PayloadIndexInqRes" minOccurs="0"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+</schema>

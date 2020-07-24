@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v921/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v921/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+    <element name="V921O" type="tns:V921OType"></element>
+
+    <complexType name="V921OType">
+    	<sequence>
+    		<element minOccurs="0" maxOccurs="1" name="GLAccount" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="CostCenter" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="AccountName" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="ClassCode" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Date" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="CurrentBalance" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="FCYBalance" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="BalanceYesterday" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="FCYBalanceYesterday" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="DebitsToday" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="FCYDebitsToday" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="CreditsToday" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="FCYCreditsToday" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="AccountStatus" type="inc-field:FieldType" />
+    	</sequence>
+    </complexType>
+</schema>

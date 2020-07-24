@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v102/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v102/1.0">
+	<xsd:import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../../Message.xsd"/>
+    <xsd:element name="V102O" type="tns:V102OType"/>
+    <xsd:complexType name="V102OType">
+    	<xsd:sequence>
+    		<xsd:element minOccurs="0" name="ShortName" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Branch" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="CurrentBookbalance" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="AvailableBalance" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="DateOpened" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="ACALimit" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="CurrencyCode" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="NumberOfOpenItems" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="PassbookStyleCode" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Filler" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="PenaltyAssessed" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="NoteOfWithdrawalAvailableDate" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="FullNameAndAddressFlag" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="NameAddressLine1" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="NameAddressLine2" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="NameAddressLine3" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="NameAddressLine4" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="NameAddressLine5" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="NameAddressLine6" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="NameAddressLine7" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="NameAddressLine8" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="AliasAccountType" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="AliasAccountNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="CIFNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="CustomerName" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="RecordNumber" type="inc-field:FieldType"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

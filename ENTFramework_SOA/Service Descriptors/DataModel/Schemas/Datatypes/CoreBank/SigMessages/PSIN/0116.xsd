@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/0116/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/0116/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+	<element name="BT0116O" type="tns:BT0116OType"></element>
+	<complexType name="BT0116OType">
+		<sequence>
+			<element name="ShortName" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="CurrentBalance" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="InterestDue" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="InterestWithheld" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="InterestWaived" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="InterestPenalty" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="ServiceChargeDue" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="NetToCustomer" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="CurrencyCode" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="AvailableWithoutPenalty"
+				type="inc-field:FieldType" minOccurs="0">
+			</element>
+			<element name="AvailableWithPenalty"
+				type="inc-field:FieldType" minOccurs="0">
+			</element>
+			<element name="InterestRate" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="AdjustableInterestRate"
+				type="inc-field:FieldType" minOccurs="0">
+			</element>
+			<element name="BranchNumber" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="Swaprate" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="Withholding" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="TaxRate" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="Tax1Due" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="Tax2Due" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="Tax3Due" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="NetAdjustment" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="ISOCurrencyCodeNumeric"
+				type="inc-field:FieldType" minOccurs="0">
+			</element>
+			<element name="InterestPaidThisTerm"
+				type="inc-field:FieldType" minOccurs="0">
+			</element>
+			<element name="AvailableInterest" type="inc-field:FieldType"
+				minOccurs="0">
+			</element>
+			<element name="TotalPenaltyAmount"
+				type="inc-field:FieldType" minOccurs="0">
+			</element>
+			<element name="WithdrawalAmount" type="inc-field:FieldType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

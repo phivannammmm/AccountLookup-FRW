@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<xs:schema
+	xmlns:cmd-memo="http://www.vietcombank.com.vn/entity/vn/common/memo"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct"
+	targetNamespace="http://www.vietcombank.com.vn/entity/vn/common/memo"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.vietcombank.com.vn/entity/vn/common/acct" schemaLocation="Account.xsd" />	
+	
+	<xs:complexType name="OfficerType">
+		<xs:sequence>
+			<xs:element name="Primary" type="xs:string" minOccurs="0"/>
+			<xs:element name="Secondary" type="xs:string" minOccurs="0"/>			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MemoItemInfoType">
+		<xs:sequence>
+			<xs:element name="ItemID" type="xs:string" minOccurs="0"/>
+			<xs:element name="ItemClass" type="xs:string" minOccurs="0"/>
+			<xs:element name="ItemType" type="xs:string" minOccurs="0"/>
+			<xs:element name="ItemStatus" type="xs:string" minOccurs="0"/>
+			<xs:element name="ItemDesc" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MemoInfoType">
+		<xs:sequence>
+			<xs:element name="ShortName" type="xs:string" minOccurs="0"/>
+			<xs:element name="AcctId" type="cmd-acct:AcctIdType" minOccurs="0"/>
+			<xs:element name="OldAcctId" type="cmd-acct:AcctIdType" minOccurs="0"/>
+			<xs:element name="CifNo" type="xs:string" minOccurs="0"/>			
+			<xs:element name="LinkNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ItemInfo" type="cmd-memo:MemoItemInfoType" minOccurs="0"/>
+			<xs:element name="MemoViewReq" type="xs:string" minOccurs="0"/>
+			<xs:element name="ExpireDate" type="xs:string" minOccurs="0"/>	
+			<xs:element name="Officer" type="cmd-memo:OfficerType" minOccurs="0"/>
+			<xs:element name="Remark" type="xs:string" minOccurs="0"/>			
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

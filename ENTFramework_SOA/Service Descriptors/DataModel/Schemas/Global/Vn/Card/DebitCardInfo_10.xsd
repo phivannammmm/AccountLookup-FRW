@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-card="http://www.vietcombank.com.vn/entity/vn/common/card" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/card/debitcardinfo/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/card/debitcardinfo/1.0">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"/>
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/card" schemaLocation="../../../Datatypes/Business/Card.xsd"/>
+	<element name="DebitCardInfoLockReq" type="tns:DebitCardInfoLockReqType"/>
+	<element name="DebitCardInfoLockRes" type="tns:DebitCardInfoLockResType"/>
+	<complexType name="DebitCardInfoLockReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadLockReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="DebitCardInfoLockResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadLockRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PayloadLockReqType">
+		<sequence>
+			<element minOccurs="0" name="Cif" type="string"/>
+			<element minOccurs="0" name="panMask" type="string"/>
+			<element minOccurs="0" name="Hash" type="string"/>
+			<element minOccurs="0" name="Username" type="string"/>
+		</sequence>
+	</complexType>
+	<complexType name="PayloadLockResType">
+		<sequence>
+			<element minOccurs="0" name="CardInfo" type="cmd-card:CardInfoType"/>
+			<element minOccurs="0" name="LockStatus" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadLockReq" type="tns:PayloadLockReqType"/>
+	<element name="PayloadLockRes" type="tns:PayloadLockResType"/>
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element minOccurs="0" name="Cif" type="string"/>
+			<element minOccurs="0" name="panMask" type="string"/>
+			<element minOccurs="0" name="Hash" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"/>
+	<complexType name="DebitCardInfoInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="DebitCardInfoInqReq" type="tns:DebitCardInfoInqReqType"/>
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element minOccurs="0" name="CardInfo" type="cmd-card:CardInfoType"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"/>
+	<complexType name="DebitCardInfoInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadInqRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="DebitCardInfoInqRes" type="tns:DebitCardInfoInqResType"/>
+	<complexType name="PayloadUnlockReqType">
+		<sequence>
+			<element minOccurs="0" name="Cif" type="string"/>
+			<element minOccurs="0" name="panMask" type="string"/>
+			<element minOccurs="0" name="Hash" type="string"/>
+			<element minOccurs="0" name="Username" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadUnlockReq" type="tns:PayloadUnlockReqType"/>
+	<complexType name="DebitCardInfoUnlockReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadUnlockReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="DebitCardInfoUnlockReq" type="tns:DebitCardInfoUnlockReqType"/>
+	<complexType name="PayloadUnlockResType">
+		<sequence>
+			<element minOccurs="0" name="CardInfo" type="cmd-card:CardInfoType"/>
+			<element minOccurs="0" name="UnlockStatus" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadUnlockRes" type="tns:PayloadUnlockResType"/>
+	<complexType name="DebitCardInfoUnlockResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadUnlockRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="DebitCardInfoUnlockRes" type="tns:DebitCardInfoUnlockResType"/>
+	<complexType name="PayloadActivateReqType">
+		<sequence>
+			<element minOccurs="0" name="newStatus" type="string"/>
+			<element minOccurs="0" name="Cif" type="string"/>
+			<element minOccurs="0" name="panMask" type="string"/>
+			<element minOccurs="0" name="Hash" type="string"/>
+			<element minOccurs="0" name="Username" type="string"/>
+			<element minOccurs="0" name="ReplReason" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadActivateReq" type="tns:PayloadActivateReqType"/>
+	<complexType name="DebitCardInfoActivateReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadActivateReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="DebitCardInfoActivateReq" type="tns:DebitCardInfoActivateReqType"/>
+	<complexType name="PayloadActivateResType">
+		<sequence>
+			<element minOccurs="0" name="CardInfo" type="cmd-card:CardInfoType"/>
+			<element minOccurs="0" name="ActivateStatus" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadActivateRes" type="tns:PayloadActivateResType"/>
+	<complexType name="DebitCardInfoActivateResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadActivateRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="DebitCardInfoActivateRes" type="tns:DebitCardInfoActivateResType"/>
+</schema>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/account/glacctinfo/1.0"
+	elementFormDefault="qualified"
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/account/glacctinfo/1.0" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	<import namespace="datamodel/datatypes/common/serviceenvelope"
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</import>
+
+	<import
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/acct"
+		schemaLocation="../../../Datatypes/Business/Account.xsd" />
+	<import schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"></import>
+	<element name="GLAcctBalInqReq" type="tns:GLAcctBalInqReqType" />
+
+	<element name="GLAcctBalInqRes" type="tns:GLAcctBalInqResType" />
+
+	<complexType name="GLAcctBalInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadBalInqReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="GLAcctBalInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadBalInqRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadBalInqReqType">
+		<sequence>
+			<element name="HeaderForClient"	type="sig:HeaderForClientType"/>
+			<element name="AcctID" type="cmd-acct:AcctIdType" minOccurs="0" />
+			<element name="OldAcctID" type="cmd-acct:AcctIdType" minOccurs="0" />
+			<element name="Currency" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadBalInqResType">
+		<sequence>
+			<element name="GLAcctInfo" type="tns:GLAcctInfoType" />
+		</sequence>
+	</complexType>
+
+	<element name="PayloadBalInqReq" type="tns:PayloadBalInqReqType" />
+
+	<element name="PayloadBalInqRes" type="tns:PayloadBalInqResType" />
+
+	<complexType name="GLAcctInfoType">
+		<complexContent>
+			<extension base="cmd-acct:AcctInfoType">
+				<sequence>					<element minOccurs="0" name="ClassCode" type="string" />
+					<element minOccurs="0" name="Date" type="string" />
+					<element minOccurs="0" name="GLBalInfo"	type="tns:GLBalInfoType" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="GLBalInfoType">
+		<sequence>
+			<element minOccurs="0" name="FCYBal" type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="BalYesterday" type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="FCYBalYesterday" type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="DebitsToday" type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="FCYDebitsToday" type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="CreditsToday" type="cmd-acct:AmountType" />
+			<element minOccurs="0" name="FCYCreditsToday" type="cmd-acct:AmountType" />
+		</sequence>
+	</complexType>
+</schema>

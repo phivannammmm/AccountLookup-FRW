@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c053/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c053/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+	<complexType name="C053IType">
+		<sequence>
+			<element name="FIXFMTCD" type="inc-field:FieldType"></element>
+			<element name="CMCNBR" type="inc-field:FieldType"></element>
+			<element name="CMMNBR" type="inc-field:FieldType"></element>
+			<element name="CMCODE" type="inc-field:FieldType"></element>
+			<element name="CMSDSC" type="inc-field:FieldType"></element>
+			<element name="CMDSC1" type="inc-field:FieldType"></element>
+			<element name="CMDSC2" type="inc-field:FieldType"></element>
+			<element name="CMDSC3" type="inc-field:FieldType"></element>
+			<element name="CMLOC" type="inc-field:FieldType"></element>
+			<element name="CMSAPP" type="inc-field:FieldType"></element>
+			<element name="CMSNBR" type="inc-field:FieldType"></element>
+			<element name="CMQTY" type="inc-field:FieldType"></element>
+			<element name="CMUPRC" type="inc-field:FieldType"></element>
+			<element name="CMVAL" type="inc-field:FieldType"></element>
+			<element name="CMOPRC" type="inc-field:FieldType"></element>
+			<element name="CMOVAL" type="inc-field:FieldType"></element>
+			<element name="CMOQTY" type="inc-field:FieldType"></element>
+			<element name="CMRLDT" type="inc-field:FieldType"></element>
+			<element name="CMCMCN" type="inc-field:FieldType"></element>
+			<element name="CMMPCT" type="inc-field:FieldType"></element>
+			<element name="CMMAXV" type="inc-field:FieldType"></element>
+			<element name="CMLVDT" type="inc-field:FieldType"></element>
+			<element name="CMPAMT" type="inc-field:FieldType"></element>
+			<element name="CMRRLD" type="inc-field:FieldType"></element>
+			<element name="CMEXDT" type="inc-field:FieldType"></element>
+			<element name="CMLGL2" type="inc-field:FieldType"></element>
+			<element name="CMLGL3" type="inc-field:FieldType"></element>
+			<element name="CMINSR" type="inc-field:FieldType"></element>
+			<element name="CMINSD" type="inc-field:FieldType"></element>
+			<element name="CMSKRC" type="inc-field:FieldType"></element>
+			<element name="CMINTR" type="inc-field:FieldType"></element>
+			<element name="CMAVL" type="inc-field:FieldType"></element>
+			<element name="CMPOOL" type="inc-field:FieldType"></element>
+			<element name="CMRVP" type="inc-field:FieldType"></element>
+			<element name="CMRVF" type="inc-field:FieldType"></element>
+			<element name="CMRVSP" type="inc-field:FieldType"></element>
+			<element name="CMRVN" type="inc-field:FieldType"></element>
+			<element name="CMRVCN" type="inc-field:FieldType"></element>
+			<element name="CMMTND" type="inc-field:FieldType"></element>
+			<element name="CMCSNR" type="inc-field:FieldType"></element>
+			<element name="CMSHRT" type="inc-field:FieldType"></element>
+			<element name="CMSHKY" type="inc-field:FieldType"></element>
+			<element name="CMINTD" type="inc-field:FieldType"></element>
+			<element name="CMRVAL" type="inc-field:FieldType"></element>
+			<element name="CMREGU" type="inc-field:FieldType"></element>
+			<element name="CMCUSP" type="inc-field:FieldType"></element>
+			<element name="CMUSR1" type="inc-field:FieldType"></element>
+			<element name="CMUSR2" type="inc-field:FieldType"></element>
+			<element name="CMUSR3" type="inc-field:FieldType"></element>
+			<element name="CMUSR4" type="inc-field:FieldType"></element>
+			<element name="CMUSR5" type="inc-field:FieldType"></element>
+			<element name="CMUSR6" type="inc-field:FieldType"></element>
+			<element name="CMSEGR" type="inc-field:FieldType"></element>
+			<element name="MSAPPL2" type="inc-field:FieldType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="C053OType">
+		<sequence>
+			<element name="MSRULN" type="inc-field:FieldType"></element>
+			<element name="MSMLNK" type="inc-field:FieldType"></element>
+		</sequence>
+	</complexType>
+
+	<element name="C053I" type="tns:C053IType"></element>
+
+    <element name="C053O" type="tns:C053OType"></element>
+</schema>

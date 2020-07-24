@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/customer/customerlist/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/customer/customerlist/1.0"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:cmd-party="http://www.vietcombank.com.vn/entity/vn/common/party" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	<import	schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd" namespace="datamodel/datatypes/common/serviceenvelope"></import>
+	<import schemaLocation="../../../Datatypes/Business/Party.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/party"></import>
+	<import schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"></import>
+	
+	<element name="CustomerListInqReq" type="tns:CustomerListInqReqType"></element>
+	<element name="CustomerListInqRes" type="tns:CustomerListInqResType"></element>
+
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"></element>
+
+	<complexType name="CustomerListInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CustomerListInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadInqRes" minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"/>
+
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient"	type="pref:HeaderForClientType"/>
+			<element name="SearchType" type="string"/>
+			<element name="SearchValue" type="string"/>
+			<element name="Pointer" type="tns:PointerType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="CustomerInfo" type="cmd-party:CustomerInfoType" minOccurs="0"	maxOccurs="unbounded"/>
+			<element name="Pointer" type="tns:PointerType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PointerType">
+		<sequence>
+			<element name="CIFKey" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>

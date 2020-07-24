@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com.vn/framework/utilities/pattern/pattern/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com.vn/framework/utilities/pattern/pattern/1.0"
+	xmlns:Q1="datamodel/datatypes/common/serviceenvelope" xmlns:cmd-svrenv="framework/datatypes/common/serviceenvelope">
+
+	<import schemaLocation="../../DataTypes/Common/SvcEnvelope.xsd" namespace="framework/datatypes/common/serviceenvelope"></import>
+	<element name="InvokeRequest" type="tns:InvokeRequest_Type"></element>
+
+	<complexType name="InvokeRequest_Type">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseMsgHdr_Type">
+				<sequence>
+					<element ref="cmd-svrenv:SvcInfo"></element>
+					<element ref="tns:Msg" minOccurs="0"></element>
+					<element ref="tns:AdditionalInfo" minOccurs="0" maxOccurs="unbounded"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="any_Type">
+		<sequence>
+			<any namespace="##any" processContents="lax"
+				minOccurs="0">
+			</any>
+		</sequence>
+	</complexType>
+
+
+    <element name="InvokeResponse" type="tns:InvokeResponse_Type"></element>
+
+    <complexType name="InvokeResponse_Type">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseMsgHdr_Type">
+    			<sequence>
+    				<element ref="cmd-svrenv:Status"></element>
+    				<element ref="tns:Msg" minOccurs="0"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="Msg" type="tns:any_Type"></element>
+
+    <element name="JMSMsg" type="tns:JMSMsg_Type"></element>
+
+    <complexType name="JMSMsg_Type">
+    	<sequence>
+    		<element name="QueueIn" type="string" minOccurs="0"></element>
+    		<element name="QueueOut" type="string" minOccurs="0"></element>
+    		<element name="CorrelationID" type="string" minOccurs="0"></element>
+    		<element ref="cmd-svrenv:MsgHdr" minOccurs="0"></element>
+    		<element ref="cmd-svrenv:Status" minOccurs="0"></element>
+    		<element ref="tns:Msg" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+        <element name="SvcIdent" type="tns:SvcIdent_Type"></element>
+    	<complexType name="SvcIdent_Type">
+		<sequence>
+			<element name="SvcCategory" type="string" minOccurs="0"/>
+			<element name="SvcType" type="string" minOccurs="0"/>
+			<element name="BillerId" type="string" minOccurs="0"/>
+			<element name="BillerDivisionId" type="string" minOccurs="0"/>
+			<element name="AggregatorId" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+    <element name="getRouteOut" type="tns:getRouteOut_Type"></element>
+
+    <complexType name="getRouteOut_Type">
+    	<sequence>
+    		<element ref="cmd-svrenv:Status"></element>
+    		<element name="Route" type="string" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="AdditionalInfo" type="tns:AdditionalInfo_Type"></element>
+
+    <complexType name="AdditionalInfo_Type">
+    	<sequence>
+    		<element name="ID" type="string"></element>
+    		<element name="Value" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+    
+
+</schema>

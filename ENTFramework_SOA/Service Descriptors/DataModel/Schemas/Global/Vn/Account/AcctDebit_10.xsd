@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.vietcombank.com.vn/global/vn/account/acctdebit/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com.vn/global/vn/account/acctdebit/1.0" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	<import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</import>
+	<import schemaLocation="../../../Datatypes/Business/Account.xsd"
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/acct">
+	</import>
+	<import schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"></import>
+
+    <element name="AcctDebitAddReq" type="tns:AcctDebitAddReqType"></element>
+
+    <element name="AcctDebitAddRes" type="tns:AcctDebitAddResType"></element>
+
+    <complexType name="AcctDebitAddReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+					<element ref="tns:PayloadAddReq"/>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="AcctDebitAddResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+					<element ref="tns:PayloadAddRes" minOccurs="0"/>
+				</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="PayloadAddReq" type="tns:PayloadAddReqType"></element>
+
+    <complexType name="PayloadAddReqType">
+    	<sequence>
+    		<element name="HeaderForClient"
+    			type="pref:HeaderForClientType">
+    		</element>
+    		<element name="AcctDebitInfo"
+    			type="cmd-acct:AcctCDInfoType">
+    		</element>
+    		<element minOccurs="0" name="RevFlg" type="string" />
+    		<element name="OpenPosFlg" type="string" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="PayloadAddRes" type="tns:PayloadAddResType"></element>
+
+    <complexType name="PayloadAddResType">
+    	<sequence>
+    		<element name="RefNumber" type="string" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

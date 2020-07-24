@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v113/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v113/1.0">
+	<xsd:import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../../Message.xsd"/>
+	<xsd:element name="V113O" type="tns:V113OType"/>
+	<xsd:complexType name="V113OType">
+		<xsd:sequence>
+			<xsd:element name="AccountNumber" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="ShortName" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="PayoffAmount" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="NextPaymentDueDate"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="NextPaymentAmount"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="InterestRate" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="InterestPaidYTD"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="EscrowBalance" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="LateFeesDue" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="LateFeesPaid" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="CurrentBalance"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="PaymentAmount" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="PaymentDueDate"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="PrincipalDue" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="InterestDue" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="EscrowDue" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="RebateableAmount"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="NumberOfPayments"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="MemoNumber" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="ChargeOffCode" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="NonAccrualFlag"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="PaymentsPastDue"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="AvailableLoanAmount"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="CurrencyCode" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="FeesDue" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="UnpaidInsurance"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="ChargeOffDate" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="NonAccrualDate"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="NextMaturityDate"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="OfficerNumber" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="BranchNumber" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="UserCodeOne" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="UserCodeTwo" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="PromptPaymentDiscount"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="AccountMemo" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="PrimaryCIF" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="VATExemptFlag" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="CustomerType" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="VATNumber" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="AddressLine1" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="VIPClass" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="BoughtSoldCode"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="LoanStatus" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="LoanType" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="TotalAmountDisbursed"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="LateChargeAccrual"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="FaceAmountOfNote"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="FullReleaseDate"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="LoanTermPeriod"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="LoanTerm" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="OriginalLoanDate"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="NextInterestPaymentDueDate"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="NextPaymentDueDatePrincipal"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="NameAddressLine1"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="FirstReleaseDate"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="RevolvingOrNonRevolving"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="RestrictToSingleAccount"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="IntAccruedOnChargeOff "
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="NonAccrualInstructionCode"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="AmountAccruedSinceDate"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="LoanTypeDescription"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="SBVReferenceCode"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="LateChargePercentOverduePrin"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="FinalPayment" type="inc-field:FieldType"
+				minOccurs="0" />
+			<xsd:element name="AliasAccountType"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="AliasAccountNumber"
+				type="inc-field:FieldType" minOccurs="0" />
+			<xsd:element name="AccountName2" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+			<xsd:element name="CustomerName1" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+			<xsd:element name="CustomerName2" type="inc-field:FieldType" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

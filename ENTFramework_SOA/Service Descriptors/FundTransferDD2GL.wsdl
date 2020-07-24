@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.vietcombank.com.vn/service/global/vn/fundtransfer/fundtransferdd2gl/1.0" xmlns:tns0="http://www.vietcombank.com.vn/global/vn/fundtransfer/fundtransferdd2gl/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FundTransferDD2GL" targetNamespace="http://www.vietcombank.com.vn/service/global/vn/fundtransfer/fundtransferdd2gl/1.0">
+  <wsdl:import namespace="http://www.vietcombank.com.vn/global/vn/fundtransfer/fundtransferdd2gl/1.0"/>
+  <wsdl:message name="AddRequest">
+    <wsdl:part element="tns0:FundTransferDD2GLAddReq" name="inAdd"/>
+  </wsdl:message>
+  <wsdl:message name="AddResponse">
+    <wsdl:part element="tns0:FundTransferDD2GLAddRes" name="outAdd"/>
+  </wsdl:message>
+  <wsdl:message name="RevRequest">
+    <wsdl:part element="tns0:FundTransferDD2GLRevReq" name="inRev"/>
+  </wsdl:message>
+  <wsdl:message name="RevResponse">
+    <wsdl:part element="tns0:FundTransferDD2GLRevRes" name="outRev"/>
+  </wsdl:message>
+  <wsdl:portType name="FundTransferDD2GL">
+    <wsdl:operation name="Add">
+      <wsdl:input message="tns:AddRequest"/>
+      <wsdl:output message="tns:AddResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="Rev">
+      <wsdl:input message="tns:RevRequest" name="operationInput"/>
+      <wsdl:output message="tns:RevResponse" name="operationOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FundTransferDD2GLServiceBinding" type="tns:FundTransferDD2GL">
+    <soap12:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+    <jms:binding messageFormat="bytes"/>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="Add" soapActionRequired="true" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="inAdd" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="outAdd" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Rev">
+      <soap12:operation soapAction="Rev" soapActionRequired="true" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="inRev" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="outRev" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FundTransferDD2GL">
+    <wsdl:port binding="tns:FundTransferDD2GLServiceBinding" name="FundTransferDD2GLSOAP">
+      <soap12:address location=""/>
+      <jms:connectionFactory>FTQueueConnectionFactory</jms:connectionFactory>
+      <jms:targetAddress destination="queue">vn.fundtransfer.ws-fundtransferdd2gl.1.0</jms:targetAddress>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

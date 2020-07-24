@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/crc/creditinformation/1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/crc/creditinformation/1.0">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"/>
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"/>
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element minOccurs="0" name="CIFNo" type="string"/>
+			<element minOccurs="0" name="FacilityNo" type="string"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"/>
+	<complexType name="CreditInformationInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="CreditInformationInqReq" type="tns:CreditInformationInqReqType"/>
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="CreditInformationRecords" type="tns:CreditInformationRecordsType"/>
+		</sequence>
+	</complexType>
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"/>
+	<complexType name="CreditInformationInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadInqRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="CreditInformationInqRes" type="tns:CreditInformationInqResType"/>
+	<complexType name="CreditInformationRecordsType">
+		<sequence>
+			<element name="BranchNumber" type="string"/>
+			<element name="CIFNo" type="string"/>
+			<element name="CustomerName" type="string"/>
+			<element name="CreditLineNo" type="string"/>
+			<element name="CreditLineBalance" type="string"/>
+			<element name="CreditLineCreateDate" type="string"/>
+			<element name="DateOfLastDWAllowed" type="string"/>
+			<element name="CRSUser" type="string"/>
+			<element name="CRSUserName" type="string"/>
+			<element name="CSOUser" type="string"/>
+			<element name="CSOUserName" type="string"/>
+		</sequence>
+	</complexType>
+</schema>

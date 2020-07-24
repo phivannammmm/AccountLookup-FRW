@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.vietcombank.com.vn/global/vn/card/cardlist/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com.vn/global/vn/card/cardlist/1.0" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:cmd-card="http://www.vietcombank.com.vn/entity/vn/common/card">
+    <import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</import>
+	<import schemaLocation="../../../Datatypes/Business/Card.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/card"></import>
+
+    <element name="CardListInqReq" type="tns:CardListInqReqType"></element>
+
+    <element name="CardListInqRes" type="tns:CardListInqResType"></element>
+
+    <complexType name="CardListInqReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+    				<element ref="tns:PayloadInqReq"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="CardListInqResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+    			<sequence>
+    				<element ref="tns:PayloadInqRes" minOccurs="0"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <element name="PayloadInqRes" type="tns:PayloadInqResType"></element>
+
+    <element name="PayloadInqReq" type="tns:PayloadInqReqType"></element>
+
+    <complexType name="PayloadInqResType">
+    	<sequence>
+			<element name="CardInfo" type="cmd-card:CardInfoType" minOccurs="0" maxOccurs="unbounded" />
+    	</sequence>
+    </complexType>
+    
+    <complexType name="PayloadInqReqType">
+    	<sequence>
+    		<element name="IdNo" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:tns="http://www.vietcombank.com.vn/global/vn/parameter/interestrateupd/1.0"
+	 xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	 xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	 targetNamespace="http://www.vietcombank.com.vn/global/vn/parameter/interestrateupd/1.0"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"/>
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"/>
+	<element name="InterestRateUpdReq" type="tns:InterestRateUpdReqType"/>
+	<element name="InterestRateUpdRes" type="tns:InterestRateUpdResType"/>
+	<complexType name="InterestRateUpdReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadUpdReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="InterestRateUpdResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType"/>
+		</complexContent>
+	</complexType>
+	<element name="PayloadUpdReq" type="tns:PayloadUpdReqType"/>
+	<complexType name="PayloadUpdReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element name="Rate" type="string" minOccurs="0"/>
+			<element name="Currency" type="string" minOccurs="0"/>
+			<element name="RateNumber" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>

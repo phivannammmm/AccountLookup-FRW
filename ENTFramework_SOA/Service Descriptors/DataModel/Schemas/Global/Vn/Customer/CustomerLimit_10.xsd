@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema elementFormDefault="qualified"
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/customer/customerlimit/1.0"
+	xmlns="http://www.w3.org/2001/XMLSchema"	
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/customer/customerlimit/1.0" xmlns:cmd-xfer="http://www.vietcombank.com.vn/entity/vn/common/xfer">
+	<import namespace="datamodel/datatypes/common/serviceenvelope"
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</import>
+
+	<import
+		namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+		schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd" />
+
+	<import schemaLocation="../../../Datatypes/Business/Xfer.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/xfer"></import>
+	
+	<element name="CustomerLimitAddEarmarkReq"
+		type="tns:CustomerLimitAddEarmarkReqType" />
+
+	<element name="CustomerLimitAddEarmarkRes"
+		type="tns:CustomerLimitAddEarmarkResType" />
+		
+	<complexType name="CustomerLimitAddEarmarkReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadAddEarmarkReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CustomerLimitAddEarmarkResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadAddEarmarkRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadAddEarmarkReqType">
+		<sequence>
+			<element name="HeaderForClient"
+				type="sig:HeaderForClientType" />
+			<element name="EarmarkInfo" type="tns:EarmarkInfoType"/>			
+		</sequence>
+	</complexType>
+
+
+	<complexType name="PayloadAddEarmarkResType">
+		<sequence>
+			<element name="CustName" type="string" minOccurs="0"></element>
+			<element name="ReservationId" type="string" minOccurs="0" maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	
+
+	<element name="PayloadAddEarmarkReq" type="tns:PayloadAddEarmarkReqType" />
+	<element name="PayloadAddEarmarkRes" type="tns:PayloadAddEarmarkResType" />
+	
+	<complexType name="EarmarkInfoType">
+		<sequence>
+			<element name="CifNo" type="string" />
+			<element name="UpdateAmount" type="cmd-xfer:XferAmountType"
+				minOccurs="0">
+			</element>
+			<element name="LimitLevel" type="string" minOccurs="0"></element>
+			<element name="SubLimitNo" type="string" minOccurs="0"></element>
+			<element name="ReservationId" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="CustomerLimitUseEarmarkReq"
+		type="tns:CustomerLimitUseEarmarkReqType" />
+
+	<element name="CustomerLimitUseEarmarkRes"
+		type="tns:CustomerLimitUseEarmarkResType" />
+		
+	<complexType name="CustomerLimitUseEarmarkReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadUseEarmarkReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CustomerLimitUseEarmarkResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadUseEarmarkRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadUseEarmarkReqType">
+		<sequence>
+			<element name="HeaderForClient"
+				type="sig:HeaderForClientType" />
+			<element name="EarmarkInfo" type="tns:EarmarkInfoType"/>			
+		</sequence>
+	</complexType>
+
+
+	<complexType name="PayloadUseEarmarkResType">
+		<sequence>
+			<element name="CustName" type="string" minOccurs="0"></element>
+			<element name="ReservationId" type="string" minOccurs="0" maxOccurs="1"></element>
+		</sequence>
+	</complexType>	
+
+	<element name="PayloadUseEarmarkReq" type="tns:PayloadUseEarmarkReqType" />
+	<element name="PayloadUseEarmarkRes" type="tns:PayloadUseEarmarkResType" />
+	
+	<element name="CustomerLimitRemoveEarmarkReq"
+		type="tns:CustomerLimitRemoveEarmarkReqType" />
+
+	<element name="CustomerLimitRemoveEarmarkRes"
+		type="tns:CustomerLimitRemoveEarmarkResType" />
+		
+	<complexType name="CustomerLimitRemoveEarmarkReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadRemoveEarmarkReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CustomerLimitRemoveEarmarkResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadRemoveEarmarkRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadRemoveEarmarkReqType">
+		<sequence>
+			<element name="HeaderForClient"
+				type="sig:HeaderForClientType" />
+			<element name="EarmarkInfo" type="tns:EarmarkInfoType"/>			
+		</sequence>
+	</complexType>
+
+
+	<complexType name="PayloadRemoveEarmarkResType">
+		<sequence>
+			<element name="CustName" type="string" minOccurs="0"></element>
+			<element name="ReservationId" type="string" minOccurs="0" maxOccurs="1"></element>
+		</sequence>
+	</complexType>	
+
+	<element name="PayloadRemoveEarmarkReq" type="tns:PayloadRemoveEarmarkReqType" />
+	<element name="PayloadRemoveEarmarkRes" type="tns:PayloadRemoveEarmarkResType" />
+	
+	<element name="CustomerLimitUnUtilisedEarmarkReq"
+		type="tns:CustomerLimitUnUtilisedEarmarkReqType" />
+
+	<element name="CustomerLimitUnUtilisedEarmarkRes"
+		type="tns:CustomerLimitUnUtilisedEarmarkResType" />
+		
+	<complexType name="CustomerLimitUnUtilisedEarmarkReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadUnUtilisedEarmarkReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CustomerLimitUnUtilisedEarmarkResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadUnUtilisedEarmarkRes" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadUnUtilisedEarmarkReqType">
+		<sequence>
+			<element name="HeaderForClient"
+				type="sig:HeaderForClientType" />
+			<element name="EarmarkInfo" type="tns:EarmarkInfoType"/>			
+		</sequence>
+	</complexType>
+
+
+	<complexType name="PayloadUnUtilisedEarmarkResType">
+		<sequence>
+			<element name="CustName" type="string" minOccurs="0"></element>
+			<element name="ReservationId" type="string" minOccurs="0" maxOccurs="1"></element>
+		</sequence>
+	</complexType>	
+
+	<element name="PayloadUnUtilisedEarmarkReq" type="tns:PayloadUnUtilisedEarmarkReqType" />
+	<element name="PayloadUnUtilisedEarmarkRes" type="tns:PayloadUnUtilisedEarmarkResType" />
+</schema>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/0117/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/0117/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+	<complexType name="BTR0117OType">
+		<sequence>
+			<element name="ShortName" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="PrincipalPayoff" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="InterestDue" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="RebateableInterest"
+				type="inc-field:FieldType" minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="EscrowDue" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="LateFeesDue" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="OtherRebates" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="NetToCustomer" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="CurrencyCode" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="FeesDue" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="UnpaidInsurance" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="PenaltyAmount" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="BranchNumber" type="inc-field:FieldType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="DefaultFee" type="inc-field:FieldType" minOccurs="0" maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+    <element name="BTR0117O" type="tns:BTR0117OType"></element>
+</schema>

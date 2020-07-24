@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v919/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v919/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+    <element name="V919O" type="tns:V919OType"></element>
+
+    <complexType name="V919OType">
+   	<sequence>
+    		<element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="CurrencyDescription" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="DecimalPosition" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="BookExchangeRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="AllowableVarianceToBookRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="BuyNoteMinRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="SellNoteMaxRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="BuyChequeMinRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="SellChequeMaxRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="BuyAppTransferMinRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="SellAppTransferMaxRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="DenominationGroup1BuyRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="DenominationGroup2BuyRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="DenominationGroup3BuyRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="DenominationGroup1SellRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="DenominationGroup2SellRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="DenominationGroup3SellRate" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="SpecialRate1Buy" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="SpecialRate1Sell" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Authorizer" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="DateEffective" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="TimeEffective" type="inc-field:FieldType" />
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v180/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v180/1.0">
+
+
+	<xsd:import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../../Message.xsd"/>
+	<xsd:element name="V180O" type="tns:V180OType"/>
+
+	<xsd:complexType name="V180OType">
+		<xsd:sequence>
+			<xsd:element name="V180OFixedField" type="tns:V180OFixedFieldType" minOccurs="0" maxOccurs="1"></xsd:element>
+			<xsd:element name="V180ORepeatedField" type="tns:V180ORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:complexType name="V180OFixedFieldType">
+    	<xsd:sequence>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="ShortName" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="Pointer" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="Currency" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="BranchNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="AliasAccountType" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="AliasAccountNumber" type="inc-field:FieldType"/>
+		</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="V180OFixedField" type="tns:V180OFixedFieldType"></xsd:element>
+
+    <xsd:complexType name="V180ORepeatedFieldType">
+    	<xsd:sequence>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="TransactionWithinTheDay" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="DebitCreditCode" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="PostingDate" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="LCYETransactionAmount" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="InternalTransactionCode" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="PassbookFlag" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="Description1" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ExternalTransactionCode" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="BatchSequenceNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ReversalFlag" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="TransactionSource" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="SourceReferenceNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="UserID" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="SequenceNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="TimeofTransaction" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="Description258" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="TellerTransactionCode" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="PrincipalBalanceAfterPost" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="InterestBalanceAfterPost" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="PSTellerBranch" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="PSTellerNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="PSTellerTillNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="PSSessionNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="PSTransactionSequence" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="PSProcessingDate" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" maxOccurs="1" name="PSPCTime" type="inc-field:FieldType"/>
+		</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="V180ORepeatedField" type="tns:V180ORepeatedFieldType"></xsd:element>
+</xsd:schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v11i/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v11i/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+    <element name="V11II" type="tns:V11IIType"></element>
+
+    <element name="V11IO" type="tns:V11IOType"></element>
+
+
+
+    <complexType name="V11IIType">
+    	<sequence>
+    		<element minOccurs="0" maxOccurs="1" name="AccountNumber" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="ApplicationNumber" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Alpha1" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Alpha2" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Alpha3" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Alpha4" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Alpha5" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="TransactionTime" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Alpha7" type="inc-field:FieldType" />
+			<element minOccurs="0" maxOccurs="1" name="Alpha8" type="inc-field:FieldType" />
+    	</sequence>
+    </complexType>
+    
+    <complexType name="V11IOType">
+    	<sequence>
+    		<element minOccurs="0" maxOccurs="1" name="SequenceNumber"
+    			type="inc-field:FieldType" />
+    		<element name="ApplicationNumber"
+    			type="inc-field:FieldType" minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element minOccurs="0" maxOccurs="1"
+    			name="AccountNumber" type="inc-field:FieldType" />
+    		<element name="TransactionTime" type="inc-field:FieldType" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+
+</schema>

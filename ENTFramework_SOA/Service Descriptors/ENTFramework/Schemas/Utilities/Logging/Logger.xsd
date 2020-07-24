@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	xmlns:tns="framework/utilities/logging/logger"
+	elementFormDefault="qualified"
+	targetNamespace="framework/utilities/logging/logger" xmlns:cmd-fw="datamodel/datatypes/common/framework">
+
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../../DataModel/Schemas/Datatypes/Common/ServiceEnvelope.xsd"/>
+	<import namespace="datamodel/datatypes/common/framework"></import>
+	<element name="DebugRequest" type="tns:DebugRequestType" />
+
+	<complexType name="DebugRequestType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="ServiceHeader"
+				type="cmd-svrenv:ServiceHeaderType" />
+			<element name="ResponseStatus"
+				type="cmd-svrenv:ResponseStatusType" minOccurs="0" maxOccurs="1">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="MessagePayLoad"
+				type="string" />
+			<element name="ServiceInfo" type="cmd-fw:ServiceInfoType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="TimeDuration" type="int" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="Direction" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="SOAMsgId" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="HostName" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="LogTimestamp" type="dateTime" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<element name="ExceptionRequest" type="tns:ExceptionRequestType" />
+
+	<complexType name="ExceptionRequestType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="ServiceHeader"
+				type="cmd-svrenv:ServiceHeaderType" />
+			<element maxOccurs="1" minOccurs="0" name="MessagePayload"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0"
+				name="TransactionDomain" type="string" />
+			<element maxOccurs="1" minOccurs="0" name="Category"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="StackTrace"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="ErrorCode"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="ErrorMessage"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="ErrorDescription"
+				type="string" />
+
+			<element name="SOAMsgId" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="ServiceInfo" type="cmd-fw:ServiceInfoType"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="FullClass"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="Class"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="ProcessStack"
+				type="string" /> 
+		</sequence>
+	</complexType>
+
+	<element name="ExceptionResponse"
+		type="tns:ExceptionResponseType">
+	</element>
+
+	<element name="DebugResponse" type="tns:DebugResponseType"></element>
+	
+    <complexType name="ExceptionResponseType">
+    	<sequence>
+    		<element name="out" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="DebugResponseType">
+    	<sequence>
+    		<element name="out" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    
+
+    <complexType name="ExceptionMsgType">
+    	<sequence>
+    		<element name="ApplicationID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ErrCode" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ErrDesc" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <element name="ExceptionMsg" type="tns:ExceptionMsgType"></element>
+
+    <complexType name="DashboardInfoType">
+    	<sequence>
+    		<element name="FromID" type="string"></element>
+    		<element name="FromName" type="string"></element>
+    		<element name="ServiceName" type="string"></element>
+    		<element name="OperationName" type="string"></element>
+    		<element name="TimeDuration" type="int"></element>
+    		<element name="ResponseStatus" type="string"></element>
+    		<element name="ErrorCode" type="string"></element>
+    	</sequence>
+    </complexType>
+    <element name="DashboardInfo" type="tns:DashboardInfoType"></element>   
+</schema>

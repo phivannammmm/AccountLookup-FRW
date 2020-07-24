@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c009/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c009/1.0">
+	<xsd:import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../../Message.xsd"/>
+	<xsd:element name="C009I" type="tns:C009IType"/>
+	<xsd:complexType name="C009IType">
+		<xsd:sequence>
+			<xsd:element name="MSCNBR" type="inc-field:FieldType"/>
+			<xsd:element name="MSMNBR" type="inc-field:FieldType"/>
+			<xsd:element name="MSCDTA" type="inc-field:FieldType"/>
+			<xsd:element name="MSFLD" type="inc-field:FieldType"/>
+			<xsd:element name="MSFLDL" type="inc-field:FieldType"/>
+			<xsd:element name="MSOLDD" type="inc-field:FieldType"/>
+			<xsd:element name="MSNEWD" type="inc-field:FieldType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="C009O" type="tns:C009OType"/>
+	<xsd:complexType name="C009OType">
+		<xsd:sequence>
+			<xsd:element name="MSRULN" type="inc-field:FieldType"/>
+			<xsd:element name="MSCNBR" type="inc-field:FieldType"/>
+			<xsd:element name="MSCNA1" type="inc-field:FieldType"/>
+			<xsd:element name="MSCNA2" type="inc-field:FieldType"/>
+			<xsd:element name="MSCNA3" type="inc-field:FieldType"/>
+			<xsd:element name="MSCNA4" type="inc-field:FieldType"/>
+			<xsd:element name="MSCNA5" type="inc-field:FieldType"/>
+			<xsd:element name="MSCNA6" type="inc-field:FieldType"/>
+			<xsd:element name="MSCANM" type="inc-field:FieldType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

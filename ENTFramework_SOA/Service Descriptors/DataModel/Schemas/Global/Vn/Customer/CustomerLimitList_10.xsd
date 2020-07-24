@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/customer/customerlimitlist/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com.vn/global/vn/customer/customerlimitlist/1.0"
+	xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"	
+	xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct">
+	<import
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"
+		namespace="datamodel/datatypes/common/serviceenvelope">
+	</import>
+	<import schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"
+		namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0">
+	</import>
+
+	<import schemaLocation="../../../Datatypes/Business/Account.xsd" namespace="http://www.vietcombank.com.vn/entity/vn/common/acct"></import>
+	<element name="CustomerLimitListInqReq"
+		type="tns:CustomerLimitListInqReqType">
+	</element>
+	<element name="CustomerLimitListInqRes"
+		type="tns:CustomerLimitListInqResType">
+	</element>
+
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"></element>
+
+	<complexType name="CustomerLimitListInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="CustomerLimitListInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadInqRes" minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="PayloadInqRes" type="tns:PayloadInqResType" />
+
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient"
+				type="pref:HeaderForClientType" />
+			<element name="CifNo" type="string" />
+			<element name="SubLimitCode" type="string" minOccurs="0"/>
+			<element name="Pointer" type="tns:PointerType"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PayloadInqResType">
+		<sequence>
+			<element name="CustLimitInfo" type="tns:CustomerLimitType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<element name="Pointer" type="tns:PointerType"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+	<complexType name="CustomerLimitType">
+		<sequence>
+			<element name="LimitLevel" type="string" minOccurs="0"></element>
+			<element name="LimitLevelDesc" type="string" minOccurs="0"></element>
+			<element name="LineNo" type="string" minOccurs="0"></element>
+			<element name="LineType" type="string" minOccurs="0"></element>
+			<element name="SubLimitNo" type="string" minOccurs="0"></element>
+			<element name="FacilityAmount" type="cmd-acct:AmountType" minOccurs="0"></element>
+			<element name="UtilisedAmount" type="cmd-acct:AmountType" minOccurs="0"></element>
+			<element name="EarmarkAmount" type="cmd-acct:AmountType" minOccurs="0"></element>
+			<element name="AvailAmount" type="cmd-acct:AmountType" minOccurs="0"></element>
+			<element name="ExpiryDate" type="string" minOccurs="0"></element>
+			<element name="Status" type="string" minOccurs="0"></element>
+			<element name="CreditType" type="string" minOccurs="0"></element>
+			<element name="FacilityNo" type="string" minOccurs="0"></element>
+			<element name="ExUncomitedLimitRef" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="PointerType">
+		<sequence>
+			<element name="OrderFlag" type="string" minOccurs="0" />
+			<element name="Level" type="string" minOccurs="0"></element>
+			<element name="LineNo" type="string" minOccurs="0"></element>
+			<element name="SubLimitNo" type="string" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+</schema>

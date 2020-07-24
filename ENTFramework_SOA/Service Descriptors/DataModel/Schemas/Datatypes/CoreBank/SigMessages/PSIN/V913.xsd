@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v913/1.0" elementFormDefault="qualified" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v913/1.0">
+	<xsd:import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></xsd:import>
+	<xsd:complexType name="V913OType">
+		<xsd:sequence>
+			<xsd:element name="V913OFixedField" type="tns:V913OFixedFieldType" minOccurs="0" maxOccurs="1"></xsd:element>
+			<xsd:element name="V913ORepeatedField" type="tns:V913ORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="V913O" type="tns:V913OType"></xsd:element>
+    <xsd:element name="V913I" type="tns:V913IType"></xsd:element>
+    <xsd:complexType name="V913IType">
+    	<xsd:sequence>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="inc-field:FieldType"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="V913OFixedField"
+    	type="tns:V913OFixedFieldType">
+    </xsd:element>
+
+    <xsd:element name="V913ORepeatedFiled"
+    	type="tns:V913ORepeatedFieldType">
+    </xsd:element>
+
+    <xsd:complexType name="V913ORepeatedFieldType">
+    	<xsd:sequence>
+    		<xsd:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="CurrencyDescription" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DecimalPosition" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="MulDivIndicator" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="BookExchangeRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="AllowableVarianceToBookRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="BuyNoteMinRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SellNoteMaxRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="BuyChequeMinRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SellChequeMaxRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="BuyAppTransferMinRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SellAppTransferMaxRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="RevaluationRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="EODTransferBuyRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="EODTransferSellRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DenominationGroup1BuyRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DenominationGroup2BuyRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DenominationGroup3BuyRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DenominationGroup1SellRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DenominationGroup2SellRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DenominationGroup3SellRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate1Buy" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate2Buy" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate3Buy" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate4Buy" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate5Buy" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate6Buy" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate7Buy" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate8Buy" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate9Buy" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate10Buy" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate1Sell" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate2Sell" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate3Sell" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate4Sell" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate5Sell" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate6Sell" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate7Sell" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate8Sell" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate9Sell" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="SpecialRate10Sell" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="Authorizer" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DateEffective" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="TimeEffective" type="inc-field:FieldType" />
+    	</xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="V913OFixedFieldType">
+    	<xsd:sequence>
+    		<xsd:element name="CurrencyCodePointer" type="inc-field:FieldType" minOccurs="0" maxOccurs="1"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

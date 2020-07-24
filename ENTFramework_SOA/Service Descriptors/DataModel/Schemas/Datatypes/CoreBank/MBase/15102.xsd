@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/mbase/15102/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/mbase/15102/1.0">
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../Message.xsd"/>
+
+    <element name="MB15102I" type="tns:MB15102IType"/>
+
+    <element name="MB15102O" type="tns:MB15102OType"/>
+
+    <complexType name="MB15102IType">
+    	<sequence>
+    		<element name="CFFSNM" type="inc-field:FieldType"/>
+			<element name="CFCIFN" type="inc-field:FieldType"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="MB15102ORepeatedFieldType">
+    	<sequence>
+    		<element name="CFFSNM" type="inc-field:FieldType"/>
+			<element name="CFCIFN" type="inc-field:FieldType"/>
+			<element name="CFSSNO" type="inc-field:FieldType"/>
+			<element name="CFSSCD" type="inc-field:FieldType"/>
+			<element name="CFBRNN" type="inc-field:FieldType"/>
+			<element name="CFNA1" type="inc-field:FieldType"/>
+			<element name="CFNA1A" type="inc-field:FieldType"/>
+			<element name="RALIAS" type="inc-field:FieldType"/>
+			<element name="CFCIFT" type="inc-field:FieldType"/>
+			<element name="CFINDI" type="inc-field:FieldType"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="MB15102OType">
+    	<sequence>
+    		<element name="MB15102ORepeatedField"
+    			type="tns:MB15102ORepeatedFieldType" minOccurs="0"
+    			maxOccurs="unbounded">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <element name="MB15102ORepeatedField" type="tns:MB15102ORepeatedFieldType"></element>
+</schema>

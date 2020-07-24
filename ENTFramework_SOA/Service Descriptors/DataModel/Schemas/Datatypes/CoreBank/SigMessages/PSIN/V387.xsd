@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v387/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v387/1.0">
+	<xsd:import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../../Message.xsd" />	<xsd:complexType name="V387OType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="1" name="CustomerShortName" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="CIFNumber" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="InterestRate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="DateOpened" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="MaturityDate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="TransactionTime" type="inc-field:FieldType" />
+		</xsd:sequence>
+	</xsd:complexType>
+    <xsd:element name="V387O" type="tns:V387OType" />
+</xsd:schema>

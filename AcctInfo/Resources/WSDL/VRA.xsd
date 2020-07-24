@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="VRA_CheckAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CIF" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DDAccount" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_CheckAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRA_CheckAccountResult" type="tns:VRA_Output"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="VRA_Output">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ResponseCode" type="xs:int"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Obj"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Transaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="VRACT" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="VCB_TELLER_ID" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="VCB_SEQUENCE" type="xs:int"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="VCB_HOST_DATE" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccountInfo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CIF" type="xs:int"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="DDACT" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="DDACTNAME" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="VRACT" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="VRACTNAME" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="VRACTCUR" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="STATUS" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="REG_TIME" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRA_GetNewAccountNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CIF" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DDAccount" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_GetNewAccountNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRA_GetNewAccountNumberResult" type="tns:VRA_Output"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_CreateNewAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CIF" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DDAccount" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DDAccountName" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRAccount" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRAccountName" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRAccountCurrency" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="TellerID" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="TellerSequence" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="SupID" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="SupSequence" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DeptCode" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Branch" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_CreateNewAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRA_CreateNewAccountResult" type="tns:VRA_Output"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_GetAccountInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRAccount" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_GetAccountInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRA_GetAccountInfoResult" type="tns:VRA_Output"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_ActivateAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRAccount" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="TellerID" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="TellerSequence" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="SupID" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="SupSequence" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DeptCode" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Branch" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_ActivateAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRA_ActivateAccountResult" type="tns:VRA_Output"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_DeactivateAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRAccount" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="TellerID" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="TellerSequence" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="SupID" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="SupSequence" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DeptCode" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Branch" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_DeactivateAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRA_DeactivateAccountResult" type="tns:VRA_Output"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_LogTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CIF" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DDAccount" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DDAccountName" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRAccount" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRAccountName" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Amount" type="xs:decimal"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Currency" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="TellerID" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Sequence" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="SupID" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Branch" type="xs:int"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="HostDate" type="xs:dateTime"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Source" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Vdate" type="xs:dateTime"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Status" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="TlxNo" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Ref" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="RtRef" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="OrgAmt" type="xs:decimal"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="OrgCurr" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="ChrgCod" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="ChrgAmt" type="xs:decimal"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="ChrgCurr" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Rate" type="xs:decimal"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DbAcct" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DbName" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="BenBank" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="RmInfo" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="SendAcct" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="SendName" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="SendInfo" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="CreateTime" type="xs:dateTime"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Reserve1" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Reserve2" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Reserve3" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_LogTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRA_LogTransactionResult" type="tns:VRA_Output"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_GetTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="DDAccount" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Start" type="xs:dateTime"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="End" type="xs:dateTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="VRA_TranOutput">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ResponseCode" type="xs:int"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Transactions" type="tns:ArrayOfTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Transaction" nillable="true" type="tns:Transaction"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRA_GetTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRA_GetTransactionsResult" type="tns:VRA_TranOutput"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_GetAllVRAccounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="cif" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="VRA_AccountOutput">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ResponseCode" type="xs:int"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="VRARecords" type="tns:ArrayOfAccountInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfAccountInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountInfo" nillable="true" type="tns:AccountInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRA_GetAllVRAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRA_GetAllVRAccountsResult" type="tns:VRA_AccountOutput"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_UpdateStatusTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CIF" type="xs:int"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="DDAccount" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Amount" type="xs:decimal"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Currency" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="TellerID" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="Sequence" type="xs:int"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="HostDate" type="xs:dateTime"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Source" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Status" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VRA_UpdateStatusTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VRA_UpdateStatusTransResult" type="tns:VRA_Output"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

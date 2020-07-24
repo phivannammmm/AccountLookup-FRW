@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:Q1="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	xmlns:Q2="datamodel/datatypes/common/serviceenvelope" xmlns:tns="http://www.vietcombank.com.vn/proxyadapter/schemas/container"
+	elementFormDefault="qualified"
+	targetNamespace="http://www.vietcombank.com.vn/proxyadapter/schemas/container">
+
+	<import namespace="datamodel/datatypes/common/serviceenvelope"
+		schemaLocation="../../../../DataModel/Schemas/Datatypes/Common/ServiceEnvelope.xsd" />
+	<import
+		namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+		schemaLocation="../../../../DataModel/Schemas/Datatypes/CoreBank/SigMessage.xsd" />
+
+	<element name="FeeConfigList" type="tns:FeeConfigListType" />
+
+	<complexType name="FeeConfigListType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="FeeConfig"
+				type="tns:FeeConfigType">
+			</element>
+		</sequence>
+	</complexType>
+	<element name="FeeConfig" type="tns:FeeConfigType" />
+	<complexType name="FeeConfigType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="Id" type="integer" />
+			<element maxOccurs="1" minOccurs="0" name="OldTrancode" type="string" />
+			<element maxOccurs="1" minOccurs="0" name="FeeAccount" type="string" />			
+			<element maxOccurs="1" minOccurs="0" name="CharGetType" type="string" />
+			<element maxOccurs="1" minOccurs="0" name="VipClass" type="string" />
+			<element maxOccurs="1" minOccurs="0" name="Vat" type="decimal" />
+		</sequence>
+	</complexType>
+
+	<element name="CurrencyList" type="tns:CurrencyListType" />
+	<complexType name="CurrencyListType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="Currency"
+				type="tns:CurrencyType">
+			</element>
+		</sequence>
+	</complexType>
+	<element name="Currency" type="tns:CurrencyType" />
+	<complexType name="CurrencyType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="Id" type="string" />
+			<element maxOccurs="1" minOccurs="0" name="OldCurrency" type="string" />
+			<element maxOccurs="1" minOccurs="0" name="NewCurrency" type="string" />
+		</sequence>
+	</complexType>
+	
+	<element name="CustomerList" type="tns:CustomerListType" />
+	<complexType name="CustomerListType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="Customer"
+				type="tns:CustomerType">
+			</element>
+		</sequence>
+	</complexType>
+	<element name="Customer" type="tns:CustomerType" />
+	<complexType name="CustomerType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="OldCusType" type="string" />
+			<element maxOccurs="1" minOccurs="0" name="SigCusType" type="string" />
+		</sequence>
+	</complexType>
+
+	<element name="ErrorCodeList" type="tns:ErrorCodeListType" />
+	<complexType name="ErrorCodeListType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="ErrorCode"
+				type="tns:ErrorCodeType">
+			</element>
+		</sequence>
+	</complexType>
+	<element name="ErrorCode" type="tns:ErrorCodeType" />
+	<complexType name="ErrorCodeType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="SoaErrorCode"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="SignatureErrorCode"
+				type="string" />
+			<element name="SignatureErrDesc" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+			<element maxOccurs="1" minOccurs="0" name="LegacyErrorCode"
+				type="string" />
+			<element maxOccurs="1" minOccurs="0" name="LegacyName" type="string" />
+		</sequence>
+	</complexType>
+
+	<element name="AccountTypeList" type="tns:AccountTypeListType"></element>
+	<complexType name="AccountTypeListType">
+		<sequence>
+			<element name="AccountType" type="tns:AccountTypeType"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+	<element name="AccountType" type="tns:AccountTypeType"></element>
+	<complexType name="AccountTypeType">
+		<sequence>
+			<element name="Legacy" type="string" minOccurs="0" maxOccurs="1"></element>
+			<element name="ESB" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+			<element name="Backend" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+			<element name="Using" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+	
+	<element name="DebitCreditList" type="tns:DebitCreditListType"></element>
+	<complexType name="DebitCreditListType">
+		<sequence>
+			<element name="DebitCredit" type="tns:DebitCreditType"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+	<element name="DebitCredit" type="tns:DebitCreditType"></element>
+	<complexType name="DebitCreditType">
+		<sequence>
+			<element name="Id" type="string" minOccurs="0" maxOccurs="1"></element>
+			<element name="Value" type="string" minOccurs="0" maxOccurs="1"></element>
+			<element name="Description" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+	<element name="AppSequenceInqReq" type="tns:AppSequenceInqReqType"/>
+<element name="AppSequenceInqRes" type="tns:AppSequenceInqResType"/>
+<complexType name="AppSequenceInqReqType">
+	<sequence>
+		<element minOccurs="0" name="AppCode" type="string"/>
+		<element minOccurs="0" name="SeqType" type="string"/>
+		<element minOccurs="0" name="TellerId" type="string"/>
+	</sequence>
+</complexType>
+
+
+<complexType name="AppSequenceInqResType">
+
+	<sequence>
+		<element name="Username" type="string"/>
+		<element name="UserBranch" type="string"/>
+		<element name="Sequence" type="string"/>
+		<element name="HostDate" type="string"/>
+		<element minOccurs="0" name="TellerID" type="string"/>
+	</sequence>
+</complexType>
+
+    <element name="BankTellerInfo" type="tns:BankTellerInfoType"/>
+
+    <complexType name="BankTellerInfoType">
+    	<sequence>
+    		<element minOccurs="0" name="UserName" type="string"/>
+    		<element minOccurs="0" name="TellerID" type="string"/>
+    		<element minOccurs="0" name="BranchNumber" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <element name="BankTellerList" type="tns:BankTellerListType"/>
+    
+    <complexType name="BankTellerListType">
+    	<sequence>
+    		<element maxOccurs="unbounded" minOccurs="0" ref="tns:BankTellerInfo"/>
+    	</sequence>
+    </complexType>
+</schema>

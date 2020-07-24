@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/mbase/16106/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/mbase/16106/1.0">
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../Message.xsd"/>
+
+    <element name="MB16106I" type="tns:MB16106IType"/>
+
+    <element name="MB16106O" type="tns:MB16106OType"/>
+
+    <complexType name="MB16106IType">
+    	<sequence>
+    		<element name="CFCIFN" type="inc-field:FieldType"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="MB16106OType">
+    	<sequence>
+    		<element name="CFCIFN" type="inc-field:FieldType"/>
+    		<element name="CFRECI" type="inc-field:FieldType"/>
+			<element name="CFRETN" type="inc-field:FieldType"/>
+			<element name="CFBNKN" type="inc-field:FieldType"/>
+			<element name="CFBRNN" type="inc-field:FieldType"/>
+			<element name="CFCOST" type="inc-field:FieldType"/>
+			<element name="CFCSTS" type="inc-field:FieldType"/>
+			<element name="CFCIFT" type="inc-field:FieldType"/>
+			<element name="CFZSAL" type="inc-field:FieldType"/>
+			<element name="CFSNME" type="inc-field:FieldType"/>
+			<element name="CFFSNM" type="inc-field:FieldType"/>
+			<element name="CFNA1" type="inc-field:FieldType"/>
+			<element name="CFNA1A" type="inc-field:FieldType"/>
+			<element name="CFMOTH" type="inc-field:FieldType"/>
+			<element name="CFINQC" type="inc-field:FieldType"/>
+			<element name="CFOFFR" type="inc-field:FieldType"/>
+			<element name="CFINSC" type="inc-field:FieldType"/>
+			<element name="CFVIPC" type="inc-field:FieldType"/>
+			<element name="CFHLDM" type="inc-field:FieldType"/>
+			<element name="CFHLDP" type="inc-field:FieldType"/>
+			<element name="CFPROA" type="inc-field:FieldType"/>
+			<element name="CFSIC1" type="inc-field:FieldType"/>
+			<element name="CFSIC2" type="inc-field:FieldType"/>
+			<element name="CFSIC3" type="inc-field:FieldType"/>
+			<element name="CFSIC4" type="inc-field:FieldType"/>
+			<element name="CFSIC5" type="inc-field:FieldType"/>
+			<element name="CFSIC6" type="inc-field:FieldType"/>
+			<element name="CFSIC7" type="inc-field:FieldType"/>
+			<element name="CFSIC8" type="inc-field:FieldType"/>
+			<element name="CFUIC1" type="inc-field:FieldType"/>
+			<element name="CFUIC2" type="inc-field:FieldType"/>
+			<element name="CFUIC3" type="inc-field:FieldType"/>
+			<element name="CFUIC4" type="inc-field:FieldType"/>
+			<element name="CFUIC5" type="inc-field:FieldType"/>
+			<element name="CFUIC6" type="inc-field:FieldType"/>
+			<element name="CFUIC7" type="inc-field:FieldType"/>
+			<element name="CFUIC8" type="inc-field:FieldType"/>
+			<element name="CFADSQ" type="inc-field:FieldType"/>
+			<element name="CFRESD" type="inc-field:FieldType"/>
+			<element name="CFZESI" type="inc-field:FieldType"/>
+			<element name="CFCITZ" type="inc-field:FieldType"/>
+			<element name="CFCOPR" type="inc-field:FieldType"/>
+			<element name="CFRACE" type="inc-field:FieldType"/>
+			<element name="CFRELI" type="inc-field:FieldType"/>
+			<element name="CFLGID" type="inc-field:FieldType"/>
+			<element name="CFMNIN" type="inc-field:FieldType"/>
+			<element name="CFBTIS" type="inc-field:FieldType"/>
+			<element name="CFBTIL" type="inc-field:FieldType"/>
+			<element name="CFFNAS" type="inc-field:FieldType"/>
+			<element name="CFFNAL" type="inc-field:FieldType"/>
+			<element name="CFMNAS" type="inc-field:FieldType"/>
+			<element name="CFMNAL" type="inc-field:FieldType"/>
+			<element name="CFLNAS" type="inc-field:FieldType"/>
+			<element name="CFLNAL" type="inc-field:FieldType"/>
+			<element name="CFSFXS" type="inc-field:FieldType"/>
+			<element name="CFSFXL" type="inc-field:FieldType"/>
+			<element name="CFATIS" type="inc-field:FieldType"/>
+			<element name="CFATIL" type="inc-field:FieldType"/>
+			<element name="CFNAMC" type="inc-field:FieldType"/>
+			<element name="CFORG6" type="inc-field:FieldType"/>
+			<element name="CFDLM6" type="inc-field:FieldType"/>
+			<element name="CFFSD6" type="inc-field:FieldType"/>
+			<element name="CFSSNO" type="inc-field:FieldType"/>
+			<element name="CFSSCD" type="inc-field:FieldType"/>
+			<element name="CFBIR6" type="inc-field:FieldType"/>
+			<element name="CFBIRP" type="inc-field:FieldType"/>
+			<element name="CFMARS" type="inc-field:FieldType"/>
+			<element name="CFMAR6" type="inc-field:FieldType"/>
+			<element name="CFDEAD" type="inc-field:FieldType"/>
+			<element name="CFDCD6" type="inc-field:FieldType"/>
+			<element name="CFSEX" type="inc-field:FieldType"/>
+			<element name="CFCLAS" type="inc-field:FieldType"/>
+			<element name="CFINDI" type="inc-field:FieldType"/>
+			<element name="CFSMSA" type="inc-field:FieldType"/>
+			<element name="CFBUST" type="inc-field:FieldType"/>
+			<element name="CFSCLA" type="inc-field:FieldType"/>
+			<element name="CFCRAT" type="inc-field:FieldType"/>
+			<element name="CFGRUP" type="inc-field:FieldType"/>
+			<element name="CFCCYC" type="inc-field:FieldType"/>
+			<element name="CFWHCD" type="inc-field:FieldType"/>
+			<element name="CFWHPR" type="inc-field:FieldType"/>
+			<element name="CFWHD6" type="inc-field:FieldType"/>
+			<element name="CFMUID" type="inc-field:FieldType"/>
+			<element name="CFMWID" type="inc-field:FieldType"/>
+			<element name="CFMTIM" type="inc-field:FieldType"/>
+			<element name="CFSTSC" type="inc-field:FieldType"/>
+			<element name="CFSTS6" type="inc-field:FieldType"/>
+			<element name="CFFORN" type="inc-field:FieldType"/>
+			<element name="CFNA2" type="inc-field:FieldType"/>
+			<element name="CFNA3" type="inc-field:FieldType"/>
+			<element name="CFNA4" type="inc-field:FieldType"/>
+			<element name="CFNA7" type="inc-field:FieldType"/>
+			<element name="HPHO" type="inc-field:FieldType"/>
+			<element name="BPHO" type="inc-field:FieldType"/>
+			<element name="MPHO" type="inc-field:FieldType"/>
+			<element name="CFIDI6" type="inc-field:FieldType"/>
+			<element name="CFIDIS" type="inc-field:FieldType"/>
+			<element name="CFIRMK" type="inc-field:FieldType"/>
+			<element name="TAXCOD" type="inc-field:FieldType"/>
+			<element name="CFNA5" type="inc-field:FieldType"/>
+			<element name="CFNA6" type="inc-field:FieldType"/>
+			<element name="CFASN1" type="inc-field:FieldType"/>
+			<element name="CFASN2" type="inc-field:FieldType"/>
+			<element name="CFBIRD8" type="inc-field:FieldType"/>
+			<element name="CFIDI8" type="inc-field:FieldType"/>
+			<element name="BLKFLAG" type="inc-field:FieldType"/>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 (x64) (http://www.altova.com) by Hai (VSII) -->
+<xs:schema
+	targetNamespace="http://www.vietcombank.com.vn/global/vn/parameter/usagelimit/1.0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:cmd-card="http://www.vietcombank.com.vn/entity/vn/common/card" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/parameter/usagelimit/1.0">
+	<xs:import namespace="datamodel/datatypes/common/serviceenvelope"
+		schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd" />
+	<xs:import
+		namespace="http://www.vietcombank.com.vn/entity/vn/common/card"
+		schemaLocation="../../../Datatypes/Business/Card.xsd" />
+	<xs:element name="UsageLimitInqReq"
+		type="tns:UsageLimitInqReqType" />
+	<xs:element name="UsageLimitInqRes"
+		type="tns:UsageLimitInqResType" />
+	<xs:complexType name="UsageLimitInqReqType">
+		<xs:complexContent>
+			<xs:extension base="cmd-svrenv:BaseServiceRequestType">
+				<xs:sequence>
+					<xs:element ref="tns:PayloadInqReq"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="UsageLimitInqResType">
+		<xs:complexContent>
+			<xs:extension base="cmd-svrenv:BaseServiceResponseType">
+				<xs:sequence>
+					<xs:element ref="tns:PayloadInqRes" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PayloadInqResType">
+		<xs:sequence>
+			<xs:element name="UsageLimit" type="cmd-card:UsageLimitInfoType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PayloadInqReqType">
+		<xs:sequence>			<xs:element name="UsageLimitCode" type="xs:string"	minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="PayloadInqRes" type="tns:PayloadInqResType"></xs:element>
+
+	<xs:element name="PayloadInqReq" type="tns:PayloadInqReqType"></xs:element>
+</xs:schema>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmd-party="http://www.vietcombank.com.vn/entity/vn/common/party" xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope" xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:tns="http://www.vietcombank.com.vn/global/vn/parameter/exchangerate/1.0" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com.vn/global/vn/parameter/exchangerate/1.0">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd">
+	</import>
+
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd">
+	</import>
+	<element name="ExchangeRateInqReq" type="tns:ExchangeRateInqReqType"/>
+	<element name="ExchangeRateInqRes" type="tns:ExchangeRateInqResType"/>
+	<element name="PayloadInqReq" type="tns:PayloadInqReqType"/>
+	<element name="PayloadInqRes" type="tns:PayloadInqResType"/>	
+
+	<complexType name="ExchangeRateInqReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadInqReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="PayloadInqReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element name="CurCode" type="string"/>
+			<element minOccurs="0" name="Pointer" type="tns:PointerType"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="ExchangeRateInqResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element minOccurs="0" ref="tns:PayloadInqRes"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PayloadInqResType">
+		<sequence>			
+			<element maxOccurs="unbounded" minOccurs="0" name="ExchangeRateInfo" type="tns:ExchangeRateInfoType"/>
+			<element minOccurs="0" name="Pointer" type="tns:PointerType"/>
+		</sequence>
+	</complexType>	
+	<complexType name="BuySellRateType">
+		<sequence>
+			<element minOccurs="0" name="Buy" type="decimal"/>
+			<element minOccurs="0" name="Sell" type="decimal"/>			
+		</sequence>
+	</complexType>
+	<complexType name="PointerType">
+		<sequence>
+			<element minOccurs="0" name="CurCode" type="string"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="ExchangeRateInfoType">
+		<sequence>
+			<element minOccurs="0" name="CurCode" type="string"/>
+			<element minOccurs="0" name="CurDesc" type="string"/>
+			<element minOccurs="0" name="BookExchangeRate" type="decimal"/>
+			<element minOccurs="0" name="AllowableVariance" type="decimal"/>
+			<element minOccurs="0" name="NoteVariance" type="tns:BuySellRateType"/>
+			<element minOccurs="0" name="ChequeVariance" type="tns:BuySellRateType"/>
+			<element minOccurs="0" name="AppXferVariance" type="tns:BuySellRateType"/>
+			<element minOccurs="0" name="RevaluationRate" type="decimal"/>
+			<element minOccurs="0" name="EODXferRate" type="tns:BuySellRateType"/>
+			<element maxOccurs="unbounded" minOccurs="0" name="DenominationGroup" type="tns:BuySellRateType"/>
+			<element maxOccurs="unbounded" minOccurs="0" name="SpecialRate" type="tns:BuySellRateType"/>
+			<element minOccurs="0" name="Authorizer" type="string"/>
+			<element minOccurs="0" name="EffectiveDt" type="string"/>
+			<element minOccurs="0" name="EffectiveTime" type="string"/>
+		</sequence>
+	</complexType>
+
+    <element name="ExchangeRateUpdReq" type="tns:ExchangeRateUpdReqType"/>
+
+    <complexType name="ExchangeRateUpdReqType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceRequestType">
+    			<sequence>
+    				<element ref="tns:PayloadUpdReq"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="ExchangeRateUpdRes" type="tns:ExchangeRateUpdResType"/>
+
+    <complexType name="ExchangeRateUpdResType">
+    	<complexContent>
+    		<extension base="cmd-svrenv:BaseServiceResponseType">
+
+    			<sequence>
+    				<element minOccurs="0" ref="tns:PayloadUpdRes"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <element name="PayloadUpdReq" type="tns:PayloadUpdReqType"/>
+
+    <complexType name="PayloadUpdReqType">
+    	<sequence>
+    		<element minOccurs="0" ref="sig:HeaderForClient"/>
+    		<element minOccurs="0" name="ExchangeRateInfo" type="tns:ExchangeRateInfoType"/>
+    	</sequence>
+    </complexType>
+    
+    <element name="PayloadUpdRes" type="tns:PayloadUpdResType"/>
+
+    <complexType name="PayloadUpdResType">
+    	<sequence>
+    		<element minOccurs="0" name="ExchangeRateInfo" type="tns:ExchangeRateInfoType"/>
+    	</sequence>
+    </complexType>
+</schema>

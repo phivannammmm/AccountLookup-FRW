@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 (x64) (http://www.altova.com) by Hai (VSII) -->
+<xs:schema xmlns:cmd-card="http://www.vietcombank.com.vn/entity/vn/common/card" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmd-prod="http://www.vietcombank.com.vn/entity/vn/common/product" xmlns:cmd-party="http://www.vietcombank.com.vn/entity/vn/common/party" targetNamespace="http://www.vietcombank.com.vn/entity/vn/common/card" xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.vietcombank.com.vn/entity/vn/common/product" schemaLocation="Product.xsd"/>
+	<xs:import namespace="http://www.vietcombank.com.vn/entity/vn/common/party" schemaLocation="Party.xsd"/>
+	<xs:import namespace="http://www.vietcombank.com.vn/entity/vn/common/acct" schemaLocation="Account.xsd"/>
+	<xs:complexType name="CardInfoType">
+		<xs:sequence>
+			<xs:element name="CardID" type="xs:string" minOccurs="0" />
+			<xs:element name="Number" type="xs:string" minOccurs="0" />
+			<xs:element name="HolderName" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="PIN" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						The PIN entered to access the card
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Type" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Prin / Sub</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Status" type="xs:string" minOccurs="0" />
+			<xs:element name="ProductInfo"
+				type="cmd-prod:ProductInfoType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Product name (e.g: VISA, MASTER), Category of
+						the card (e.g., Business, Classic, Gold,
+						Personal, Platinum)
+					</xs:documentation>
+					<xs:documentation />
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BranchInfo"
+				type="cmd-party:BranchInfoType" minOccurs="0" />
+			<xs:element name="CardBalance"
+				type="cmd-card:CardBalanceType" minOccurs="0" />
+			<xs:element name="IssueDate" type="xs:string" minOccurs="0" />
+			<xs:element name="ExpiryDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="MemberSinceDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="DueDate" type="xs:string" minOccurs="0" />
+			<xs:element name="XpacInfo" type="cmd-card:XpacInfoType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="PanInfo" type="cmd-card:PanInfoType"
+				minOccurs="0" />
+			<xs:element name="LinkAccount" type="cmd-card:LinkAcctType"
+				minOccurs="0" />
+			<xs:element name="CustomerInfo"
+				type="cmd-party:CustomerInfoType" minOccurs="0" />
+			<xs:element name="BIN" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="UsageCode" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="SupRel" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CardBalanceType">
+		<xs:sequence>
+			<xs:element name="CurrentBal" type="cmd-acct:AmountType" minOccurs="0" />
+			<xs:element name="OutStdBal" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="RetailBal" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="CashBal" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="CashLimit" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="CashAvail" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="CreditLimit" type="cmd-acct:AmountType" minOccurs="0" />
+			<xs:element name="CreditAvail" type="cmd-acct:AmountType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UsageLimitInfoType">
+		<xs:sequence>
+			<xs:element name="UsageCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="RetailUsageAmount" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="RetailUsageCount" type="xs:long" minOccurs="0"/>
+			<xs:element name="CashUsageAmount" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="CashUsageCount" type="xs:long" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="XpacInfoType">
+		<xs:sequence>
+			<xs:element name="XpacCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="XpacDate" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PanInfoType">
+		<xs:sequence>
+			<xs:element name="PanShort" type="xs:string" minOccurs="0"/>
+			<xs:element name="PanHash" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LinkAcctType">
+		<xs:sequence>
+			<xs:element name="PrimaryAcct" type="cmd-acct:AcctIdType" minOccurs="0"/>
+			<xs:element name="SecondaryAcct" type="cmd-acct:AcctIdType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PaymentInfoType">
+		<xs:sequence>
+			<xs:element name="DueAmt" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="PastDueAmt" type="cmd-acct:AmountType" minOccurs="0"/>
+			<xs:element name="PreBal" type="cmd-acct:AmountType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MerchantInfoType">
+		<xs:sequence>
+			<xs:element name="MerchName" type="xs:string"></xs:element>
+			<xs:element name="MerchType" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="MerchBranch" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="ContactInfo" type="cmd-party:ContactInfoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="CardSmtmInfoType">
+		<xs:sequence>
+			<xs:element name="CardInfo" type="cmd-card:CardInfoType"></xs:element>
+			<xs:element name="StmtBal" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="MinPay" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="RefundBal" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="OutStdBal" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="OutStdAuthBal" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="AccrIntRtl" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="AccrIntCash" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="AccrOverLimit" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="CTDCash" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="StmtCrLimit" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="Billed" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="Refunded" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="PymTdy" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="RefundTdy" type="xs:decimal" minOccurs="0"></xs:element>
+			<xs:element name="LastStmtDate" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

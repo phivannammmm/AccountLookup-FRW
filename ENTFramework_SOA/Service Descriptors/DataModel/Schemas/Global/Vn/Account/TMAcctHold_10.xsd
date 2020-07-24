@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:cmd-acct="http://www.vietcombank.com.vn/entity/vn/common/acct"
+	 xmlns:cmd-svrenv="datamodel/datatypes/common/serviceenvelope"
+	 xmlns:tns="http://www.vietcombank.com.vn/global/vn/account/tmaccthold/1.0"
+	 xmlns:sig="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0"
+	 targetNamespace="http://www.vietcombank.com.vn/global/vn/account/tmaccthold/1.0"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<import namespace="datamodel/datatypes/common/serviceenvelope" schemaLocation="../../../Datatypes/Common/ServiceEnvelope.xsd"/>
+	<import namespace="http://www.vietcombank.com.vn/entity/vn/common/acct" schemaLocation="../../../Datatypes/Business/Account.xsd"/>
+	<import namespace="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" schemaLocation="../../../Datatypes/CoreBank/SigMessage.xsd"/>
+	<element name="TMAcctHoldAddReq" type="tns:TMAcctHoldAddReqType"/>
+	<element name="TMAcctHoldAddRes" type="tns:TMAcctHoldAddResType"/>
+	<complexType name="TMAcctHoldAddReqType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceRequestType">
+				<sequence>
+					<element ref="tns:PayloadAddReq"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="TMAcctHoldAddResType">
+		<complexContent>
+			<extension base="cmd-svrenv:BaseServiceResponseType">
+				<sequence>
+					<element ref="tns:PayloadAddRes" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="PayloadAddReq" type="tns:PayloadAddReqType"/>
+	<element name="PayloadAddRes" type="tns:PayloadAddResType"/>
+	<complexType name="PayloadAddReqType">
+		<sequence>
+			<element name="HeaderForClient" type="sig:HeaderForClientType"/>
+			<element name="AcctID" type="cmd-acct:AcctIdType" minOccurs="0"/>
+			<element name="OldAcctID" type="cmd-acct:AcctIdType" minOccurs="0"/>
+			<element name="HoldAmt" type="cmd-acct:AmountType" minOccurs="0"/>
+			<element name="HoldFlag" type="string" minOccurs="0"/>
+			<element name="TxnTime" type="string"/>
+		</sequence>
+	</complexType>
+	<complexType name="PayloadAddResType">
+		<sequence>
+			<element name="CurrentBal" type="cmd-acct:AmountType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>

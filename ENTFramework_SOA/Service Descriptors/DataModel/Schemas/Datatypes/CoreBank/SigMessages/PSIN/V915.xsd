@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v915/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v915/1.0">
+	<xsd:import namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" schemaLocation="../../Message.xsd"/>
+    
+    <xsd:complexType name="V915ORepeatedFieldType">
+    	<xsd:sequence>
+    					<xsd:element minOccurs="0" name="IndexNumber" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Description" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="Rate1" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="EffectiveDate1" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="RateChangedToday" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="PendingInterestRate" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="PendingEffectiveDate" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="RefTable" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="ReferenceIndex" type="inc-field:FieldType"/>
+			<xsd:element minOccurs="0" name="ReferenceVariance" type="inc-field:FieldType"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="V915ORepeatedField" type="tns:V915ORepeatedFieldType"/>
+    <xsd:element name="V915O" type="tns:V915OType"/>
+     <xsd:complexType name="V915OType">
+    	<xsd:sequence>
+    	<xsd:element name="V180ORepeatedField" type="tns:V915ORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+   
+</xsd:schema>

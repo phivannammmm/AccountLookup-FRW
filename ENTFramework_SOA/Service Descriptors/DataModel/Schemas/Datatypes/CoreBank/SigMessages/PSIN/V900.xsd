@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v900/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v900/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+
+    <complexType name="V900OType">
+    	<sequence>
+			<element name="V900OFixedField" type="tns:V900OFixedFieldType" minOccurs="0" maxOccurs="1"/>
+			<element name="V900ORepeatedField" type="tns:V900ORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+    </complexType>
+
+    <element name="V900O" type="tns:V900OType"></element>
+
+    <element name="V900OFixedField" type="tns:V900OFixedFieldType"></element>
+
+    <element name="V900ORepeatedField" type="tns:V900ORepeatedFieldType"></element>
+
+    <complexType name="V900OFixedFieldType">
+    	<sequence>
+    		<element name="CustomerLineNumber" type="inc-field:FieldType" minOccurs="0"/>
+    		<element name="SublimitNumber" type="inc-field:FieldType" minOccurs="0"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="V900ORepeatedFieldType">
+    	<sequence>
+    		<element name="CustomerLineNumber" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="SublimitNumber" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="CustomerFacilityNumber" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="LoanAgreementDate" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="DateApproved" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="ApplicationNumber" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="FacilityName" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="SequenceNumber" type="inc-field:FieldType" minOccurs="0"/>
+			<element name="DateForApproval " type="inc-field:FieldType" minOccurs="0"/>
+    	</sequence>
+    </complexType>
+</schema>

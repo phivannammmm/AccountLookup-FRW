@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v10a/1.0"
+	elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0" xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/psin/v10a/1.0">
+
+	<xsd:import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></xsd:import>
+	<xsd:complexType name="V10AORepeatedFieldType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactApplicationNumber" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactAccountNumber" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ElectronicSequenceNumber" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactType" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactDetails" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactMarketingFlag" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactName" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactDepartmentName" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactJobDesignationCode" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactMaintenanceDate" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactMaintenanceTime" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactRemark1" type="inc-field:FieldType" />
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactRemark2" type="inc-field:FieldType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="V10AORepeatedFieldType" type="tns:V10AORepeatedFieldType"></xsd:element>
+	<xsd:complexType name="V10AOFixedFieldType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="1" name="ContactSequenceNo" type="inc-field:FieldType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:element name="V10AOFixedField" type="tns:V10AOFixedFieldType"></xsd:element>
+
+    <xsd:element name="V10AO" type="tns:V10AOType"></xsd:element>
+
+    <xsd:complexType name="V10AOType">
+    	<xsd:sequence>
+    		<xsd:element name="V10AOFixedField" type="tns:V10AOFixedFieldType" minOccurs="0" maxOccurs="1"></xsd:element>
+			<xsd:element name="V10AORepeatedField" type="tns:V10AORepeatedFieldType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

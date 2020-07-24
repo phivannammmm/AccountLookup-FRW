@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c002/1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.vietcombank.com/entity/vn/corebank/signature/crin/c002/1.0"
+	xmlns:pref="http://www.vietcombank.com/entity/global/backend/vn/signature/message/1.0" xmlns:inc-field="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0">
+
+	<import schemaLocation="../../Message.xsd" namespace="http://www.vietcombank.com/entity/global/backend/vn/as400/message/1.0"></import>
+	<complexType name="C002IType">
+		<sequence>
+			<element name="FIXFMTCD" type="inc-field:FieldType"></element>
+			<element name="CUSTAT" type="inc-field:FieldType"></element>
+			<element name="CUALT" type="inc-field:FieldType"></element>
+			<element name="CUNA1" type="inc-field:FieldType"></element>
+			<element name="CUNA2" type="inc-field:FieldType"></element>
+			<element name="CUNA3" type="inc-field:FieldType"></element>
+			<element name="CUNA4" type="inc-field:FieldType"></element>
+			<element name="CUNA5" type="inc-field:FieldType"></element>
+			<element name="CUNA6" type="inc-field:FieldType"></element>
+			<element name="CUZIP" type="inc-field:FieldType"></element>
+			<element name="CUZIP2" type="inc-field:FieldType"></element>
+			<element name="CUZIP3" type="inc-field:FieldType"></element>
+			<element name="CUZIP4" type="inc-field:FieldType"></element>
+			<element name="CUSHRT" type="inc-field:FieldType"></element>
+			<element name="CUSSNR" type="inc-field:FieldType"></element>
+			<element name="CUSSTY" type="inc-field:FieldType"></element>
+			<element name="CUCLPH" type="inc-field:FieldType"></element>
+			<element name="CUHMPH" type="inc-field:FieldType"></element>
+			<element name="CUBUPH" type="inc-field:FieldType"></element>
+			<element name="CUPOFF" type="inc-field:FieldType"></element>
+			<element name="CUSOFF" type="inc-field:FieldType"></element>
+			<element name="CUPOF1" type="inc-field:FieldType"></element>
+			<element name="CUPOF2" type="inc-field:FieldType"></element>
+			<element name="CUOPDT" type="inc-field:FieldType"></element>
+			<element name="CUTYPE" type="inc-field:FieldType"></element>
+			<element name="CUTYP" type="inc-field:FieldType"></element>
+			<element name="CUSIC" type="inc-field:FieldType"></element>
+			<element name="CUSEX" type="inc-field:FieldType"></element>
+			<element name="CURACE" type="inc-field:FieldType"></element>
+			<element name="CUOWN" type="inc-field:FieldType"></element>
+			<element name="CUYREM" type="inc-field:FieldType"></element>
+			<element name="CUINC" type="inc-field:FieldType"></element>
+			<element name="CUSRIN" type="inc-field:FieldType"></element>
+			<element name="CUBDTE" type="inc-field:FieldType"></element>
+			<element name="CUDEP" type="inc-field:FieldType"></element>
+			<element name="CUCTC" type="inc-field:FieldType"></element>
+			<element name="CUCTCT" type="inc-field:FieldType"></element>
+			<element name="CUCIRA" type="inc-field:FieldType"></element>
+			<element name="CUMNBR" type="inc-field:FieldType"></element>
+			<element name="CUNTID" type="inc-field:FieldType"></element>
+			<element name="CUUSR1" type="inc-field:FieldType"></element>
+			<element name="CUCLNK" type="inc-field:FieldType"></element>
+			<element name="CUUSR3" type="inc-field:FieldType"></element>
+			<element name="CUCDCH" type="inc-field:FieldType"></element>
+			<element name="CUCDCN" type="inc-field:FieldType"></element>
+			<element name="CUCDCD" type="inc-field:FieldType"></element>
+			<element name="CUCMCH" type="inc-field:FieldType"></element>
+			<element name="CUCMNR" type="inc-field:FieldType"></element>
+			<element name="CUCMCD" type="inc-field:FieldType"></element>
+			<element name="CUCVSH" type="inc-field:FieldType"></element>
+			<element name="CUCVCN" type="inc-field:FieldType"></element>
+			<element name="CUCVCD" type="inc-field:FieldType"></element>
+			<element name="CUCATH" type="inc-field:FieldType"></element>
+			<element name="CUCATN" type="inc-field:FieldType"></element>
+			<element name="CUCATD" type="inc-field:FieldType"></element>
+			<element name="CUCLNG" type="inc-field:FieldType"></element>
+			<element name="CUCCCD" type="inc-field:FieldType"></element>
+			<element name="CULGLR" type="inc-field:FieldType"></element>
+			<element name="CUCWHP" type="inc-field:FieldType"></element>
+			<element name="CUCPSP" type="inc-field:FieldType"></element>
+			<element name="CUCTXN" type="inc-field:FieldType"></element>
+			<element name="CUCPRF" type="inc-field:FieldType"></element>
+			<element name="CUSHKY" type="inc-field:FieldType"></element>
+			<element name="CUITLD" type="inc-field:FieldType"></element>
+			<element name="CUPSTL" type="inc-field:FieldType"></element>
+			<element name="CUPSLC" type="inc-field:FieldType"></element>
+			<element name="CUACOM" type="inc-field:FieldType"></element>
+			<element name="CUBRCH" type="inc-field:FieldType"></element>
+			<element name="CUMIDT" type="inc-field:FieldType"></element>
+			<element name="CUMRTS" type="inc-field:FieldType"></element>
+			<element name="CUMAIL" type="inc-field:FieldType"></element>
+			<element name="CUSOLI" type="inc-field:FieldType"></element>
+			<element name="CUSOCI" type="inc-field:FieldType"></element>
+			<element name="CUCPNA" type="inc-field:FieldType"></element>
+			<element name="CUBPNA" type="inc-field:FieldType"></element>
+			<element name="CUPERS" type="inc-field:FieldType"></element>
+			<element name="CUSALU" type="inc-field:FieldType"></element>
+			<element name="CUFAX" type="inc-field:FieldType"></element>
+			<element name="CUTELX" type="inc-field:FieldType"></element>
+			<element name="CUTXAN" type="inc-field:FieldType"></element>
+			<element name="CUDOCF" type="inc-field:FieldType"></element>
+			<element name="CUDCDT" type="inc-field:FieldType"></element>
+			<element name="CUTINU" type="inc-field:FieldType"></element>
+			<element name="CUTADT" type="inc-field:FieldType"></element>
+			<element name="CUWPRT" type="inc-field:FieldType"></element>
+			<element name="CUCECD" type="inc-field:FieldType"></element>
+			<element name="CUCELM" type="inc-field:FieldType"></element>
+			<element name="CUEXTF" type="inc-field:FieldType"></element>
+			<element name="CUMTND" type="inc-field:FieldType"></element>
+			<element name="CUCNCD" type="inc-field:FieldType"></element>
+			<element name="CUMARK" type="inc-field:FieldType"></element>
+			<element name="CUEMPL" type="inc-field:FieldType"></element>
+			<element name="CUINQ" type="inc-field:FieldType"></element>
+			<element name="CUMNT" type="inc-field:FieldType"></element>
+			<element name="CUCENS" type="inc-field:FieldType"></element>
+			<element name="CUCODT" type="inc-field:FieldType"></element>
+			<element name="CUDEDT" type="inc-field:FieldType"></element>
+			<element name="CUSOOD" type="inc-field:FieldType"></element>
+			<element name="CUCFLN" type="inc-field:FieldType"></element>
+			<element name="CULVLA" type="inc-field:FieldType"></element>
+			<element name="CUMIDC" type="inc-field:FieldType"></element>
+			<element name="CUEXTN" type="inc-field:FieldType"></element>
+			<element name="CUBEXT" type="inc-field:FieldType"></element>
+			<element name="CUBHVF" type="inc-field:FieldType"></element>
+			<element name="CULFSF" type="inc-field:FieldType"></element>
+			<element name="CURSPF" type="inc-field:FieldType"></element>
+			<element name="CATEXT" type="inc-field:FieldType"></element>
+			<element name="CUALNM" type="inc-field:FieldType"></element>
+			<element name="CUESTS" type="inc-field:FieldType"></element>
+			<element name="CUEMA1" type="inc-field:FieldType"></element>
+			<element name="CUEMA2" type="inc-field:FieldType"></element>
+			<element name="CUACCD" type="inc-field:FieldType"></element>
+			<element name="MSPARS" type="inc-field:FieldType"></element>
+			<element name="CUPREF" type="inc-field:FieldType"></element>
+			<element name="CUCDAT" type="inc-field:FieldType"></element>
+			<element name="CUCTIT" type="inc-field:FieldType"></element>
+			<element name="CUCFNM" type="inc-field:FieldType"></element>
+			<element name="CUCSNM" type="inc-field:FieldType"></element>
+			<element name="CUCLNM" type="inc-field:FieldType"></element>
+			<element name="CUCBUS" type="inc-field:FieldType"></element>
+			<element name="CUCFNO" type="inc-field:FieldType"></element>
+			<element name="CUCHNM" type="inc-field:FieldType"></element>
+			<element name="CUCHNO" type="inc-field:FieldType"></element>
+			<element name="CUCSTR" type="inc-field:FieldType"></element>
+			<element name="CUCDIS" type="inc-field:FieldType"></element>
+			<element name="CUCTWN" type="inc-field:FieldType"></element>
+			<element name="CUCCTY" type="inc-field:FieldType"></element>
+			<element name="CUCCDE" type="inc-field:FieldType"></element>
+			<element name="CUCPSL" type="inc-field:FieldType"></element>
+			<element name="CUCCMP" type="inc-field:FieldType"></element>
+			<element name="CUCZIP" type="inc-field:FieldType"></element>
+			<element name="CUCZIS" type="inc-field:FieldType"></element>
+			<element name="CUCZP3" type="inc-field:FieldType"></element>
+			<element name="CUCZP4" type="inc-field:FieldType"></element>
+			<element name="CUCSTA" type="inc-field:FieldType"></element>
+			<element name="CUCNTY" type="inc-field:FieldType"></element>
+			<element name="CUCATL" type="inc-field:FieldType"></element>
+			<element name="CUCAFN" type="inc-field:FieldType"></element>
+			<element name="CUCASN" type="inc-field:FieldType"></element>
+			<element name="CUCALN" type="inc-field:FieldType"></element>
+			<element name="CUCACP" type="inc-field:FieldType"></element>
+			<element name="CULYLTY" type="inc-field:FieldType"></element>
+			<element name="CUCNBT" type="inc-field:FieldType"></element>
+			<element name="CUDEAL" type="inc-field:FieldType"></element>
+			<element name="CUPEP" type="inc-field:FieldType"></element>
+			<element name="CUCLNM2" type="inc-field:FieldType"></element>
+			<element name="CUCALN2" type="inc-field:FieldType"></element>
+			<element name="CUPLNID" type="inc-field:FieldType"></element>
+			<element name="CUDTNID" type="inc-field:FieldType"></element>
+			<element name="CUPLSSS" type="inc-field:FieldType"></element>
+			<element name="CUDTSSS" type="inc-field:FieldType"></element>
+			<element name="CUPLTAX" type="inc-field:FieldType"></element>
+			<element name="CUDTTAX" type="inc-field:FieldType"></element>
+			<element name="CUPLKEY" type="inc-field:FieldType"></element>
+			<element name="CUDTKEY" type="inc-field:FieldType"></element>
+			<element name="CURGD8" type="inc-field:FieldType"></element>
+			<element name="WKSVBRSTR" type="inc-field:FieldType"></element>
+			<element name="CTVTEX" type="inc-field:FieldType"></element>
+			<element name="CUSCL" type="inc-field:FieldType"></element>
+			<element name="CUEXSSS" type="inc-field:FieldType"></element>
+			<element name="CUEXTAX" type="inc-field:FieldType"></element>
+			<element name="CUEXNID" type="inc-field:FieldType"></element>
+			<element name="CUEXKEY" type="inc-field:FieldType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="C002OType">
+		<sequence>
+			<element name="MSRULN" type="inc-field:FieldType"></element>
+			<element name="MSCNBR" type="inc-field:FieldType"></element>
+			<element name="MSCNA1" type="inc-field:FieldType"></element>
+			<element name="MSCNA2" type="inc-field:FieldType"></element>
+			<element name="MSCNA3" type="inc-field:FieldType"></element>
+			<element name="MSCNA4" type="inc-field:FieldType"></element>
+			<element name="MSCNA5" type="inc-field:FieldType"></element>
+			<element name="MSCNA6" type="inc-field:FieldType"></element>
+			<element name="MSCANM" type="inc-field:FieldType"></element>
+			<element name="C2CARD" type="inc-field:FieldType"></element>
+			<element name="C2ASTS" type="inc-field:FieldType"></element>
+			<element name="C2SHRT" type="inc-field:FieldType"></element>
+		</sequence>
+	</complexType>
+
+    <element name="C002I" type="tns:C002IType"></element>
+
+    <element name="C002O" type="tns:C002OType"></element>
+</schema>
